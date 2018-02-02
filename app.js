@@ -12,11 +12,16 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 
 
+
+
+// HTML资源显示
 var static_files=express.static(path.join(__dirname, 'views'));
 app.use('/', static_files);
+
+
 
 
 // uncomment after placing your favicon in /public
