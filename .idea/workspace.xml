@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/findMusic.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/css/head/head.css" afterPath="$PROJECT_DIR$/public/stylesheets/css/head/head.css" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/css/index/index.css" afterPath="$PROJECT_DIR$/public/stylesheets/css/index/index.css" />
       <change beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change beforePath="$PROJECT_DIR$/views/myCollection.html" afterPath="$PROJECT_DIR$/views/myCollection.html" />
-      <change beforePath="$PROJECT_DIR$/views/myMusic.html" afterPath="$PROJECT_DIR$/views/myMusic.html" />
-      <change beforePath="$PROJECT_DIR$/views/settings.html" afterPath="$PROJECT_DIR$/views/settings.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,18 +24,18 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="496">
-                  <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+                <state relative-caret-position="294">
+                  <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/stylesheets/css/index/index.css">
+          <file leaf-file-name="head.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/stylesheets/css/head/head.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+                <state relative-caret-position="366">
+                  <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -54,8 +48,8 @@
           <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/css/index/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+                <state relative-caret-position="459">
+                  <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -102,15 +96,15 @@
         <option value="$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/css/myCollection/myCollection.css" />
         <option value="$PROJECT_DIR$/public/stylesheets/css/settings/settings.css" />
-        <option value="$PROJECT_DIR$/public/stylesheets/css/head/head.css" />
         <option value="$PROJECT_DIR$/views/myCollection.html" />
         <option value="$PROJECT_DIR$/views/myMusic.html" />
         <option value="$PROJECT_DIR$/views/settings.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
         <option value="$PROJECT_DIR$/views/findMusic.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css" />
-        <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/css/index/index.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/css/head/head.css" />
+        <option value="$PROJECT_DIR$/views/index.html" />
       </list>
     </option>
   </component>
@@ -170,14 +164,15 @@
               <item name="gd-music-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="headphoto" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gd-music-frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="gd-music-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="logo" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="playbar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gd-music-frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -327,12 +322,12 @@
       <updated>1517559822375</updated>
       <workItem from="1517559823586" duration="9000" />
       <workItem from="1517559863766" duration="3654000" />
-      <workItem from="1517788256731" duration="20129000" />
+      <workItem from="1517788256731" duration="21515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23792000" />
+    <option name="totallyTimeSpent" value="25178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="22" width="1440" height="878" extended-state="6" />
@@ -514,24 +509,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/css/head/head.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="46" column="66" lean-forward="true" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="66" />
+        <state relative-caret-position="366">
+          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="294">
+          <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/css/index/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="85" column="4" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+        <state relative-caret-position="459">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
