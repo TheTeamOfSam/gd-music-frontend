@@ -5,6 +5,13 @@
     background-color: #242424;
 }
 
+.navigation_min{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
 .logo{
     float: left;
     margin-left: 45px;
