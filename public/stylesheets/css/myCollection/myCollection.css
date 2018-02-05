@@ -6,12 +6,9 @@ body,*{
     border: 0;
 }
 
-.navigation ul li:nth-child(1) {
+.navigation ul li:nth-child(3) {
     background-color: #000000;
     color: #FFFFFF;
     cursor: default;
 }
-
-
-
 
