@@ -1,9 +1,9 @@
 window.onload = function () {
 
-    var oIframe = $(".middle_content iframe");
+    // var oIframe = $(".middle_content iframe");
 
-    $(".logo_min").click(function () {
-        oIframe.attr("src","findMusic.html");
+    $(".logo").click(function () {
+        window.location.href="index.html";
     });
 
     var oNavigationUl = document.getElementById("navigation_ul");
@@ -12,21 +12,21 @@ window.onload = function () {
     for (var i = 0; i < oLis.length; i++) {
         oLis[i].index = i;
         oLis[i].onclick = function () {
-            for (var j = 0; j < oLis.length; j++) {
-                oLis[j].style.backgroundColor = "#242424";
-                oLis[j].style.color = "#CCCCCC";
-            }
+            // for (var j = 0; j < oLis.length; j++) {
+            //     oLis[j].style.backgroundColor = "#242424";
+            //     oLis[j].style.color = "#CCCCCC";
+            // }
             var index = this.index;
-            oLis[index].style.backgroundColor="#000000";
-            oLis[index].style.color="#FFFFFF";
+            // oLis[index].style.backgroundColor="#000000";
+            // oLis[index].style.color="#FFFFFF";
             if (index == 0) {
-                oIframe.attr("src","findMusic.html");
+                window.location.href="index.html";
             } else if (index == 1) {
-                oIframe.attr("src","myMusic.html");
+                window.location.href="myMusic.html";
             } else if (index == 2) {
-                oIframe.attr("src","myCollection.html");
+                window.location.href="myCollection.html";
             } else {
-                oIframe.attr("src","settings.html");
+                window.location.href="settings.html";
             }
         };
     }
