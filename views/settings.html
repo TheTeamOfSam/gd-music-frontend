@@ -39,31 +39,104 @@
     <div class="middle_content_min">
         <div class="settings_frame">
             <span class="settings_title">个人设置</span>
-            <ul class="settings_bar">
+            <ul id="settings_bar" class="settings_bar">
                 <li>基本设置</li>
                 <li>安全设置</li>
             </ul>
-            <form class="update_form">
+            <form id="update_form" class="update_form" name="reg_testdate">
+                <div class="form_left">
+                    <div class="item">
+                        <label>昵称：</label>
+                        <input id="nickname" type="text" name="nickname" class="nickname">
+                    </div>
+                    <div id="nickname_reminder" class="nickname_reminder">
 
-
-
-
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
+                    </div>
+                    <div class="item tag">
+                        <label>介绍：</label>
+                        <textarea name="introduction" id="introduction" class="introduction"></textarea>
+                        <span id="residue_text" class="residue_text">150</span>
+                    </div>
+                    <div class="item">
+                        <label>性别：</label>
+                        <div class="select_gender">
+                            <label>
+                                <input name="gender" type="radio" value="1" class="gender" checked="checked">&nbsp;男
+                            </label>
+                            <label>
+                                <input name="gender" type="radio" value="2" class="gender">&nbsp;女
+                            </label>
+                            <label>
+                                <input name="gender" type="radio" value="3" class="gender">&nbsp;保密
+                            </label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <label>生日：</label>
+                        <div class="select_date_of_birth">
+                            <select name="YYYY" onChange="YYYYDD(this.value)">
+                                <option value="">请选择 年</option>
+                            </select>
+                            <span>&nbsp;年</span>
+                            <select name="MM" onChange="MMDD(this.value)">
+                                <option value="">选择 月</option>
+                            </select>
+                            <span>&nbsp;月</span>
+                            <select name="DD">
+                                <option value="">选择 日</option>
+                            </select>
+                            <span>&nbsp;日</span>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="/javascripts/controller/utils/selectDate.js"></script>
+                    <div class="item">
+                        <label>地区：</label>
+                        <div class="select_province_and_city">
+                            <select name="province" id="selProvince" onchange="provinceChange();">
+                                <!--<option value=""></option>-->
+                            </select>
+                            <select name="city" id="selCity">
+                                <!--<option value=""></option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <script type="text/javascript" src="/javascripts/controller/utils/selectProvinceAndCity.js"></script>
+                    <div class="save_item">
+                        <input class="save_btn" type="button" value="保存">
+                    </div>
+                </div>
+                <div class="form_right">
+                    <img src="/images/headphoto/IMG_0416.JPG">
+                    <span class="change_hp_btn"></span>
+                    <a href="javascript:;" class="upload" id="upload">更改头像</a>
+                </div>
+            </form>
+            <form id="update_password" class="update_password">
+                <div class="form_left">
+                    <div class="password_item">
+                        <label>原密码：</label>
+                        <input id="old_password" type="password" name="old_password" class="nickname">
+                        <div id="old_password_reminder" class="password_reminder"></div>
+                    </div>
+                    <div class="password_item">
+                        <label>新密码：</label>
+                        <input id="new_password" type="password" name="new_password" class="nickname">
+                        <div id="new_password_reminder" class="password_reminder"></div>
+                    </div>
+                    <div class="password_item">
+                        <label>确认密码：</label>
+                        <input id="re_new_password" type="password" name="re_new_password" class="nickname">
+                        <div id="re_new_password_reminder" class="password_reminder"></div>
+                    </div>
+                    <div class="save_item">
+                        <input class="save_btn" type="button" value="更改密码">
+                    </div>
+                </div>
             </form>
         </div>
+        <script type="text/javascript" src="/javascripts/controller/style/settingsTab.js"></script>
+        <script type="text/javascript" src="/javascripts/controller/style/updateBasicInfo.js"></script>
+        <script type="text/javascript" src="/javascripts/controller/style/updatePassword.js"></script>
     </div>
 </div>
 <div class="copyright">
