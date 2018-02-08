@@ -37,4 +37,8 @@ window.onload = function () {
         oLoginBtn.style.display = "none";
     }
 
+    oLoginBtn.onclick = function () {
+        window.location.href="login.html";
+    };
+
 };
