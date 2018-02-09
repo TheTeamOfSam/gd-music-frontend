@@ -175,6 +175,7 @@ body, * {
 }
 
 .lg_alt_frame_bg {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -184,6 +185,7 @@ body, * {
 }
 
 .login_alt_frame {
+    display: none;
     width: 530px;
     height: 351px;
     position: absolute;
