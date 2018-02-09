@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body,*{
+body, * {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,5 +11,56 @@ body,*{
     color: #FFFFFF;
     cursor: default;
 }
+
+.middle_content {
+    margin-top: 75px;
+    width: 100%;
+    background-color: #F5F5F5;
+    z-index: 999;
+}
+
+.middle_content_min {
+    width: 980px;
+    height: 1000px;
+    border-left: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.music_list {
+    width: 232px;
+    background-color: #F9F9F9;
+    padding: 40px 0 50px 0;
+    position: fixed;
+    float: left;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.music_list::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.created_music_list {
+    height: 700px;
+}
+
+.music_in_music_list {
+    margin: 0;
+    padding: 0;
+    width: 748px;
+    height: 1000px;
+    position: relative;
+    left: 232px;
+    border-left: 1px solid #D3D3D3;
+    float: left;
+}
+
+
+
+
 
 
