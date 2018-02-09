@@ -3,6 +3,9 @@ var oLgAltFrameBg = $(".lg_alt_frame_bg");
 var oLoginAltFrame = $(".login_alt_frame");
 var oCloseLaf = $(".close_laf");
 
+var oRegisterBtn = $(".register_btn");
+var oRegistLink = $(".regist_link");
+
 var oLoginEmail = document.getElementById("login_email");
 var oLoginPassword = document.getElementById("login_password");
 var oReminderInfo = document.getElementById("reminder_info");
@@ -14,6 +17,8 @@ oLoginBtn.click(function () {
 });
 
 oCloseLaf.click(function () {
+    oLoginEmail.value = "";
+    oLoginPassword.value = "";
     oLgAltFrameBg.css("display", "none");
     oLoginAltFrame.css("display", "none");
 });
@@ -35,6 +40,12 @@ oLafmLoginBtn.onclick = function () {
     }
 };
 
+oRegisterBtn.click(function () {
+    window.location.href = "register.html";
+});
 
+oRegistLink.click(function () {
+    window.location.href = "register.html";
+});
 
 
