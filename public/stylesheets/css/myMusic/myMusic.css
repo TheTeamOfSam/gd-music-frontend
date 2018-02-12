@@ -681,6 +681,103 @@ body, * {
     font-style: normal;
 }
 
+.delete_music_list_frame {
+    display: none;
+    padding: 0;
+    border: 0;
+    position: fixed;
+    width: 480px;
+    height: 203px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    z-index: 9999;
+    margin-top: -101px;
+    margin-left: -240px;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+}
+
+.dmlf_top {
+    width: 480px;
+    height: 38px;
+    border-bottom: 1px solid #191919;
+    background-color: #2d2d2d;
+}
+
+.dmlf_title {
+    width: 417px;
+    height: 38px;
+    margin: 0;
+    border: 0;
+    padding: 0 18px;
+    line-height: 38px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.dmlf_main {
+    margin-top: -1px;
+    border-radius: 0 0 4px 4px;
+    width: 478px;
+    height: 83px;
+    padding: 40px 0;
+    border: 1px solid #8E8E8E;
+}
+
+.dmlf_main_tip {
+    width: 478px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+}
+
+.dmlf_btns {
+    margin: 30px 142px 0 142px;
+    height: 31px;
+    text-align: center;
+}
+
+.dmlf_btns a {
+    text-decoration: none;
+    display: block;
+    width: 75px;
+    height: 31px;
+    margin: 0 10px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    float: left;
+    border-radius: 3px;
+    line-height: 31px;
+}
+
+.dmlf_btns a:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.dmlf_btns a:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.dmlf_confirm_btn {
+    background-color: #2677C6;
+    border: 1px solid #2677C6;
+    color: #FFFFFF;
+}
+
+.dmlf_cancel_btn {
+    background-color: #F6F6F6;
+    border: 1px solid #CDCDCD;
+    color: #333333;
+}
 
 
 

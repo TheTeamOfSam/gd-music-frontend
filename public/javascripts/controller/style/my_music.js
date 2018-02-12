@@ -12,6 +12,10 @@ var oReminderCmlfName = document.getElementById("reminder_cmlf_name");
 var oCreateBtn = document.getElementById("create_btn");
 var oCancelBtn = document.getElementById("cancel_btn");
 
+var oDeleteMusiListFrame = document.getElementById("delete_music_list_frame");
+
+var oDmlfCancelBtn = document.getElementById("dmlf_cancel_btn");
+
 $(function () {
     //浏览器时下窗口可视区域高度
     var windowHeight = $(window).height();
@@ -40,12 +44,17 @@ for (var j = 0; j < oMMLLis.length; j++) {
     oMMLLis[j].onmouseover = function () {
         var index = this.index;
         var oMusicListBtns = oMMLLis[index].getElementsByClassName("music_list_btns")[0];
-        oMMLLis[index].onmouseover = function () {
-            oMusicListBtns.style.display = "block";
+        oMusicListBtns.style.display = "block";
+        var oDeleteBtn = oMusicListBtns.getElementsByClassName("delete_btn")[0];
+        oDeleteBtn.onclick = function () {
+            oCreateMusicListFrameBg.style.display = "block";
+            oDeleteMusiListFrame.style.display = "block";
         };
-        oMMLLis[index].onmouseout = function () {
-            oMusicListBtns.style.display = "none";
-        };
+    };
+    oMMLLis[j].onmouseout = function () {
+        var index = this.index;
+        var oMusicListBtns = oMMLLis[index].getElementsByClassName("music_list_btns")[0];
+        oMusicListBtns.style.display = "none";
     };
 }
 
@@ -85,6 +94,12 @@ oCreateBtn.onclick = function () {
         oReminderCmlfName.innerHTML = null;
     }
 };
+
+oDmlfCancelBtn.onclick = function () {
+    oCreateMusicListFrameBg.style.display = "none";
+    oDeleteMusiListFrame.style.display = "none";
+};
+
 
 
 
