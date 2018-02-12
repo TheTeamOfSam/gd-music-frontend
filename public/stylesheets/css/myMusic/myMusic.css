@@ -103,6 +103,7 @@ body, * {
     padding: 6px 0 6px 20px;
     width: 212px;
     height: 42px;
+    position: relative;
 }
 
 .my_music_list li:nth-child(1) {
@@ -148,6 +149,38 @@ body, * {
     font-size: 12px;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
     color: #999999;
+}
+
+.music_list_btns {
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+    display: none;
+}
+
+.music_list_btns a {
+    display: block;
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin: 0 10px 0 0;
+    background-image: url("../../../images/style/icon.png");
+}
+
+.edit_btn {
+    background-position: 0 -270px;
+}
+
+.edit_btn:hover {
+    background-position: -20px -270px;
+}
+
+.delete_btn {
+    background-position: 0 -284px;
+}
+
+.delete_btn:hover {
+    background-position: -20px -284px;
 }
 
 .music_in_music_list {

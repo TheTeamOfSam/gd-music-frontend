@@ -1,3 +1,6 @@
+var oMyMusicList = document.getElementById("my_music_list");
+var oMMLLis = oMyMusicList.getElementsByTagName("li");
+
 var oMusicTable = document.getElementById("music_table");
 var oMTTrs = oMusicTable.getElementsByTagName("tr");
 
@@ -31,6 +34,20 @@ $(window).resize(function () {
     oMusicList.css("height", (windowHeight - 75) + "px");
     oMiddleContent.css("height", (documentHeight - 75) + "px");
 });
+
+for (var j = 0; j < oMMLLis.length; j++) {
+    oMMLLis[j].index = j;
+    oMMLLis[j].onmouseover = function () {
+        var index = this.index;
+        var oMusicListBtns = oMMLLis[index].getElementsByClassName("music_list_btns")[0];
+        oMMLLis[index].onmouseover = function () {
+            oMusicListBtns.style.display = "block";
+        };
+        oMMLLis[index].onmouseout = function () {
+            oMusicListBtns.style.display = "none";
+        };
+    };
+}
 
 for (var i = 0; i < oMTTrs.length; i++) {
     oMTTrs[i].index = i;
