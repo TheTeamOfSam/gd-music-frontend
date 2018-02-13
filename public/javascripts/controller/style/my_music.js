@@ -12,6 +12,8 @@ var oReminderCmlfName = document.getElementById("reminder_cmlf_name");
 var oCreateBtn = document.getElementById("create_btn");
 var oCancelBtn = document.getElementById("cancel_btn");
 
+var oEditMusicListBtn = document.getElementsByClassName("edit_music_list_btn")[0];
+
 var oDeleteMusiListFrame = document.getElementById("delete_music_list_frame");
 
 var oDmlfCancelBtn = document.getElementById("dmlf_cancel_btn");
@@ -45,10 +47,14 @@ for (var j = 0; j < oMMLLis.length; j++) {
         var index = this.index;
         var oMusicListBtns = oMMLLis[index].getElementsByClassName("music_list_btns")[0];
         oMusicListBtns.style.display = "block";
+        var oEditBtn = oMusicListBtns.getElementsByClassName("edit_btn")[0];
         var oDeleteBtn = oMusicListBtns.getElementsByClassName("delete_btn")[0];
         oDeleteBtn.onclick = function () {
             oCreateMusicListFrameBg.style.display = "block";
             oDeleteMusiListFrame.style.display = "block";
+        };
+        oEditBtn.onclick = function () {
+            window.location.href = "editMusicList.html";
         };
     };
     oMMLLis[j].onmouseout = function () {
@@ -57,6 +63,10 @@ for (var j = 0; j < oMMLLis.length; j++) {
         oMusicListBtns.style.display = "none";
     };
 }
+
+oEditMusicListBtn.onclick = function () {
+    window.location.href = "editMusicList.html";
+};
 
 for (var i = 0; i < oMTTrs.length; i++) {
     oMTTrs[i].index = i;
@@ -99,6 +109,8 @@ oDmlfCancelBtn.onclick = function () {
     oCreateMusicListFrameBg.style.display = "none";
     oDeleteMusiListFrame.style.display = "none";
 };
+
+
 
 
 

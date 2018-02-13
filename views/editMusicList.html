@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑歌单</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/editMusicList/editMusicList.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/head/head.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/footer/footer.css">
+    <script type="text/javascript" src="/javascripts/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/javascripts/controller/navigation/navigation.js"></script>
+</head>
+<body>
+<div class="navigation">
+    <div class="navigation_min">
+        <div class="logo">
+            <div class="logo_min">
+                <a href="javascript:;">
+                    <img src="/images/logo/logo.png">
+                </a>
+            </div>
+        </div>
+        <ul id="navigation_ul">
+            <li>发现音乐</li>
+            <li>我的音乐</li>
+            <li>我的收藏</li>
+            <li>个人设置</li>
+        </ul>
+        <div class="search">
+            <input type="text" class="search_content" placeholder="搜索音乐/专辑/艺人/歌单">
+        </div>
+        <div id="head_photo" class="head_photo">
+            <img src="/images/headphoto/IMG_0416.JPG">
+        </div>
+        <div id="login_btn" class="login_btn">
+            <a href="javascript:;">登录</a>
+        </div>
+    </div>
+</div>
+<div class="red_bar"></div>
+<div id="middle_content" class="middle_content">
+    <div class="middle_content_min">
+        <div class="edit_top">
+            <span>
+                编辑歌单
+            </span>
+        </div>
+        <div class="edit_bottom">
+            <div class="eb_left">
+                <div class="edit_item_music_list_name">
+                    <span class="music_list_name">
+                        歌单名：
+                    </span>
+                    <input type="text" class="replace_music_list_name" id="replace_music_list_name">
+                    <div class="reminder_rml_name" id="reminder_rml_name">
+
+                    </div>
+                </div>
+                <div class="edit_item_music_list_intro">
+                    <span class="music_list_name">
+                        介绍：
+                    </span>
+                    <textarea name="music_list_intro" id="music_list_intro" class="music_list_intro"></textarea>
+                </div>
+                <div class="dmlf_btns">
+                    <a class="dmlf_confirm_btn" id="eml_confirm_btn" href="javascript:;">确定</a>
+                    <a class="dmlf_cancel_btn" id="eml_cancel_btn" href="javascript:;">取消</a>
+                </div>
+            </div>
+            <div class="eb_right">
+                <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/javascripts/controller/style/edit_music_list.js"></script>
+</body>
+</html>
