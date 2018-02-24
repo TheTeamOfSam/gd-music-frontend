@@ -39,16 +39,34 @@ oSendEmailBtn.onclick = function () {
             oReminderRegisterEmail.innerHTML = "";
             if (oSendEmailBtn.value != "发送") {
             } else {
-                var countDown = 60;
-                timer = setInterval(function () {
-                    countDown--;
-                    if (countDown == 0) {
-                        oSendEmailBtn.value = "发送";
-                        clearInterval(timer);
-                    } else {
-                        oSendEmailBtn.value = "(" + countDown + ")后重发";
+                $.ajax({
+                    url: 'http://localhost:7200/gdmusicserver/email/@get',
+                    type: 'POST',
+                    data: {
+                        email: oRegisterEmail.value
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        oReminderRegisterEmail.innerHTML = "网络错误，请求失败！";
+                    },
+                    success: function (result) {
+                        if (result.is_success == false) {
+                            oReminderRegisterEmail.innerHTML = "验证码发送失败了！";
+                        } else {
+                            oReminderRegisterEmail.innerHTML = "";
+                            var countDown = 60;
+                            timer = setInterval(function () {
+                                countDown--;
+                                if (countDown == 0) {
+                                    oSendEmailBtn.value = "发送";
+                                    clearInterval(timer);
+                                } else {
+                                    oSendEmailBtn.value = "(" + countDown + ")后重发";
+                                }
+                            }, 1000);
+                        }
                     }
-                }, 1000);
+                });
             }
         }
     }
@@ -56,21 +74,37 @@ oSendEmailBtn.onclick = function () {
 
 oFirstNextStepLink.onclick = function () {
     if (oEmailCode.value.length == 0) {
-        oReminderEmailCode.value = "请输入邮箱验证码";
+        oReminderEmailCode.innerHTML = "请输入邮箱验证码！";
     } else {
-        if (oEmailCode.value != "1111") {
-        } else {
-            oRULis[0].style.border = "1px solid #C6C6C6";
-            oRULis[0].style.backgroundColor = "#F7F7F7";
-            oRULis[0].getElementsByTagName("div")[0].className = "step_number";
-            oRULis[0].getElementsByTagName("span")[0].className = "step_text";
-            oRULis[1].style.borderTop = "1px solid #C20C0C";
-            oRULis[1].style.backgroundColor = "#FFFFFF";
-            oRULis[1].getElementsByTagName("div")[0].className = "step_number step_outline";
-            oRULis[1].getElementsByTagName("span")[0].className = "step_text step_text_outline";
-            oFirstStepForm.style.display = "none";
-            oSecondStepForm.style.display = "block";
-        }
+
+        $.ajax({
+            url: 'http://localhost:7200/gdmusicserver/email/@check',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                email: oRegisterEmail.value,
+                code: oEmailCode.value
+            },
+            error: function () {
+                oReminderEmailCode.innerHTML = "网络请求失败！";
+            },
+            success: function (result) {
+                if (result.is_success == false) {
+                    oReminderEmailCode.innerHTML = result.feedback_message;
+                } else {
+                    oRULis[0].style.border = "1px solid #C6C6C6";
+                    oRULis[0].style.backgroundColor = "#F7F7F7";
+                    oRULis[0].getElementsByTagName("div")[0].className = "step_number";
+                    oRULis[0].getElementsByTagName("span")[0].className = "step_text";
+                    oRULis[1].style.borderTop = "1px solid #C20C0C";
+                    oRULis[1].style.backgroundColor = "#FFFFFF";
+                    oRULis[1].getElementsByTagName("div")[0].className = "step_number step_outline";
+                    oRULis[1].getElementsByTagName("span")[0].className = "step_text step_text_outline";
+                    oFirstStepForm.style.display = "none";
+                    oSecondStepForm.style.display = "block";
+                }
+            }
+        });
     }
 };
 
