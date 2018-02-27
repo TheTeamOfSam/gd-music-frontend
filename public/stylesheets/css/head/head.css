@@ -10,6 +10,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+    position: relative;
 }
 
 .logo {
@@ -113,5 +114,18 @@
 .red_bar {
     height: 5px;
     background-color: #C20C0C;
+}
+
+.logout_btn {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: 1px solid #CDCDCD;
+    background-color: white;
+    position: absolute;
+    right: 125px;
+    top: 65px;
+    z-index: 99999999;
 }
 

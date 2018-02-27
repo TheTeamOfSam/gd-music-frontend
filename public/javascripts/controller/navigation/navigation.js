@@ -27,7 +27,7 @@ window.onload = function () {
     var headPhoto = $(".head_photo img");
     var oLoginBtn = document.getElementById("login_btn");
 
-    if ($.cookie("user_head_photo") == null) {
+    if ($.cookie("user_head_photo") != null) {
         oHeadPhoto.style.display = "none";
         headPhoto.attr("src", "");
         oLoginBtn.style.display = "block";
