@@ -126,6 +126,19 @@
     position: absolute;
     right: 125px;
     top: 65px;
-    z-index: 99999999;
+    z-index: 99999;
+    text-align: center;
+    display: none;
 }
+
+.logout_btn:hover {
+    cursor: pointer;
+}
+
+.logout_btn a {
+    display: block;
+    text-decoration: none;
+    color: #333333;
+}
+
 

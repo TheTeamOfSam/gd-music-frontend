@@ -23,9 +23,12 @@ window.onload = function () {
         };
     }
 
+    var isLogoutBtn = false;
+
     var oHeadPhoto = document.getElementById("head_photo");
     var headPhoto = $(".head_photo img");
     var oLoginBtn = document.getElementById("login_btn");
+    var oLogoutBtn = document.getElementById("logout_btn");
 
     if ($.cookie("user_head_photo") != null) {
         oHeadPhoto.style.display = "none";
@@ -38,7 +41,22 @@ window.onload = function () {
     }
 
     oLoginBtn.onclick = function () {
-        window.location.href="login.html";
+        window.location.href = "login.html";
     };
+
+    oHeadPhoto.onclick = function () {
+        if (isLogoutBtn == false) {
+            isLogoutBtn = true;
+            oLogoutBtn.style.display = "block";
+        } else {
+            isLogoutBtn = false;
+            oLogoutBtn.style.display = "none";
+        }
+    };
+
+    oLogoutBtn.onclick = function () {
+        
+    };
+
 
 };
