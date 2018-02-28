@@ -55,7 +55,7 @@ window.onload = function () {
     };
 
     oLogoutBtn.onclick = function () {
-        
+
     };
 
 

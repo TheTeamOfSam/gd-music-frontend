@@ -34,4 +34,11 @@ oIntroduction.onfocus = function () {
     };
 };
 
+var oChangeHpBtn = document.getElementById("change_hp_btn");
+var oUpload = document.getElementById("upload");
+
+oChangeHpBtn.onclick = oUpload.onclick = function () {
+    window.location.href = "changeHeadPhoto.html";
+};
+
 
