@@ -5,7 +5,6 @@
     padding: 0;
 }
 
-
 .navigation ul li:nth-child(4) {
     background-color: #000000;
     color: #FFFFFF;
@@ -20,10 +19,139 @@
 .middle_content_min {
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+    width: 920px;
     height: 700px;
     border-left: 1px solid #D3D3D3;
     border-right: 1px solid #D3D3D3;
     background-color: white;
+    padding: 40px;
+}
+
+.setting_title {
+    width: 900px;
+    height: 27px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.upload_box {
+    width: 900px;
+    height: 495px;
+}
+
+.upload_btn_box {
+    width: 900px;
+    height: 31px;
+    line-height: 31px;
+    margin: 0;
+    padding: 26px 0 30px 0;
+    position: relative;
+}
+
+.upload_select_btn {
+    width: 95px;
+    height: 31px;
+    border-radius: 3px;
+    border: 1px solid #CDCDCD;
+    outline: none;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 26px;
+    z-index: 9999;
+}
+
+.upload_select_btn:hover {
+    cursor: pointer;
+}
+
+.up_upload_select_btn {
+    width: 95px;
+    height: 31px;
+    border-radius: 3px;
+    border: 1px solid #CDCDCD;
+    outline: none;
+    display: block;
+    text-decoration: none;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    left: 0;
+    top: 26px;
+    text-align: center;
+    color: #333333;
+    z-index: 999;
+}
+
+.up_upload_select_btn:hover {
+    cursor: pointer;
+}
+
+.upload_tip {
+    display: block;
+    margin: 7px 0 0 105px;
+    padding: 0;
+    color: #999;
+    height: 17px;
+    line-height: 17px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+}
+
+.head_preview {
+    width: 322px;
+    height: 322px;
+    border: 1px solid #CDCDCD;
+}
+
+.head_preview img {
+    width: 100%;
+    height: 100%;
+}
+
+.operate_btns {
+    margin: 40px 0 0 0;
+    width: 900px;
+    height: 31px;
+}
+
+.operate_btns a {
+    border-radius: 3px;
+    text-align: center;
+    display: block;
+    width: 75px;
+    height: 36px;
+    text-decoration: none;
+    line-height: 36px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+}
+
+.operate_btns a:hover {
+    filter: opacity(80%);
+    opacity: 0.8;
+}
+
+.operate_btns a:active {
+    filter: opacity(100%);
+    opacity: 1;
+}
+
+.save_head_photo_btn {
+    margin: 0 20px 0 0;
+    background-color: #2677C6;
+    color: white;
+    float: left;
+}
+
+.cancel_btn {
+    float: left;
+    border: 1px solid #CDCDCD;
+    color: #333333;
+
 }
 
