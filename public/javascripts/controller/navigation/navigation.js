@@ -30,13 +30,13 @@ window.onload = function () {
     var oLoginBtn = document.getElementById("login_btn");
     var oLogoutBtn = document.getElementById("logout_btn");
 
-    if ($.cookie("user_head_photo") != null) {
+    if ($.cookie("uHeadPhoto") == null) {
         oHeadPhoto.style.display = "none";
         headPhoto.attr("src", "");
         oLoginBtn.style.display = "block";
     } else {
         oHeadPhoto.style.display = "block";
-        headPhoto.attr("src", "/images/headphoto/IMG_0416.JPG");
+        headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
         oLoginBtn.style.display = "none";
     }
 

@@ -51,7 +51,7 @@ oSendEmailBtn.onclick = function () {
                     },
                     success: function (result) {
                         if (result.is_success == false) {
-                            oReminderRegisterEmail.innerHTML = "验证码发送失败了！";
+                            oReminderRegisterEmail.innerHTML = result.feedback_message;
                         } else {
                             oReminderRegisterEmail.innerHTML = "";
                             var countDown = 60;
@@ -145,17 +145,43 @@ oSecondNextStepLink.onclick = function () {
 };
 
 oFinishStepLink.onclick = function () {
-    console.log(oRegisterEmail.value);
-    console.log(oNickname.value);
-    console.log(oPassword.value);
+    var rEmail = oRegisterEmail.value;
+    var rNickname = oNickname.value;
+    var rPassword = oPassword.value;
+    var rGender = 0;
     for (var i = 0; i < oGender.length; i++) {
         if (oGender[i].checked) {
-            console.log(oGender[i].value);
+            rGender = oGender[i].value;
         }
     }
-    console.log(oYear.value + "-" + oMonth.value + "-" + oDay.value);
-    console.log(oSelProvince.value);
-    console.log(oSelCity.value);
+    var rDOfB = oYear.value + "-" + oMonth.value + "-" + oDay.value;
+    var rProvince = oSelProvince.value;
+    var rCity = oSelCity.value;
+
+    $.ajax({
+        url: 'http://localhost:7200/gdmusicserver/user/service/@register',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            email: rEmail,
+            nickname: rNickname,
+            password: rPassword,
+            sex: rGender,
+            str_date_of_birth: rDOfB,
+            province: rProvince,
+            city: rCity
+        },
+        error: function () {
+            alert("网络异常，请求注册失败！");
+        },
+        success: function (result) {
+            if (result.is_success) {
+                window.location.href = "index.html";
+            } else {
+                alert(result.message);
+            }
+        }
+    });
 };
 
 
