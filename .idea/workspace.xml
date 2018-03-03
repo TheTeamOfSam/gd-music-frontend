@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/views/findMusic.html" afterPath="$PROJECT_DIR$/views/findMusic.html" />
-    </list>
+    <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -466,12 +462,12 @@
       <workItem from="1519475184605" duration="2441000" />
       <workItem from="1519697780624" duration="1736000" />
       <workItem from="1519798397789" duration="8424000" />
-      <workItem from="1519953310377" duration="17161000" />
+      <workItem from="1519953310377" duration="17211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169739000" />
+    <option name="totallyTimeSpent" value="169789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-240" y="-1058" width="1920" height="1058" extended-state="6" />
