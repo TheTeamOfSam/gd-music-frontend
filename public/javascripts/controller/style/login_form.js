@@ -56,35 +56,7 @@ oLafmLoginBtn.onclick = function () {
                                 path: '/',//cookie的作用域
                                 expires: 7
                             });
-                            $.cookie("uCity", uResult.city, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
-                            $.cookie("uDateOfBirth", uResult.date_of_birth, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
-                            $.cookie("uEmail", uResult.email, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
                             $.cookie("uId", uResult.id, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
-                            $.cookie("uIntroduction", uResult.introduction, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
-                            $.cookie("uNickname", uResult.nickname, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
-                            $.cookie("uProvince", uResult.province, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
-                            $.cookie("uSex", uResult.sex, {
                                 path: '/',//cookie的作用域
                                 expires: 7
                             });

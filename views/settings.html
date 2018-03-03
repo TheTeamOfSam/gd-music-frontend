@@ -65,7 +65,7 @@
                     </div>
                     <div class="item">
                         <label>性别：</label>
-                        <div class="select_gender">
+                        <div class="select_gender" id="select_gender">
                             <label>
                                 <input name="gender" type="radio" value="1" class="gender" checked="checked">&nbsp;男
                             </label>
@@ -80,15 +80,15 @@
                     <div class="item">
                         <label>生日：</label>
                         <div class="select_date_of_birth">
-                            <select name="YYYY" onChange="YYYYDD(this.value)">
+                            <select id="year" name="YYYY" onChange="YYYYDD(this.value)">
                                 <option value="">请选择 年</option>
                             </select>
                             <span>&nbsp;年</span>
-                            <select name="MM" onChange="MMDD(this.value)">
+                            <select id="month" name="MM" onChange="MMDD(this.value)">
                                 <option value="">选择 月</option>
                             </select>
                             <span>&nbsp;月</span>
-                            <select name="DD">
+                            <select id="day" name="DD">
                                 <option value="">选择 日</option>
                             </select>
                             <span>&nbsp;日</span>

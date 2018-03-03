@@ -55,7 +55,13 @@ window.onload = function () {
     };
 
     oLogoutBtn.onclick = function () {
-
+        $.cookie("uId", null, {
+            expires: -1
+        });
+        $.cookie("uHeadPhoto", null, {
+            expires: -1
+        });
+        window.location.href = "index.html";
     };
 
 

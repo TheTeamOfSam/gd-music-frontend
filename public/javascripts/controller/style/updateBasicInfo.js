@@ -1,8 +1,76 @@
 var oNickname = document.getElementById("nickname");
 var oNicknameReminder = document.getElementById("nickname_reminder");
+var oIntroduction = document.getElementById("introduction");
+var oResidueText = document.getElementById("residue_text");
+var oChangeHpBtn = document.getElementById("change_hp_btn");
+var oUpload = document.getElementById("upload");
+
+var oSelectGender = document.getElementById("select_gender");
+var aSGLabel = oSelectGender.getElementsByTagName("label");
+
+var oYear = document.getElementById("year");
+var oMonth = document.getElementById("month");
+var oDay = document.getElementById("day");
+
+var oSelProvince = document.getElementById("selProvince");
+var oSelCity = document.getElementById("selCity");
+
+function timestampToTime(timestamp) {
+    var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    Y = date.getFullYear();
+    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    D = date.getDate();
+    h = date.getHours();
+    m = date.getMinutes();
+    s = date.getSeconds();
+    var dateOfBirth = {
+        year: Y,
+        month: M,
+        day: D,
+        hour: h,
+        minute: m,
+        second: s
+    };
+    return dateOfBirth;
+}
+
+$.ajax({
+    url: 'http://localhost:7200/gdmusicserver/user/service/info/@get',
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        uID: $.cookie("uId")
+    },
+    error: function () {
+        alert("网络请求错误，请稍候重试！");
+    },
+    success: function (result) {
+        if (!result.is_success) {
+            alert(result.message);
+        } else {
+            var user = result.result;
+            oNickname.value = user.nickname;
+            oIntroduction.value = user.introduction;
+            for (var i = 0; i < aSGLabel.length; i++) {
+                var oGender = aSGLabel[i].getElementsByClassName("gender")[0];
+                if ((i + 1) == user.sex) {
+                    oGender.checked = "checked";
+                } else {
+                    oGender.checked = null;
+                }
+            }
+            var oDOfB = timestampToTime(user.date_of_birth / 1000);
+            oYear.value = oDOfB.year;
+            oMonth.value = oDOfB.month;
+            oDay.value = oDOfB.day;
+            oSelProvince.value = user.province;
+            provinceChange();
+            oSelCity.value = user.city;
+        }
+    }
+});
 
 oNickname.onblur = function () {
-
     var nicknameValue = oNickname.value;
     console.log(nicknameValue);
     if (nicknameValue == "") {
@@ -14,11 +82,8 @@ oNickname.onblur = function () {
     } else {
         oNicknameReminder.style.display = "none";
     }
-
 };
 
-var oIntroduction = document.getElementById("introduction");
-var oResidueText = document.getElementById("residue_text");
 
 oIntroduction.onfocus = function () {
     oIntroduction.onkeydown = function () {
@@ -34,11 +99,9 @@ oIntroduction.onfocus = function () {
     };
 };
 
-var oChangeHpBtn = document.getElementById("change_hp_btn");
-var oUpload = document.getElementById("upload");
-
 oChangeHpBtn.onclick = oUpload.onclick = function () {
     window.location.href = "changeHeadPhoto.html";
 };
+
 
 

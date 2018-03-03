@@ -39,16 +39,6 @@ var xianggang = ["中西区", "湾仔区", "东区", "南区", "九龙城区", "
 var taiwan = ["台北", "高雄", "基隆", "台中", "台南", "新竹", "嘉义"];
 var aomeng = ["澳门半岛", "氹仔岛", "路环岛"];
 
-//页面加载方法
-$(function () {
-    //设置省份数据
-    setProvince();
-
-    //设置背景颜色
-    setBgColor();
-});
-
-
 //设置省份数据
 function setProvince() {
     //给省份下拉列表赋值
@@ -212,3 +202,12 @@ function setBgColor() {
     var $option = $("select option:odd");
     $option.css({ "background-color": "#DEDEDE" });
 }
+
+//页面加载方法
+// $(function () {
+    //设置省份数据
+    setProvince();
+
+    //设置背景颜色
+    setBgColor();
+// });
