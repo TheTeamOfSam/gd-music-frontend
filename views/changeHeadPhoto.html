@@ -48,22 +48,23 @@
         </div>
         <div class="upload_box">
             <div class="upload_btn_box">
-                <input type="file" class="upload_select_btn">
+                <input type="file" class="upload_select_btn" id="upload_select_btn" onchange="imgPreView(this);">
                 <a href="javascript:;" class="up_upload_select_btn">上传头像</a>
                 <span class="upload_tip">
                     支持jpg、png、bmp格式的图片，且文件小于20M
                 </span>
             </div>
-            <div class="head_preview">
-                <img src="/images/headphoto/default_head_photo.png" alt="#">
+            <div class="head_preview" id="head_preview">
+                <img id="user_head_photo" src="/images/headphoto/default_head_photo.png" alt="#">
             </div>
             <div class="operate_btns">
-                <a href="javascript:;" class="save_head_photo_btn">保存</a>
-                <a href="javascript:;" class="cancel_btn">取消</a>
+                <a href="javascript:;" class="save_head_photo_btn" id="save_head_photo_btn">保存</a>
+                <a href="javascript:;" class="cancel_btn" id="cancel_btn">取消</a>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="/javascripts/controller/style/changeHeadPhoto.js"></script>
 <div class="copyright">
     <div class="copyright_min">
         <ul class="services">

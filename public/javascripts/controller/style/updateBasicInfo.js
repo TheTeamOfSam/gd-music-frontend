@@ -15,6 +15,8 @@ var oDay = document.getElementById("day");
 var oSelProvince = document.getElementById("selProvince");
 var oSelCity = document.getElementById("selCity");
 
+var oUserHeadPhoto = document.getElementById("user_head_photo");
+
 function timestampToTime(timestamp) {
     var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
     Y = date.getFullYear();
@@ -66,6 +68,11 @@ $.ajax({
             oSelProvince.value = user.province;
             provinceChange();
             oSelCity.value = user.city;
+            if (user.head_photo == null || user.head_photo == "") {
+                oUserHeadPhoto.src = "/images/headphoto/default_head_photo.png";
+            } else {
+                oUserHeadPhoto.src = user.head_photo;
+            }
         }
     }
 });
