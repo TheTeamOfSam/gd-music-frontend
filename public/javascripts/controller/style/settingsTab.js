@@ -1,7 +1,3 @@
-if ($.cookie("uId") == null || $.cookie("uId") == "") {
-    window.location.href = "login.html";
-}
-
 var oSettingsTabBar = document.getElementById("settings_bar");
 var oSettingsLis = oSettingsTabBar.getElementsByTagName("li");
 

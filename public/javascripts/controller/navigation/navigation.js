@@ -14,11 +14,23 @@ window.onload = function () {
             if (index == 0) {
                 window.location.href = "index.html";
             } else if (index == 1) {
-                window.location.href = "myMusic.html";
+                if ($.cookie("uId") == null || $.cookie("uId") == "") {
+                    window.location.href = "login.html";
+                } else {
+                    window.location.href = "myMusic.html";
+                }
             } else if (index == 2) {
-                window.location.href = "myCollection.html";
+                if ($.cookie("uId") == null || $.cookie("uId") == "") {
+                    window.location.href = "login.html";
+                } else {
+                    window.location.href = "myCollection.html";
+                }
             } else {
-                window.location.href = "settings.html";
+                if ($.cookie("uId") == null || $.cookie("uId") == "") {
+                    window.location.href = "login.html";
+                } else {
+                    window.location.href = "settings.html";
+                }
             }
         };
     }
@@ -30,13 +42,17 @@ window.onload = function () {
     var oLoginBtn = document.getElementById("login_btn");
     var oLogoutBtn = document.getElementById("logout_btn");
 
-    if ($.cookie("uHeadPhoto") == null) {
+    if ($.cookie("uId") == null) {
         oHeadPhoto.style.display = "none";
         headPhoto.attr("src", "");
         oLoginBtn.style.display = "block";
     } else {
         oHeadPhoto.style.display = "block";
-        headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
+        if ($.cookie("uHeadPhoto") == null || $.cookie("uHeadPhoto") == "") {
+            headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
+        } else {
+            headPhoto.attr("src", $.cookie("uHeadPhoto"));
+        }
         oLoginBtn.style.display = "none";
     }
 
