@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/settingsTab.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/settingsTab.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/utils/selectDate.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/utils/selectDate.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/utils/selectProvinceAndCity.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/utils/selectProvinceAndCity.js" />
-      <change beforePath="$PROJECT_DIR$/views/settings.html" afterPath="$PROJECT_DIR$/views/settings.html" />
-    </list>
+    <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -56,8 +47,8 @@
       <file leaf-file-name="updateBasicInfo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+            <state relative-caret-position="766">
+              <caret line="84" column="2" lean-forward="true" selection-start-line="84" selection-start-column="2" selection-end-line="84" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -519,12 +510,12 @@
       <workItem from="1519475184605" duration="2441000" />
       <workItem from="1519697780624" duration="1736000" />
       <workItem from="1519798397789" duration="8424000" />
-      <workItem from="1519953310377" duration="12466000" />
+      <workItem from="1519953310377" duration="12621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165044000" />
+    <option name="totallyTimeSpent" value="165199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-240" y="-1058" width="1920" height="1058" extended-state="6" />
@@ -896,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        <state relative-caret-position="766">
+          <caret line="84" column="2" lean-forward="true" selection-start-line="84" selection-start-column="2" selection-end-line="84" selection-end-column="2" />
           <folding />
         </state>
       </provider>
