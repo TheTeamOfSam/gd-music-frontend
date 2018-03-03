@@ -80,5 +80,15 @@ window.onload = function () {
         window.location.href = "index.html";
     };
 
+    var oSearchContent = document.getElementById("search_content");
+
+    oSearchContent.onkeydown = function (ev) {
+        var oEvent = ev || event;
+        if (oEvent.keyCode == 13) {
+            var link = "findMusic.html?search_content=" + this.value;
+            window.location.href = link;
+        }
+    };
+
 
 };
