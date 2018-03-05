@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>发现音乐</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/css/index/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/findMusic/findMusic.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/css/head/head.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/footer/footer.css">
     <script type="text/javascript" src="/javascripts/jquery/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/javascripts/jquery/jquery.cookie.js"></script>
     <script type="text/javascript" src="/javascripts/controller/navigation/navigation.js"></script>
@@ -41,8 +42,44 @@
 </div>
 <div class="red_bar"></div>
 <div class="middle_content">
-
+    <div class="middle_content_min">
+        <div class="search_bar" id="search_bar">
+            <input name="search_content_input" class="search_content_input" id="search_content_input" type="text">
+            <a class="search_btn" id="search_btn" href="javascript:;"></a>
+        </div>
+        <ul class="tab_bar" id="tab_bar">
+            <li>
+                <a href="javascript:;" class="tb_slt">单曲</a>
+            </li>
+            <li>
+                <a href="javascript:;">歌手</a>
+            </li>
+            <li>
+                <a href="javascript:;">专辑</a>
+            </li>
+            <li>
+                <a href="javascript:;">歌单</a>
+            </li>
+            <li>
+                <a href="javascript:;">用户</a>
+            </li>
+        </ul>
+    </div>
 </div>
 <script type="text/javascript" src="/javascripts/controller/style/findMusic.js"></script>
+<div class="copyright">
+    <div class="copyright_min">
+        <ul class="services">
+            <li>关于本站</li>
+            <li>客户服务</li>
+            <li>服务条款</li>
+            <li>网站导航</li>
+            <li>意见反馈</li>
+        </ul>
+        <div class="copyright_text">
+            音乐云版权所有©2017-1018
+        </div>
+    </div>
+</div>
 </body>
 </html>

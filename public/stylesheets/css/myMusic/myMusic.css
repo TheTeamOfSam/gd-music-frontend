@@ -158,6 +158,10 @@ body, * {
     display: none;
 }
 
+.my_music_list li:hover .music_list_btns {
+    display: block;
+}
+
 .music_list_btns a {
     display: block;
     float: left;
@@ -497,6 +501,10 @@ body, * {
     margin: 2px 0 0 4px;
     float: left;
     background-image: url("../../../images/style/table.png");
+}
+
+.music_table tr td:nth-child(3):hover .music_operation {
+    display: block;
 }
 
 .add_music {

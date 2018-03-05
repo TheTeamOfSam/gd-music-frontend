@@ -1,1 +1,115 @@
 @charset "UTF-8";
+
+body, * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.middle_content {
+    height: 700px;
+    background-color: #F5F5F5;
+}
+
+.middle_content_min {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: 700px;
+    border-left: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+    background-color: white;
+    padding: 40px;
+}
+
+.search_bar {
+    width: 420px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    margin: 0 240px;
+    background-image: url("../../../images/style/sprite.png");
+    background-position: 0 0;
+    position: relative;
+}
+
+.search_content_input {
+    float: left;
+    width: 320px;
+    height: 17px;
+    margin: 12px 0 0 20px;
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+.search_btn {
+    float: right;
+    width: 50px;
+    height: 40px;
+    display: block;
+    background: url("../../../images/style/sprite.png") no-repeat 0 9999px;
+}
+
+.search_btn:hover {
+    background-position: -430px 0;
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.search_btn:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.tab_bar {
+    width: 898px;
+    height: 39px;
+    margin: 17px 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-width: 0 1px;
+    list-style: none;
+    background: url("../../../images/style/tab.png");
+    background-position: 0 0;
+}
+
+.tab_bar li {
+    float: left;
+    width: 112px;
+    height: 39px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+    left: -1px;
+    text-align: center;
+}
+
+.tab_bar li a {
+    display: block;
+    float: left;
+    height: 39px;
+    font-size: 14px;
+    padding: 0 2px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    text-decoration: none;
+    color: #333333;
+    line-height: 39px;
+    text-align: center;
+    width: 110px;
+}
+
+.tab_bar li a:hover{
+    background: url("../../../images/style/tab.png") no-repeat 0 9999px;
+    background-position: left -90px;
+    border-right: 1px solid #D2D2D2;
+}
+
+.tb_slt {
+    background: url("../../../images/style/tab.png") no-repeat 0 9999px;
+    background-position: left -90px;
+    border-right: 1px solid #D2D2D2;
+}
+
