@@ -15,6 +15,12 @@ console.log(getUrlParam("search_content"));
 var oTabBar = document.getElementById("tab_bar");
 var aTBLis = oTabBar.getElementsByTagName("li");
 
+var oSearchContentInput = document.getElementById("search_content_input");
+var oSearchContent = document.getElementById("search_content");
+
+oSearchContentInput.value = getUrlParam("search_content");
+oSearchContent.value = getUrlParam("search_content");
+
 for (var i = 0; i < aTBLis.length; i++) {
     aTBLis[i].index = i;
     aTBLis[i].onclick = function () {

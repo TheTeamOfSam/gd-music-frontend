@@ -7,7 +7,7 @@ body, * {
 }
 
 .middle_content {
-    height: 700px;
+    /*height: 700px;*/
     background-color: #F5F5F5;
 }
 
@@ -15,7 +15,7 @@ body, * {
     margin-left: auto;
     margin-right: auto;
     width: 900px;
-    height: 700px;
+    /*height: 700px;*/
     border-left: 1px solid #D3D3D3;
     border-right: 1px solid #D3D3D3;
     background-color: white;
@@ -101,7 +101,7 @@ body, * {
     width: 110px;
 }
 
-.tab_bar li a:hover{
+.tab_bar li a:hover {
     background: url("../../../images/style/tab.png") no-repeat 0 9999px;
     background-position: left -90px;
     border-right: 1px solid #D2D2D2;
@@ -113,3 +113,98 @@ body, * {
     border-right: 1px solid #D2D2D2;
 }
 
+.fd_music_list {
+    width: 900px;
+    height: 1290px;
+}
+
+.a_music {
+    width: 870px;
+    height: 23px;
+    padding: 10px 10px 8px 18px;
+    border: 1px solid #FFFFFF;
+}
+
+.fd_music_list .a_music:nth-child(even) {
+    background-color: #F7F7F7;
+}
+
+.fd_music_list .a_music:nth-child(odd) {
+    background-color: white;
+}
+
+.fd_music_list .a_music:hover {
+    border-color: #E1E1E1;
+    background-color: #F2F2F2;
+}
+
+.a_music div {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    float: left;
+    line-height: 23px;
+}
+
+.a_music div a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.a_music div a:hover {
+    text-decoration: underline;
+}
+
+.am_w1 {
+    width: 370px;
+    height: 23px;
+}
+
+.am_w2 {
+    width: 96px;
+    height: 16px;
+    margin: 0 5px 0 0;
+}
+
+.operate_btn {
+    width: 96px;
+    height: 16px;
+    display: none;
+}
+
+.operate_btn a {
+    width: 18px;
+    height: 16px;
+    margin: 0 7px 0 0;
+    background-image: url("../../../images/style/table.png");
+}
+
+.collect_btn {
+    display: block;
+    background-position: 0 -174px;
+}
+
+.collect_btn:hover {
+    background-position: -20px -174px;
+}
+
+.am_w3 {
+    width: 130px;
+    height: 17px;
+    margin: 0 12px 0 0;
+}
+
+.am_w4 {
+    width: 156px;
+    height: 17px;
+    margin: 0 12px 0 0;
+}
+
+.am_w5 {
+    width: 30px;
+    height: 14px;
+    margin: 0 5px 0 0;
+}
+
+.a_music:hover .operate_btn{
+    display: block;
+}
