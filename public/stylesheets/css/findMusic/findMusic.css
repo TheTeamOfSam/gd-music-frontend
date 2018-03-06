@@ -115,7 +115,9 @@ body, * {
 
 .fd_music_list {
     width: 900px;
-    height: 1290px;
+    height: auto;
+
+    display: none;
 }
 
 .a_music {
@@ -205,6 +207,325 @@ body, * {
     margin: 0 5px 0 0;
 }
 
-.a_music:hover .operate_btn{
+.a_music:hover .operate_btn {
     display: block;
 }
+
+.fd_artist_list {
+    width: 900px;
+    height: 2760px;
+    display: none;
+}
+
+.fd_artists {
+    margin: 0 0 0 -24px;
+    width: 924px;
+    list-style: none;
+}
+
+.fd_artists li {
+    float: left;
+    margin: 0;
+    border: 0;
+    padding: 0 0 30px 24px;
+    width: 130px;
+    height: 154px;
+}
+
+.fd_artist_cover {
+    width: 130px;
+    height: 130px;
+    position: relative;
+}
+
+.fd_artist_cover a {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.fd_artist_cover a img {
+    width: 100%;
+    height: 100%;
+}
+
+.fd_artist_cover a span {
+    background-image: url("../../../images/style/coverall.png");
+    background-position: 0 -680px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130px;
+    height: 130px;
+}
+
+.fd_artists li p {
+    width: 130px;
+    height: 17px;
+    line-height: 17px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #333333;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.fd_artists li p a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.fd_artists li p a:hover {
+    text-decoration: underline;
+}
+
+.fd_special_list {
+    width: 900px;
+    height: 3120px;
+    display: none;
+}
+
+.fd_specials {
+    width: 933px;
+    height: 3120px;
+    margin-left: -33px;
+    list-style: none;
+}
+
+.fd_specials li {
+    width: 153px;
+    height: 178px;
+    float: left;
+    margin: 0;
+    border: 0;
+    padding: 0 0 30px 33px;
+}
+
+.fd_specials li div {
+    position: relative;
+    width: 130px;
+    height: 130px;
+}
+
+.fd_specials li div a {
+    display: block;
+}
+
+.fd_specials li div a img {
+    width: 100%;
+    height: 100%;
+}
+
+.fd_specials li div a span {
+    width: 153px;
+    height: 130px;
+    position: absolute;
+    margin-right: -23px;
+    background-image: url("../../../images/style/coverall.png");
+    background-position: 0 -845px;
+    top: 0;
+    left: 0;
+}
+
+.fd_specials li p:nth-child(2) {
+    margin: 8px 0 3px 0;
+    font-size: 14px;
+    width: 153px;
+    height: 20px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.fd_specials li p:nth-child(2) a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.fd_specials li p:nth-child(2) a:hover {
+    text-decoration: underline;
+}
+
+.fd_specials li p:nth-child(3) {
+    width: 153px;
+    height: 17px;
+    line-height: 17px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.fd_specials li p:nth-child(3) a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.fd_specials li p:nth-child(3) a:hover {
+    text-decoration: underline;
+}
+
+.fd_musicList_list {
+    width: 900px;
+    height: 1860px;
+    display: block;
+}
+
+.fd_musicLists {
+    width: 900px;
+    height: 1860px;
+    list-style: none;
+}
+
+.fd_musicLists li {
+    width: 900px;
+    height: 62px;
+    border: 1px solid #FFFFFF;
+}
+
+.fd_musicLists li:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+.fd_musicLists li:nth-child(even) {
+    background-color: #F7F7F7;
+}
+
+.fd_musicLists li:hover {
+    background-color: #F2F2F2;
+    border: 1px solid #E1E1E1;
+}
+
+.fd_musicLists li div {
+    float: left;
+}
+
+.play_btn {
+    width: 25px;
+    height: 17px;
+    padding: 22px 20px;
+}
+
+.play_btn a {
+    width: 17px;
+    display: block;
+    height: 17px;
+    background-image: url("../../../images/style/table.png");
+    background-position: 0 -103px;
+}
+
+.play_btn a:hover {
+    background-position: 0 -128px;
+}
+
+.fdml_cover {
+    width: 50px;
+    height: 50px;
+    padding: 6px 10px;
+}
+
+.fdml_cover a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.fdml_cover a img {
+    width: 100%;
+    height: 100%;
+}
+
+.fdml_cover a span {
+    width: 50px;
+    height: 50px;
+    background-image: url("../../../images/style/coverall.png");
+    background-position: -160px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fdml_tt_and_opt {
+    width: 327px;
+    height: 18px;
+    padding: 22px 10px;
+    line-height: 18px;
+    position: relative;
+}
+
+.fdml_title {
+    width: 327px;
+    line-height: 18px;
+    float: left;
+    color: #333333;
+}
+
+.fdml_title a {
+    font-size: 12px;
+    text-decoration: none;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    color: #333333;
+    line-height: 18px;
+    float: left;
+}
+
+.fdml_title a:hover {
+    text-decoration: underline;
+}
+
+.fdml_operate_btns {
+    display: none;
+    float: left;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 22px;
+    right: 45px;
+}
+
+.fdml_operate_btns a {
+    width: 18px;
+    height: 16px;
+    float: left;
+    background-image: url("../../../images/style/table.png");
+    background-position: 0 -174px;
+}
+
+.fdml_operate_btns a:hover {
+    background-position: -20px -174px;
+}
+
+.fd_musicLists li:hover .fdml_operate_btns {
+    display: block;
+}
+
+.fdml_number {
+    width: 35px;
+    height: 18px;
+    padding: 22px 0 22px 25px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #999999;
+}
+
+.fdml_author {
+    width: 160px;
+    height: 18px;
+    padding: 22px 10px;
+    line-height: 18px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #666666;
+}
+
+.fdml_author a {
+    color: #666666;
+    text-decoration: none;
+}
+
+.fdml_author a:hover {
+    text-decoration: underline;
+}
+
+
