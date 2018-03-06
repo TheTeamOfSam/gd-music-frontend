@@ -203,8 +203,8 @@
                             04:53
                         </span>
                         <div class="music_operation">
-                            <a href="javascript:;" class="add_music"></a>
-                            <a href="javascript:;" class="delete_music"></a>
+                            <a href="javascript:;" class="add_music" onclick="addMusicToMusicList(1)"></a>
+                            <a href="javascript:;" class="delete_music" onclick="deleteMusicInMusicList(1, 0);"></a>
                         </div>
                     </td>
                     <td>
@@ -230,8 +230,8 @@
                             03:43
                         </span>
                         <div class="music_operation">
-                            <a href="javascript:;" class="add_music"></a>
-                            <a href="javascript:;" class="delete_music"></a>
+                            <a href="javascript:;" class="add_music" onclick="addMusicToMusicList(2)"></a>
+                            <a href="javascript:;" class="delete_music" onclick="deleteMusicInMusicList(2, 0);"></a>
                         </div>
                     </td>
                     <td>
@@ -312,6 +312,70 @@
             <a class="dmlf_cancel_btn" id="dm_cancel_btn" href="javascript:;">取消</a>
         </div>
     </div>
+</div>
+<div class="add_music_list_frame" id="add_music_list_frame">
+    <div class="amlf_top">
+        <div class="amlf_top_tip">
+            添加到歌单
+        </div>
+    </div>
+    <div class="amlf_middle">
+        <ul>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <span class="close_amlf" id="close_amlf"></span>
 </div>
 <script type="text/javascript" src="/javascripts/controller/style/my_music.js"></script>
 </body>

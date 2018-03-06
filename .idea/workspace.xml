@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/my_music.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/my_music.js" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css" afterPath="$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css" />
-      <change beforePath="$PROJECT_DIR$/views/findMusic.html" afterPath="$PROJECT_DIR$/views/findMusic.html" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css" afterPath="$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css" />
+      <change beforePath="$PROJECT_DIR$/views/myMusic.html" afterPath="$PROJECT_DIR$/views/myMusic.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,67 +18,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.66005665">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="findMusic.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/findMusic.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="65">
-                  <caret line="300" column="46" lean-forward="false" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="46" />
-                  <folding>
-                    <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="n#div#4;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                    <element signature="e#8589#8595#0" expanded="true" />
-                    <element signature="e#8595#8601#0" expanded="true" />
-                    <element signature="e#9740#9746#0" expanded="true" />
-                    <element signature="e#9746#9752#0" expanded="true" />
-                    <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#li#1;n#ul#0;n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="findMusic.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1057">
-                  <caret line="73" column="46" lean-forward="false" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="findMusic.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="637" column="19" lean-forward="false" selection-start-line="637" selection-start-column="19" selection-end-line="637" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="footer.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/stylesheets/css/footer/footer.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="myMusic.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="837" column="17" lean-forward="true" selection-start-line="837" selection-start-column="17" selection-end-line="837" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,10 +42,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>333</find>
-      <find>水</find>
-      <find>save_btn</find>
-      <find>login_btn</find>
       <find>lg_alt_frame_bg</find>
       <find>hidden=&quot;hidden&quot;</find>
       <find>last_step_form</find>
@@ -118,6 +66,12 @@
       <find>my_music_list</find>
       <find>fd_artist_cover</find>
       <find>fd_music_list</find>
+      <find>fd_artist_list</find>
+      <find>miml_tt</find>
+      <find>delete_music</find>
+      <find>onclick</find>
+      <find>create_music_list_frame_bg</find>
+      <find>add_music_list_frame</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,13 +113,13 @@
         <option value="$PROJECT_DIR$/views/myCollection.html" />
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/views/settings.html" />
-        <option value="$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css" />
-        <option value="$PROJECT_DIR$/views/myMusic.html" />
-        <option value="$PROJECT_DIR$/public/javascripts/controller/style/my_music.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/css/footer/footer.css" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js" />
         <option value="$PROJECT_DIR$/views/findMusic.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css" />
+        <option value="$PROJECT_DIR$/views/myMusic.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/controller/style/my_music.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css" />
       </list>
     </option>
   </component>
@@ -509,12 +463,12 @@
       <workItem from="1520247529886" duration="208000" />
       <workItem from="1520251166611" duration="3975000" />
       <workItem from="1520298996320" duration="4000" />
-      <workItem from="1520299010655" duration="14919000" />
+      <workItem from="1520299010655" duration="19973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205252000" />
+    <option name="totallyTimeSpent" value="210306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="34" y="22" width="1406" height="878" extended-state="6" />
@@ -525,7 +479,7 @@
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24521072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24521072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -821,32 +775,28 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myMusic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="164" column="46" lean-forward="true" selection-start-line="164" selection-start-column="46" selection-end-line="164" selection-end-column="46" />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/images/style/icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/my_music.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css">
+    <entry file="file://$PROJECT_DIR$/views/findMusic.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
-          <caret line="145" column="14" lean-forward="true" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/footer/footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding />
+          <caret line="188" column="14" lean-forward="true" selection-start-line="188" selection-start-column="14" selection-end-line="188" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#8589#8595#0" expanded="false" />
+            <element signature="e#8595#8601#0" expanded="false" />
+            <element signature="e#9740#9746#0" expanded="false" />
+            <element signature="e#9746#9752#0" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#li#1;n#ul#0;n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -858,34 +808,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/style/icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="214" column="18" lean-forward="true" selection-start-line="214" selection-start-column="12" selection-end-line="214" selection-end-column="18" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/findMusic.html">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/footer/footer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="300" column="46" lean-forward="false" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="46" />
+        <state relative-caret-position="75">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/my_music.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="23" column="70" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="70" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#8589#8595#0" expanded="true" />
-            <element signature="e#8595#8601#0" expanded="true" />
-            <element signature="e#9740#9746#0" expanded="true" />
-            <element signature="e#9746#9752#0" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#1;n#li#1;n#ul#0;n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1520323251690" expanded="true" signature="3587:3593" ph=" " />
+            <marker date="1520323251690" expanded="true" signature="3601:3607" ph=" " />
+            <marker date="1520323251690" expanded="true" signature="3609:3615" ph=" " />
+            <marker date="1520323251690" expanded="true" signature="4491:4497" ph=" " />
+            <marker date="1520323251690" expanded="true" signature="5979:5985" ph=" " />
+            <marker date="1520323251690" expanded="true" signature="8267:8273" ph=" " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/findMusic/findMusic.css">
+    <entry file="file://$PROJECT_DIR$/views/myMusic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="637" column="19" lean-forward="false" selection-start-line="637" selection-start-column="19" selection-end-line="637" selection-end-column="19" />
+        <state relative-caret-position="340">
+          <caret line="246" column="21" lean-forward="true" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
+          <folding>
+            <element signature="e#13947#13953#0" expanded="true" />
+            <element signature="e#13961#13967#0" expanded="true" />
+            <element signature="e#13969#13975#0" expanded="true" />
+            <element signature="e#14475#14481#0" expanded="true" />
+            <element signature="e#14489#14495#0" expanded="true" />
+            <element signature="e#14497#14503#0" expanded="true" />
+            <element signature="e#15003#15009#0" expanded="true" />
+            <element signature="e#15017#15023#0" expanded="true" />
+            <element signature="e#15025#15031#0" expanded="true" />
+            <element signature="e#15531#15537#0" expanded="true" />
+            <element signature="e#15545#15551#0" expanded="true" />
+            <element signature="e#15553#15559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/myMusic/myMusic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="837" column="17" lean-forward="true" selection-start-line="837" selection-start-column="17" selection-end-line="837" selection-end-column="17" />
           <folding />
         </state>
       </provider>

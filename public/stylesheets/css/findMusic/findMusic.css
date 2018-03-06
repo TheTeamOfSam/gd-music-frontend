@@ -115,9 +115,8 @@ body, * {
 
 .fd_music_list {
     width: 900px;
-    height: auto;
-
-    display: none;
+    height: 1290px;
+    display: block;
 }
 
 .a_music {
@@ -531,7 +530,7 @@ body, * {
 .fd_user_list {
     width: 900px;
     height: 1860px;
-    display: block;
+    display: none;
 }
 
 .fd_users {
