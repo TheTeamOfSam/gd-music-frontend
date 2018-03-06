@@ -10,7 +10,7 @@
     <script type="text/javascript" src="/javascripts/controller/navigation/navigation.js"></script>
 </head>
 <body>
-<div class="navigation">
+<div class="navigation" style="position: fixed;top: 0;left: 0;right: 0;z-index: 9999;">
     <div class="navigation_min">
         <div class="logo">
             <div class="logo_min">
@@ -39,9 +39,344 @@
         </div>
     </div>
 </div>
-<div class="red_bar"></div>
+<div class="red_bar" style="position: fixed;top: 70px;left: 0;right: 0;z-index: 9;"></div>
 <div class="middle_content">
-
+    <div class="middle_content_min">
+        <div class="music_list">
+            <div class="created_music_list">
+                <div class="created_music_list_min">
+                    <h2 class="created_title">
+                        <span class="created_title_text">我创建的歌单</span>
+                        <a href="javascript:;" id="create_music_list_btn" class="create_music_list_btn">
+                            <i>新建</i>
+                        </a>
+                    </h2>
+                    <ul class="my_music_list" id="my_music_list">
+                        <li>
+                            <div class="music_list_img">
+                                <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
+                                     alt="">
+                            </div>
+                            <div class="music_list_name_and_num">
+                                <div class="music_list_name">
+                                    The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                                </div>
+                                <div class="music_list_num">
+                                    <span class="music_num">100</span>首
+                                </div>
+                            </div>
+                            <span class="music_list_btns">
+                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(0);"></a>-->
+                                <a href="javascript:;" class="delete_btn"></a>
+                            </span>
+                        </li>
+                        <li>
+                            <div class="music_list_img">
+                                <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
+                                     alt="">
+                            </div>
+                            <div class="music_list_name_and_num">
+                                <div class="music_list_name">
+                                    The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                                </div>
+                                <div class="music_list_num">
+                                    <span class="music_num">100</span>首
+                                </div>
+                            </div>
+                            <span class="music_list_btns">
+                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(1);"></a>-->
+                                <a href="javascript:;" class="delete_btn"></a>
+                            </span>
+                        </li>
+                        <li>
+                            <div class="music_list_img">
+                                <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
+                                     alt="">
+                            </div>
+                            <div class="music_list_name_and_num">
+                                <div class="music_list_name">
+                                    The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                                </div>
+                                <div class="music_list_num">
+                                    <span class="music_num">100</span>首
+                                </div>
+                            </div>
+                            <span class="music_list_btns">
+                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(2);"></a>-->
+                                <a href="javascript:;" class="delete_btn"></a>
+                            </span>
+                        </li>
+                        <li>
+                            <div class="music_list_img">
+                                <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
+                                     alt="">
+                            </div>
+                            <div class="music_list_name_and_num">
+                                <div class="music_list_name">
+                                    The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                                </div>
+                                <div class="music_list_num">
+                                    <span class="music_num">100</span>首
+                                </div>
+                            </div>
+                            <span class="music_list_btns">
+                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(3);"></a>-->
+                                <a href="javascript:;" class="delete_btn"></a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="music_in_music_list" id="music_in_music_list">
+            <div class="miml_top" id="miml_top">
+                <div class="miml_tt" id="miml_tt">
+                    <div class="music_list_cover">
+                        <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
+                             alt="">
+                    </div>
+                    <div class="music_list_info">
+                        <div class="mli_top">
+                            <div class="music_list_icon"></div>
+                            <span class="music_list_title">The&nbsp;Playlist&nbsp;of&nbsp;Sam</span>
+                            <!--<a href="javascript:;" class="edit_music_list_btn" onclick="editMusicList(0);">编辑</a>-->
+                        </div>
+                        <div class="mli_middle">
+                            <div class="user_head_photo">
+                                <img src="/images/headphoto/IMG_0416.JPG" alt="">
+                            </div>
+                            <span class="user_nickname">
+                                sam1995
+                            </span>
+                            <span class="user_created_time">
+                                2014-11-01&nbsp;创建
+                            </span>
+                        </div>
+                        <div class="mli_bottom">
+                            <a class="play_btn" href="javascript:;">
+                                <em class="play_start"></em>
+                                播放
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="miml_tb">
+                    <h3>
+                        <span class="miml_tb_ml_title">
+                            歌曲列表
+                        </span>
+                    </h3>
+                    <span class="miml_tb_ml_num">
+                        <span id="miml_tb_ml_num">
+                            162
+                        </span>首歌
+                    </span>
+                </div>
+            </div>
+            <table id="music_table" class="music_table">
+                <tr>
+                    <th class="first_mt_column">
+                        &nbsp;
+                    </th>
+                    <th class="second_mt_column">
+                        歌曲标题
+                    </th>
+                    <th class="third_mt_column">
+                        时长
+                    </th>
+                    <th class="fourth_mt_column">
+                        歌手
+                    </th>
+                    <th class="fifth_mt_column">
+                        专辑
+                    </th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <a href="javascript:;">
+                            当
+                        </a>
+                    </td>
+                    <td>
+                        <span class="music_duration">
+                            04:53
+                        </span>
+                        <div class="music_operation">
+                            <a href="javascript:;" class="add_music" onclick="addMusicToMusicList(1)"></a>
+                            <!--<a href="javascript:;" class="delete_music" onclick="deleteMusicInMusicList(1, 0);"></a>-->
+                        </div>
+                    </td>
+                    <td>
+                        <a href="javascript:;">
+                            动力火车
+                        </a>
+                    </td>
+                    <td>
+                        <a href="javascript:;">
+                            就是红&nbsp;辉煌全纪录
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <a href="javascript:;">
+                            稻香
+                        </a>
+                    </td>
+                    <td>
+                        <span class="music_duration">
+                            03:43
+                        </span>
+                        <div class="music_operation">
+                            <a href="javascript:;" class="add_music" onclick="addMusicToMusicList(2)"></a>
+                            <!--<a href="javascript:;" class="delete_music" onclick="deleteMusicInMusicList(2, 0);"></a>-->
+                        </div>
+                    </td>
+                    <td>
+                        <a href="javascript:;">
+                            周杰伦
+                        </a>
+                    </td>
+                    <td>
+                        <a href="javascript:;">
+                            摩羯座
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
+<div id="create_music_list_frame_bg" class="create_music_list_frame_bg"></div>
+<div class="create_music_list_frame" id="create_music_list_frame">
+    <div class="cmlf_top">
+        <div class="cmlf_title">新建歌单</div>
+    </div>
+    <div class="cmlf_middle">
+        <div class="inner_cmlf_middle">
+            <p>
+                歌单名：
+                <input type="text" name="create_music_list_name" id="create_music_list_name" class="create_music_list_name">
+            </p>
+            <div class="reminder_cmlf_name" id="reminder_cmlf_name">
+
+            </div>
+            <p>
+                可通过“收藏”将音乐添加到新歌单中
+            </p>
+            <div class="frame_btns">
+                <a class="create_btn" id="create_btn" href="javascript:;">
+                    <i>
+                        新建
+                    </i>
+                </a>
+                <a class="cancel_btn" id="cancel_btn" href="javascript:;">
+                    <i>
+                        取消
+                    </i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="delete_music_list_frame" id="delete_music_list_frame">
+    <div class="dmlf_top">
+        <div class="dmlf_title">
+            提示
+        </div>
+    </div>
+    <div class="dmlf_main">
+        <div class="dmlf_main_tip">
+            确认删除歌单？
+        </div>
+        <div class="dmlf_btns">
+            <a class="dmlf_confirm_btn" id="dmlf_confirm_btn" href="javascript:;">确定</a>
+            <a class="dmlf_cancel_btn" id="dmlf_cancel_btn" href="javascript:;">取消</a>
+        </div>
+    </div>
+</div>
+<div class="delete_music_list_frame" id="delete_music">
+    <div class="dmlf_top">
+        <div class="dmlf_title">
+            提示
+        </div>
+    </div>
+    <div class="dmlf_main">
+        <div class="dmlf_main_tip">
+            确认删除歌曲？
+        </div>
+        <div class="dmlf_btns">
+            <a class="dmlf_confirm_btn" id="dm_confirm_btn" href="javascript:;">确定</a>
+            <a class="dmlf_cancel_btn" id="dm_cancel_btn" href="javascript:;">取消</a>
+        </div>
+    </div>
+</div>
+<div class="add_music_list_frame" id="add_music_list_frame">
+    <div class="amlf_top">
+        <div class="amlf_top_tip">
+            添加到歌单
+        </div>
+    </div>
+    <div class="amlf_middle">
+        <ul>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <span class="close_amlf" id="close_amlf"></span>
+</div>
+<script type="text/javascript" src="/javascripts/controller/style/my_collection.js"></script>
 </body>
 </html>

@@ -12,3 +12,894 @@ body, * {
     cursor: default;
 }
 
+
+.middle_content {
+    margin-top: 75px;
+    width: 100%;
+    background-color: #F5F5F5;
+    z-index: 999;
+}
+
+.middle_content_min {
+    width: 980px;
+    height: 1000px;
+    border-left: 1px solid #D3D3D3;
+    border-right: 1px solid #D3D3D3;
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.music_list {
+    width: 232px;
+    background-color: #F9F9F9;
+    padding: 40px 0 50px 0;
+    position: fixed;
+    float: left;
+    display: block;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.created_music_list {
+}
+
+.created_music_list_min {
+    margin-top: 5px;
+    border: 0;
+    padding: 0;
+    width: 232px;
+}
+
+.created_title {
+    margin: 0;
+    border: 0;
+    padding: 0 10px 12px 15px;
+    width: 207px;
+    height: 20px;
+}
+
+.created_title_text {
+    font-size: 16px;
+    color: #000000;
+    float: left;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.create_music_list_btn {
+    width: 52px;
+    height: 22px;
+    float: right;
+    margin-right: 20px;
+    background-image: url("../../../images/style/button.png");
+    background-position: 0 -96px;
+    text-decoration: none;
+}
+
+.create_music_list_btn i {
+    margin: 0;
+    border: 0;
+    padding: 0 0 0 20px;
+    width: 24px;
+    height: 22px;
+    line-height: 22px;
+    color: #515151;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-weight: normal;
+    font-style: normal;
+    float: left;
+}
+
+.my_music_list {
+    width: 232px;
+    height: 486px;
+    list-style: none;
+}
+
+.my_music_list li {
+    margin: 0;
+    border: 0;
+    padding: 6px 0 6px 20px;
+    width: 212px;
+    height: 42px;
+    position: relative;
+}
+
+.my_music_list li:nth-child(1) {
+    background-color: #E6E6E6;
+}
+
+.my_music_list li:hover {
+    background-color: #E6E6E6;
+    cursor: pointer;
+}
+
+.music_list_img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+
+.music_list_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.music_list_name_and_num {
+    float: left;
+}
+
+.music_list_name {
+    margin: 2px 0 8px 0;
+    width: 150px;
+    height: 17px;
+    font-size: 12px;
+    color: #333333;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.music_list_num {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 130px;
+    height: 17px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    color: #999999;
+}
+
+.music_list_btns {
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+    display: none;
+}
+
+.my_music_list li:hover .music_list_btns {
+    display: block;
+}
+
+.music_list_btns a {
+    display: block;
+    float: left;
+    width: 13px;
+    height: 13px;
+    margin: 0 10px 0 0;
+    background-image: url("../../../images/style/icon.png");
+}
+
+.edit_btn {
+    background-position: 0 -270px;
+}
+
+.edit_btn:hover {
+    background-position: -20px -270px;
+}
+
+.delete_btn {
+    background-position: 0 -284px;
+}
+
+.delete_btn:hover {
+    background-position: -20px -284px;
+}
+
+.music_in_music_list {
+    margin: 0;
+    padding: 0;
+    width: 748px;
+    position: relative;
+    left: 232px;
+    border-left: 1px solid #D3D3D3;
+    float: left;
+}
+
+.miml_top {
+    width: 740px;
+    height: 315px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.miml_tt {
+    margin: 0;
+    border: 0;
+    padding: 40px;
+    width: 660px;
+    height: 200px;
+}
+
+.music_list_cover {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.music_list_cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.music_list_info {
+    float: left;
+    width: 430px;
+    height: 122px;
+    margin-left: 30px;
+}
+
+.mli_top {
+    width: 430px;
+    height: 24px;
+    margin: 0 0 12px 0;
+}
+
+.music_list_icon {
+    width: 54px;
+    height: 24px;
+    margin: 0 6px 0 0;
+    float: left;
+    background-image: url("../../../images/style/icon.png");
+    background-position: 0 -243px;
+}
+
+.music_list_title {
+    width: 328px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 20px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.edit_music_list_btn {
+    width: 24px;
+    height: 17px;
+    padding: 0 0 0 18px;
+    margin: 1px 0 0 0;
+    float: right;
+    background-image: url("../../../images/style/table.png");
+    background-position: 0 -259px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #0C73C2;
+    text-decoration: none;
+    line-height: 17px;
+}
+
+.edit_music_list_btn:hover {
+    text-decoration: underline;
+}
+
+.mli_middle {
+    width: 430px;
+    height: 35px;
+    margin: 0 0 20px 0;
+}
+
+.user_head_photo {
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin-right: 10px;
+}
+
+.user_head_photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.user_nickname {
+    height: 35px;
+    float: left;
+    line-height: 35px;
+    color: #0C73C2;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+
+}
+
+.user_created_time {
+    margin-left: 15px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    line-height: 35px;
+    color: #999;
+}
+
+.mli_bottom {
+    width: 440px;
+    height: 31px;
+    padding: 0;
+    border: 0;
+    margin: 0 -10px 25px 0;
+}
+
+.play_btn {
+    margin: 0;
+    border: 0;
+    padding: 0 5px 0 0;
+    width: 61px;
+    height: 31px;
+    background-image: url("../../../images/style/button2.png");
+    background-position: 0 -387px;
+    display: block;
+    text-align: center;
+    line-height: 31px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 12px;
+    outline: none;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.play_btn:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.play_btn:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.play_start {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 18px;
+    margin: 6px 2px 2px 5px;
+    background-image: url("../../../images/style/button2.png");
+    background-position: 0 -1622px;
+}
+
+.miml_tb {
+    width: 705px;
+    border-bottom: 2px solid #C20C0C;
+    height: 33px;
+    padding: 0 10px 0 32px;
+}
+
+.miml_tb h3 {
+    width: 80px;
+    height: 28px;
+    float: left;
+}
+
+.miml_tb_ml_title {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: normal;
+}
+
+.miml_tb_ml_num {
+    margin: 9px 0 0 20px;
+    height: 17px;
+    float: left;
+    color: #666666;
+    font-size: 12px;
+}
+
+.music_table {
+    border-collapse: collapse;
+}
+
+.music_table tr th {
+    height: 38px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #D4D4D4;
+    line-height: 38px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #666666;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.first_mt_column {
+    width: 74px;
+}
+
+.second_mt_column {
+    width: 303px;
+    border-left: 1px solid #D4D4D4;
+}
+
+.third_mt_column {
+    width: 111px;
+    border-left: 1px solid #D4D4D4;
+}
+
+.fourth_mt_column {
+    width: 103px;
+    border-left: 1px solid #D4D4D4;
+}
+
+.fifth_mt_column {
+    width: 147px;
+    border-left: 1px solid #D4D4D4;
+}
+
+.music_table tr td {
+    height: 38px;
+    border-bottom: 1px solid #D4D4D4;
+    line-height: 38px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #333333;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.music_table tr td a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.music_table tr td a:hover {
+    text-decoration: underline;
+}
+
+.music_table tr:nth-child(odd) {
+    background-color: #F7F7F7;
+}
+
+.music_table tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.music_table tr:nth-child(1) {
+    background-color: #F7F7F7;
+}
+
+.music_duration {
+    padding-left: 20px;
+    padding-right: 10px;
+    width: 99px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.music_operation {
+    padding: 6px 10px;
+    width: 99px;
+    height: 26px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 26px;
+    display: none;
+}
+
+.music_table tr:nth-child(odd) td .music_operation {
+    background-color: #F7F7F7;
+}
+
+.music_table tr:nth-child(even) td .music_operation {
+    background-color: #FFFFFF;
+}
+
+.music_operation a {
+    line-height: 16px;
+    display: block;
+    width: 18px;
+    height: 16px;
+    margin: 2px 0 0 4px;
+    float: left;
+    background-image: url("../../../images/style/table.png");
+}
+
+.music_table tr:hover .music_operation {
+    display: block;
+}
+
+.add_music {
+    background-position: 0 -174px;
+}
+
+.add_music:hover {
+    background-position: -20px -174px;
+}
+
+.delete_music {
+    background-position: 0 -217px;
+}
+
+.delete_music:hover {
+    background-position: -20px -217px;
+}
+
+.create_music_list_frame_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.create_music_list_frame {
+    display: none;
+    width: 480px;
+    height: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -240px;
+    margin-top: -125px;
+    border-radius: 4px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    overflow: hidden;
+}
+
+.cmlf_top {
+    width: 100%;
+    height: 38px;
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #191919;
+}
+
+.cmlf_title {
+    width: 417px;
+    height: 38px;
+    padding: 0 45px 0 18px;
+    line-height: 38px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.cmlf_middle {
+    width: 100%;
+    height: 211px;
+    border: 1px solid #878787;
+    background-color: #FFFFFF;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.inner_cmlf_middle {
+    padding: 40px 0;
+    width: 448px;
+    height: 130px;
+    margin-left: 30px;
+}
+
+.inner_cmlf_middle p:nth-child(1) {
+    width: 100%;
+    height: 32px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #333333;
+}
+
+.inner_cmlf_middle p:nth-child(3) {
+    width: 400px;
+    height: 17px;
+    margin: 8px 0 20px 48px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #999999;
+}
+
+.create_music_list_name {
+    width: 330px;
+    height: 19px;
+    border: 1px solid #CDCDCD;
+    padding: 5px 6px 6px 6px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.reminder_cmlf_name {
+    margin: 5px 0 0 48px;
+    width: 400px;
+    height: 17px;
+    color: #E33232;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.frame_btns {
+    width: 400px;
+    height: 31px;
+    margin-left: 48px;
+}
+
+.frame_btns a {
+    display: block;
+    float: left;
+    width: 75px;
+    height: 31px;
+    padding: 0 5px 0 0;
+    text-decoration: none;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    background-image: url("../../../images/style/button2.png");
+    text-align: center;
+}
+
+.create_btn {
+    background-position: 0 -387px;
+    border-radius: 4px;
+}
+
+.create_btn:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.create_btn:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.create_btn i {
+    display: block;
+    width: 40px;
+    height: 31px;
+    color: #FFFFFF;
+    padding: 0 15px 0 20px;
+    font-style: normal;
+    line-height: 31px;
+}
+
+.cancel_btn {
+    border-radius: 4px;
+    margin-left: 20px;
+    background-position: 0 -59px;
+    border-right: 2px solid #CECECE;
+}
+
+.cancel_btn:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.cancel_btn:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.cancel_btn i {
+    display: block;
+    width: 40px;
+    height: 31px;
+    color: #333333;
+    padding: 0 15px 0 20px;
+    line-height: 31px;
+    font-style: normal;
+}
+
+.delete_music_list_frame {
+    display: none;
+    padding: 0;
+    border: 0;
+    position: fixed;
+    width: 480px;
+    height: 203px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    z-index: 9999;
+    margin-top: -101px;
+    margin-left: -240px;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+}
+
+.dmlf_top {
+    width: 480px;
+    height: 38px;
+    border-bottom: 1px solid #191919;
+    background-color: #2d2d2d;
+}
+
+.dmlf_title {
+    width: 417px;
+    height: 38px;
+    margin: 0;
+    border: 0;
+    padding: 0 18px;
+    line-height: 38px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.dmlf_main {
+    margin-top: -1px;
+    border-radius: 0 0 4px 4px;
+    width: 478px;
+    height: 83px;
+    padding: 40px 0;
+    border: 1px solid #8E8E8E;
+}
+
+.dmlf_main_tip {
+    width: 478px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+}
+
+.dmlf_btns {
+    margin: 30px 142px 0 142px;
+    height: 31px;
+    text-align: center;
+}
+
+.dmlf_btns a {
+    text-decoration: none;
+    display: block;
+    width: 75px;
+    height: 31px;
+    margin: 0 10px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    float: left;
+    border-radius: 3px;
+    line-height: 31px;
+}
+
+.dmlf_btns a:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.dmlf_btns a:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.dmlf_confirm_btn {
+    background-color: #2677C6;
+    border: 1px solid #2677C6;
+    color: #FFFFFF;
+}
+
+.dmlf_cancel_btn {
+    background-color: #F6F6F6;
+    border: 1px solid #CDCDCD;
+    color: #333333;
+}
+
+.add_music_list_frame {
+    z-index: 99999;
+    width: 480px;
+    height: 414px;
+    margin-left: -240px;
+    margin-top: -207px;
+    position: fixed;
+    left: 50%;
+    top: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    display: none;
+}
+
+.amlf_top {
+    width: 480px;
+    height: 38px;
+    border-bottom: 1px solid #191919;
+    background-color: #2D2D2D;
+}
+
+.amlf_top_tip {
+    width: 417px;
+    height: 38px;
+    padding: 0 45px 0 18px;
+    line-height: 38px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    color: #FFFFFF;
+}
+
+.close_amlf {
+    background-image: url("../../../images/layer/layer.png");
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background-position: 0 -95px;
+}
+
+.close_amlf:hover {
+    cursor: pointer;
+}
+
+.amlf_middle {
+    width: 478px;
+    height: 374px;
+    border-width: 0 1px 1px 1px;
+    margin-top: -1px;
+    border: 1px solid #878787;
+    border-radius: 0 0 4px 4px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.amlf_middle ul {
+    width: 463px;
+    list-style: none;
+}
+
+.amlf_middle ul li {
+    width: 428px;
+    height: 44px;
+    border-top: 1px solid #E0E0E0;
+    padding: 6px 0 6px 35px;
+}
+
+.amlf_middle ul li:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.amlfm_item {
+    width: 378px;
+    padding: 0 0 0 50px;
+    height: 42px;
+}
+
+.amlfm_item_left {
+    width: 40px;
+    height: 40px;
+    margin-left: -50px;
+    float: left;
+}
+
+.amlfm_item_left img {
+    width: 100%;
+    height: 100%;
+}
+
+.amlfm_item_title {
+    margin: 2px 0 8px 0;
+    width: 378px;
+    /*float: left;*/
+    height: 17px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    color: #333333;
+}
+
+.amlfm_item_num {
+    width: 378px;
+    height: 17px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #666666;
+}
+
+
+
+
+

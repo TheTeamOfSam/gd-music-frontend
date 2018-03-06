@@ -503,7 +503,7 @@ body, * {
     background-image: url("../../../images/style/table.png");
 }
 
-.music_table tr td:nth-child(3):hover .music_operation {
+.music_table tr:hover .music_operation {
     display: block;
 }
 
