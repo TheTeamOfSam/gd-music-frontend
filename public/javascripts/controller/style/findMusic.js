@@ -12,6 +12,12 @@ function getUrlParam(name) {
 
 console.log(getUrlParam("search_content"));
 
+var addInfo;
+
+var oCreateMusicListFrameBg = document.getElementById("create_music_list_frame_bg");
+var oCloseAmlf = document.getElementById("close_amlf");
+var oAddMusicListFrame = document.getElementById("add_music_list_frame");
+
 var oTabBar = document.getElementById("tab_bar");
 var aTBLis = oTabBar.getElementsByTagName("li");
 
@@ -76,4 +82,15 @@ for (var i = 0; i < aTBLis.length; i++) {
     }
 }
 
+function addTheMusicToMusicList(musicId) {
+    oCreateMusicListFrameBg.style.display = "block";
+    oAddMusicListFrame.style.display = "block";
+    addInfo = {musicId: musicId};
+}
+
+oCloseAmlf.onclick = function () {
+    oCreateMusicListFrameBg.style.display = "none";
+    oAddMusicListFrame.style.display = "none";
+    addInfo = null;
+};
 

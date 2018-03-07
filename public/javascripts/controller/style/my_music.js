@@ -193,7 +193,6 @@ for (var j = 0; j < oMMLLis.length; j++) {
             oMimlTt.innerHTML = musicListInfo;
             oMusicTable.innerHTML = innerHTML;
 
-
         };
 
     };
