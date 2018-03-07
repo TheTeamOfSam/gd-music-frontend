@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>艺人</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/artist/artist.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/head/head.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/footer/footer.css">
+    <script type="text/javascript" src="/javascripts/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/javascripts/controller/navigation/navigation.js"></script>
+</head>
+<body>
+<div class="navigation">
+    <div class="navigation_min">
+        <div class="logo">
+            <div class="logo_min">
+                <a href="javascript:;">
+                    <img src="/images/logo/logo.png">
+                </a>
+            </div>
+        </div>
+        <ul id="navigation_ul">
+            <li>发现音乐</li>
+            <li>我的音乐</li>
+            <li>我的收藏</li>
+            <li>个人设置</li>
+        </ul>
+        <div class="search">
+            <input type="text" class="search_content" id="search_content" placeholder="搜索音乐/专辑/艺人/歌单">
+        </div>
+        <div id="head_photo" class="head_photo">
+            <img src="/images/headphoto/IMG_0416.JPG">
+        </div>
+        <div id="login_btn" class="login_btn">
+            <a href="javascript:;">登录</a>
+        </div>
+        <div id="logout_btn" class="logout_btn">
+            <a href="javascript:;">退出登录</a>
+        </div>
+    </div>
+</div>
+<div class="red_bar"></div>
+<div class="middle_content">
+    <div class="middle_content_min">
+        <div class="artist">
+            <div class="ats_top">
+                <div class="ats_name_and_otherName">
+                    <h2 class="ats_name" id="ats_name">
+                        周杰伦
+                    </h2>
+                    <h3 class="ats_other_name" id="ats_other_name">
+                        Jay Chou
+                    </h3>
+                </div>
+                <div class="ats_head_photo">
+                    <div class="ats_head_photo_big">
+                        <img id="ats_head_photo_big"
+                             src="http://p4.music.126.net/ql3nSwy0XKow_HAoZzRZgw==/109951163111196186.jpg?param=640y300">
+                    </div>
+                    <div class="cover_effect"></div>
+                </div>
+            </div>
+            <ul class="ats_tab_bar" id="ats_tab_bar">
+                <li>
+                    <a href="javascript:;">
+                        <em>
+                            所有专辑
+                        </em>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <em>
+                            歌手介绍
+                        </em>
+                    </a>
+                </li>
+            </ul>
+            <ul class="ats_all_special">
+                <li>
+                    <div class="ats_special_cover">
+                        <a href="javascript:;">
+                            <img src="http://p4.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=120y120">
+                            <span class="ats_sc_msk"></span>
+                        </a>
+                    </div>
+                    <p class="ats_special_title">
+                        <a href="javascript:;">周杰伦的床边故事</a>
+                    </p>
+                    <p class="ats_special_publish_date">
+                        <span class="ats_spd">2016.6.24</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="ats_special_cover">
+                        <a href="javascript:;">
+                            <img src="http://p4.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=120y120">
+                            <span class="ats_sc_msk"></span>
+                        </a>
+                    </div>
+                    <p class="ats_special_title">
+                        <a href="javascript:;">周杰伦的床边故事</a>
+                    </p>
+                    <p class="ats_special_publish_date">
+                        <span class="ats_spd">2016.6.24</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="ats_special_cover">
+                        <a href="javascript:;">
+                            <img src="http://p4.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=120y120">
+                            <span class="ats_sc_msk"></span>
+                        </a>
+                    </div>
+                    <p class="ats_special_title">
+                        <a href="javascript:;">周杰伦的床边故事</a>
+                    </p>
+                    <p class="ats_special_publish_date">
+                        <span class="ats_spd">2016.6.24</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="ats_special_cover">
+                        <a href="javascript:;">
+                            <img src="http://p4.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=120y120">
+                            <span class="ats_sc_msk"></span>
+                        </a>
+                    </div>
+                    <p class="ats_special_title">
+                        <a href="javascript:;">周杰伦的床边故事</a>
+                    </p>
+                    <p class="ats_special_publish_date">
+                        <span class="ats_spd">2016.6.24</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="ats_special_cover">
+                        <a href="javascript:;">
+                            <img src="http://p4.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=120y120">
+                            <span class="ats_sc_msk"></span>
+                        </a>
+                    </div>
+                    <p class="ats_special_title">
+                        <a href="javascript:;">周杰伦的床边故事</a>
+                    </p>
+                    <p class="ats_special_publish_date">
+                        <span class="ats_spd">2016.6.24</span>
+                    </p>
+                </li>
+                <li>
+                    <div class="ats_special_cover">
+                        <a href="javascript:;">
+                            <img src="http://p4.music.126.net/cUTk0ewrQtYGP2YpPZoUng==/3265549553028224.jpg?param=120y120">
+                            <span class="ats_sc_msk"></span>
+                        </a>
+                    </div>
+                    <p class="ats_special_title">
+                        <a href="javascript:;">周杰伦的床边故事</a>
+                    </p>
+                    <p class="ats_special_publish_date">
+                        <span class="ats_spd">2016.6.24</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <div class="copyright_min">
+        <ul class="services">
+            <li>关于本站</li>
+            <li>客户服务</li>
+            <li>服务条款</li>
+            <li>网站导航</li>
+            <li>意见反馈</li>
+        </ul>
+        <div class="copyright_text">
+            音乐云版权所有©2017-1018
+        </div>
+    </div>
+</div>
+</body>
+</html>
