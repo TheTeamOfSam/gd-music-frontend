@@ -453,7 +453,13 @@ body, * {
 }
 
 .special a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    display: block;
     text-decoration: none;
+    width: 107px;
     color: #333333;
 }
 

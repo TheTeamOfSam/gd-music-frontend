@@ -448,8 +448,17 @@ body, * {
 }
 
 .music_table tr td a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    display: block;
     color: #333333;
     text-decoration: none;
+}
+
+.music_table tr td:nth-child(5) a {
+    width: 115px;
 }
 
 .music_table tr td a:hover {

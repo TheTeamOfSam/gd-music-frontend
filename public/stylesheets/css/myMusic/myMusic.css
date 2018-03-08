@@ -304,10 +304,6 @@ body, * {
     text-decoration: none;
 }
 
-.user_nickname:hover {
-    text-decoration: underline;
-}
-
 .user_created_time {
     margin-left: 15px;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
@@ -448,8 +444,17 @@ body, * {
 }
 
 .music_table tr td a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    display: block;
     color: #333333;
     text-decoration: none;
+}
+
+.music_table tr td:nth-child(5) a {
+    width: 115px;
 }
 
 .music_table tr td a:hover {
