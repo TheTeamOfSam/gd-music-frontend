@@ -89,9 +89,9 @@ for (var j = 0; j < oMMLLis.length; j++) {
                 "                            <div class=\"user_head_photo\">\n" +
                 "                                <img src=\"/images/headphoto/IMG_0416.JPG\" alt=\"\">\n" +
                 "                            </div>\n" +
-                "                            <span class=\"user_nickname\">\n" +
+                "                            <a href=\"javascript:;\" class=\"user_nickname\">\n" +
                 "                                sam1995\n" +
-                "                            </span>\n" +
+                "                            </a>\n" +
                 "                            <span class=\"user_created_time\">\n" +
                 "                                2014-11-01&nbsp;创建\n" +
                 "                            </span>\n" +

@@ -301,7 +301,11 @@ body, * {
     color: #0C73C2;
     font-size: 12px;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    text-decoration: none;
+}
 
+.user_nickname:hover {
+    text-decoration: underline;
 }
 
 .user_created_time {
