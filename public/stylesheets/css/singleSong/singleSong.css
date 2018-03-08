@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+body, * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.navigation ul li:nth-child(1) {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+.middle_content {
+    width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+}
+
+.middle_content_min {
+    width: 900px;
+    height: auto;
+    padding: 40px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    border-width: 0 1px;
+}
+
+.ss {
+    width: 640px;
+    height: auto;
+    padding: 47px 30px 40px 39px;
+}
+
+.ss_info {
+    width: 640px;
+    height: 235px;
+}
+
+.ss_left {
+    width: 206px;
+    height: 235px;
+    margin-right: -226px;
+    position: relative;
+    float: left;
+}
+
+.ss_cover {
+    width: 198px;
+    height: 198px;
+    position: relative;
+}
+
+.ss_cover img {
+    width: 130px;
+    height: 130px;
+    margin: 34px;
+}
+
+.ss_cover .msk {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 206px;
+    height: 205px;
+    background-image: url("../../../images/style/coverall.png");
+    background-position: -140px -580px;
+}
+
+.ss_right {
+    width: 414px;
+    float: right;
+    height: auto;
+}
+
+.ssr_top {
+    width: 414px;
+    height: 33px;
+}
+
+.ssrt_icon {
+    float: left;
+    width: 54px;
+    height: 24px;
+    background-image: url("../../../images/style/icon.png");
+    background-position: 0 -463px;
+}
+
+.ss_name {
+    margin-left: 64px;
+    position: relative;
+    top: -6px;
+    font-size: 24px;
+    color: #333333;
+    font-style: normal;
+}
+
+.des {
+    width: 414px;
+    height: 17px;
+    margin: 10px 0;
+    line-height: 17px;
+    color: #999999;
+    font-size: 12px;
+}
+
+.des a {
+    color: #0C72C3;
+    text-decoration: none;
+}
+
+.des a:hover {
+    text-decoration: underline;
+}
+
+.opt_btns {
+    width: 414px;
+    height: 31px;
+}
+
+.collect_btn {
+    display: block;
+    background-image: url("../../../images/style/button2.png");
+    background-position: right -1020px;
+    width: 54px;
+    height: 31px;
+    padding: 0 5px 0 0;
+    margin: 0 6px 0 0;
+    color: #333333;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.collect_btn:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.collect_btn i {
+    display: block;
+    font-style: normal;
+    width: 24px;
+    height: 31px;
+    line-height: 31px;
+    padding: 0 2px 0 28px;
+    background-image: url("../../../images/style/button2.png");
+    background-position: 0 -977px;
+}
+
+.n_cmt {
+    width: 640px;
+    margin-top: 40px;
+    height: auto;
+}
+
+.cmt_title {
+    border-bottom: 2px solid #C20C0C;
+    width: 640px;
+    height: 33px;
+}
+
+.cmt_title h3 {
+    width: auto;
+    height: 28px;
+    font-size: 20px;
+    line-height: 28px;
+    float: left;
+    font-weight: normal;
+    color: #333333;
+}
+
+.cmt_title_min {
+    font-size: 20px;
+    line-height: 28px;
+    color: #333333;
+    font-weight: normal;
+}
+
+.cmt_area {
+    width: 640px;
+    height: 98px;
+    margin: 20px 0;
+}
+
+.head {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: -100px;
+}
+
+.head img {
+    width: 100%;
+    height: 100%;
+}
+
+.cmt_content {
+    width: 578px;
+    height: 98px;
+    margin-left: 62px;
+}
+
+.cmt_content_min {
+    padding-right: 14px;
+    width: 564px;
+    height: 63px;
+}
+
+.comment {
+    resize: none;
+    width: 564px;
+    height: 50px;
+    padding: 5px 6px 6px 6px;
+    border: 1px solid #CDCDCD;
+    border-radius: 2px;
+    line-height: 19px;
+    outline: none;
+}
+
+.opt_btns {
+    width: 578px;
+    height: 25px;
+    padding-top: 10px;
+}
+
+.residue_num {
+    float: right;
+    margin-right: 10px;
+    line-height: 25px;
+    color: #999999;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    width: auto;
+    height: 25px;
+}
+
+.cmt_btn {
+    display: block;
+    width: 46px;
+    height: 25px;
+    background-image: url("../../../images/style/button.png");
+    background-position: -84px -64px;
+    float: right;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 25px;
+}
+
+.cmt_btn:hover {
+    filter: alpha(80%);
+    opacity: 0.8;
+}
+
+.cmt_btn:active {
+    filter: alpha(100%);
+    opacity: 1;
+}
+
+.all_cmt {
+    width: 640px;
+    height: auto;
+    list-style: none;
+}
+
+.all_cmt li {
+    height: auto;
+    width: 100%;
+    padding: 15px 0;
+    border-top: 1px dotted #CCCCCC;
+}
+
+.cntwrap {
+    margin-left: 60px;
+    width: 580px;
+    height: auto;
+}
+
+.cntwrap_top {
+    width: 580px;
+    height: auto;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+    color: #333333;
+}
+
+.cntwrap_top a {
+    color: #0C72C3;
+    text-decoration: none;
+}
+
+.cntwrap_top a:hover {
+    text-decoration: underline;
+}
+
+.cntwrap_bottom {
+    width: 580px;
+    height: 17px;
+    margin-top: 15px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 12px;
+}
+
+.cnt_time {
+    width: auto;
+    height: 17px;
+    line-height: 17px;
+    float: left;
+    color: #999999;
+}
+
+.cntwrap_bottom a {
+    float: right;
+    display: block;
+    width: auto;
+    height: 14px;
+    line-height: 14px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.cntwrap_bottom a:hover {
+    text-decoration: underline;
+}
+
+.like_cmt {
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    margin-top: -4px;
+    background-image: url("../../../images/style/icon2.png");
+    background-position: -150px 0;
+}

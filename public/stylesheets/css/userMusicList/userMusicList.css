@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body, * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.navigation ul li:nth-child(1) {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+.middle_content {
+    width: 100%;
+    height: auto;
+    background-color: #F5F5F5;
+}
+
+.middle_content_min {
+    width: 900px;
+    height: auto;
+    padding: 40px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 1px solid #D3D3D3;
+    border-width: 0 1px;
+}
+
