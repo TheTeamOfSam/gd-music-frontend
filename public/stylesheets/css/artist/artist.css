@@ -198,6 +198,12 @@ body, * {
 .ats_special_title a {
     text-decoration: none;
     color: #333333;
+    display: block;
+    width: 135px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
     font-size: 14px;
 }

@@ -339,6 +339,12 @@ body, * {
 
 .fd_specials li p:nth-child(2) a {
     text-decoration: none;
+    display: block;
+    width: 143px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
     color: #000000;
 }
 
