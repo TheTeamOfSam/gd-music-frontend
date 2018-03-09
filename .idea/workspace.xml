@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="nochange">
+    <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" />
+      <change beforePath="$PROJECT_DIR$/views/changeHeadPhoto.html" afterPath="$PROJECT_DIR$/views/changeHeadPhoto.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="changeHeadPhoto.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+            <state relative-caret-position="445">
+              <caret line="91" column="56" lean-forward="false" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -45,8 +44,8 @@
       <file leaf-file-name="changeHeadPhoto.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/changeHeadPhoto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="69" column="29" lean-forward="true" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+            <state relative-caret-position="60">
+              <caret line="4" column="83" lean-forward="false" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -55,8 +54,8 @@
       <file leaf-file-name="navigation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="66" column="59" lean-forward="true" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
+            <state relative-caret-position="176">
+              <caret line="56" column="34" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -75,7 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>deleteMusicInMusicList</find>
       <find>music_list</find>
       <find>ats_introduction</find>
       <find>hover</find>
@@ -105,6 +103,7 @@
       <find>onclick</find>
       <find>/images/headphoto/IMG_0416.JPG</find>
       <find>allImgExt</find>
+      <find>save_head_photo_btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,7 +146,6 @@
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/user.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/my_music.js" />
         <option value="$PROJECT_DIR$/views/artist.html" />
-        <option value="$PROJECT_DIR$/views/changeHeadPhoto.html" />
         <option value="$PROJECT_DIR$/views/editMusicList.html" />
         <option value="$PROJECT_DIR$/views/findMusic.html" />
         <option value="$PROJECT_DIR$/views/index.html" />
@@ -161,9 +159,10 @@
         <option value="$PROJECT_DIR$/views/user.html" />
         <option value="$PROJECT_DIR$/views/userMusicList.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
+        <option value="$PROJECT_DIR$/views/changeHeadPhoto.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" />
       </list>
     </option>
   </component>
@@ -428,11 +427,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520570405163</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="图片格式优化">
+      <created>1520573037078</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1520573037078</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274284000" />
+    <option name="totallyTimeSpent" value="279452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="22" width="1405" height="878" extended-state="6" />
@@ -510,7 +516,8 @@
     <MESSAGE value="更换头像栏内容优化" />
     <MESSAGE value="设置页面更改头像样式改进" />
     <MESSAGE value="nochange" />
-    <option name="LAST_COMMIT_MESSAGE" value="nochange" />
+    <MESSAGE value="图片格式优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="图片格式优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -770,18 +777,18 @@
             <element signature="n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#4;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#5;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#12841#12847#0" expanded="true" />
-            <element signature="e#12855#12861#0" expanded="true" />
-            <element signature="e#12863#12869#0" expanded="true" />
-            <element signature="e#13369#13375#0" expanded="true" />
-            <element signature="e#13383#13389#0" expanded="true" />
-            <element signature="e#13391#13397#0" expanded="true" />
-            <element signature="e#13897#13903#0" expanded="true" />
-            <element signature="e#13911#13917#0" expanded="true" />
-            <element signature="e#13919#13925#0" expanded="true" />
-            <element signature="e#14425#14431#0" expanded="true" />
-            <element signature="e#14439#14445#0" expanded="true" />
-            <element signature="e#14447#14453#0" expanded="true" />
+            <element signature="e#12841#12847#0" expanded="false" />
+            <element signature="e#12855#12861#0" expanded="false" />
+            <element signature="e#12863#12869#0" expanded="false" />
+            <element signature="e#13369#13375#0" expanded="false" />
+            <element signature="e#13383#13389#0" expanded="false" />
+            <element signature="e#13391#13397#0" expanded="false" />
+            <element signature="e#13897#13903#0" expanded="false" />
+            <element signature="e#13911#13917#0" expanded="false" />
+            <element signature="e#13919#13925#0" expanded="false" />
+            <element signature="e#14425#14431#0" expanded="false" />
+            <element signature="e#14439#14445#0" expanded="false" />
+            <element signature="e#14447#14453#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -907,16 +914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="66" column="59" lean-forward="true" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/changeHeadPhoto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="69" column="29" lean-forward="true" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+        <state relative-caret-position="176">
+          <caret line="56" column="34" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -929,10 +928,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/changeHeadPhoto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="83" lean-forward="false" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        <state relative-caret-position="445">
+          <caret line="91" column="56" lean-forward="false" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
           <folding />
         </state>
       </provider>
