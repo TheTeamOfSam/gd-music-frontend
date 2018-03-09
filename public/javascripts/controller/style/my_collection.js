@@ -20,14 +20,7 @@ var oDeleteMusic = document.getElementById("delete_music");
 
 var oDMCancelBtn = document.getElementById("dm_cancel_btn");
 
-var oAddMusicListFrame = document.getElementById("add_music_list_frame");
-var oCloseAmlf = document.getElementById("close_amlf");
-
-
 var deleteInfo;
-
-var addInfo;
-
 
 $(function () {
     //浏览器时下窗口可视区域高度
@@ -146,7 +139,7 @@ for (var j = 0; j < oMMLLis.length; j++) {
                 "                            04:53\n" +
                 "                        </span>\n" +
                 "                        <div class=\"music_operation\">\n" +
-                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addMusicToMusicList(1)\"></a>\n" +
+                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addTheMusicToMusicList(1)\"></a>\n" +
                 // "                            <a href=\"javascript:;\" class=\"delete_music\" onclick=\"deleteMusicInMusicList(1, 0);\"></a>\n" +
                 "                        </div>\n" +
                 "                    </td>\n" +
@@ -173,7 +166,7 @@ for (var j = 0; j < oMMLLis.length; j++) {
                 "                            03:43\n" +
                 "                        </span>\n" +
                 "                        <div class=\"music_operation\">\n" +
-                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addMusicToMusicList(2)\"></a>\n" +
+                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addTheMusicToMusicList(2)\"></a>\n" +
                 // "                            <a href=\"javascript:;\" class=\"delete_music\" onclick=\"deleteMusicInMusicList(2, 0);\"></a>\n" +
                 "                        </div>\n" +
                 "                    </td>\n" +
@@ -238,17 +231,3 @@ function editMusicList(musicListId) {
     var href = "editMusicList.html?musicListId=" + musicListId;
     window.location.href = href;
 }
-
-oCloseAmlf.onclick = function () {
-    oCreateMusicListFrameBg.style.display = "none";
-    oAddMusicListFrame.style.display = "none";
-    addInfo = null;
-};
-
-function addMusicToMusicList(musicId) {
-    oCreateMusicListFrameBg.style.display = "block";
-    oAddMusicListFrame.style.display = "block";
-    addInfo = {musicId: musicId};
-}
-
-

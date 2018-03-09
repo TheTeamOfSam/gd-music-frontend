@@ -81,16 +81,3 @@ for (var i = 0; i < aTBLis.length; i++) {
         }
     }
 }
-
-function addTheMusicToMusicList(musicId) {
-    oCreateMusicListFrameBg.style.display = "block";
-    oAddMusicListFrame.style.display = "block";
-    addInfo = {musicId: musicId};
-}
-
-oCloseAmlf.onclick = function () {
-    oCreateMusicListFrameBg.style.display = "none";
-    oAddMusicListFrame.style.display = "none";
-    addInfo = null;
-};
-

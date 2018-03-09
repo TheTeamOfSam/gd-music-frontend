@@ -21,14 +21,7 @@ var oDeleteMusic = document.getElementById("delete_music");
 
 var oDMCancelBtn = document.getElementById("dm_cancel_btn");
 
-var oAddMusicListFrame = document.getElementById("add_music_list_frame");
-var oCloseAmlf = document.getElementById("close_amlf");
-
-
 var deleteInfo;
-
-var addInfo;
-
 
 $(function () {
     //浏览器时下窗口可视区域高度
