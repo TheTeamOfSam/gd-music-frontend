@@ -48,11 +48,39 @@ window.onload = function () {
         oLoginBtn.style.display = "block";
     } else {
         oHeadPhoto.style.display = "block";
-        if ($.cookie("uHeadPhoto") == null || $.cookie("uHeadPhoto") == "") {
-            headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
-        } else {
-            headPhoto.attr("src", $.cookie("uHeadPhoto"));
-        }
+
+        $.ajax({
+            url: 'http://localhost:7200/gdmusicserver/user/service/info/@get',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                uID: $.cookie("uId")
+            },
+            error: function () {
+                alert("网络请求错误，请稍候重试！");
+            },
+            success: function (result) {
+                if (!result.is_success) {
+                    alert(result.message);
+                } else {
+                    var user = result.result;
+                    var allImgExt = ".jpg|.jpeg|.gif|.bmp|.png";
+                    if (user.head_photo.toLowerCase().match(allImgExt) == null) {
+                        // oUserHeadPhoto.src = "/images/headphoto/default_head_photo.png";
+                        headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
+                    } else {
+                        // oUserHeadPhoto.src = user.head_photo;
+                        headPhoto.attr("src", user.head_photo);
+                    }
+                }
+            }
+        });
+
+        // if ($.cookie("uHeadPhoto") == null || $.cookie("uHeadPhoto") == "") {
+        //     headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
+        // } else {
+        //     headPhoto.attr("src", $.cookie("uHeadPhoto"));
+        // }
         oLoginBtn.style.display = "none";
     }
 

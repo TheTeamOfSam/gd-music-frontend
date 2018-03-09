@@ -140,7 +140,7 @@ for (var j = 0; j < oMMLLis.length; j++) {
                 "                            04:53\n" +
                 "                        </span>\n" +
                 "                        <div class=\"music_operation\">\n" +
-                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addMusicToMusicList(1)\"></a>\n" +
+                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addTheMusicToMusicList(1)\"></a>\n" +
                 "                            <a href=\"javascript:;\" class=\"delete_music\" onclick=\"deleteMusicInMusicList(1, 0);\"></a>\n" +
                 "                        </div>\n" +
                 "                    </td>\n" +
@@ -167,7 +167,7 @@ for (var j = 0; j < oMMLLis.length; j++) {
                 "                            03:43\n" +
                 "                        </span>\n" +
                 "                        <div class=\"music_operation\">\n" +
-                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addMusicToMusicList(2)\"></a>\n" +
+                "                            <a href=\"javascript:;\" class=\"add_music\" onclick=\"addTheMusicToMusicList(2)\"></a>\n" +
                 "                            <a href=\"javascript:;\" class=\"delete_music\" onclick=\"deleteMusicInMusicList(2, 0);\"></a>\n" +
                 "                        </div>\n" +
                 "                    </td>\n" +
@@ -235,18 +235,6 @@ oDmConfirmBtn.onclick = function () {
 function editMusicList(musicListId) {
     var href = "editMusicList.html?musicListId=" + musicListId;
     window.location.href = href;
-}
-
-oCloseAmlf.onclick = function () {
-    oCreateMusicListFrameBg.style.display = "none";
-    oAddMusicListFrame.style.display = "none";
-    addInfo = null;
-};
-
-function addMusicToMusicList(musicId) {
-    oCreateMusicListFrameBg.style.display = "block";
-    oAddMusicListFrame.style.display = "block";
-    addInfo = {musicId: musicId};
 }
 
 

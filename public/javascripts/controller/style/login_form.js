@@ -52,10 +52,6 @@ oLafmLoginBtn.onclick = function () {
                         } else {
                             oReminderInfo.innerHTML = "";
                             var uResult = result.result;
-                            $.cookie("uHeadPhoto", uResult.head_photo, {
-                                path: '/',//cookie的作用域
-                                expires: 7
-                            });
                             $.cookie("uId", uResult.id, {
                                 path: '/',//cookie的作用域
                                 expires: 7

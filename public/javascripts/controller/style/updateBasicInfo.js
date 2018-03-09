@@ -68,7 +68,8 @@ $.ajax({
             oSelProvince.value = user.province;
             provinceChange();
             oSelCity.value = user.city;
-            if (user.head_photo == null || user.head_photo == "") {
+            var allImgExt = ".jpg|.jpeg|.gif|.bmp|.png";
+            if (user.head_photo.toLowerCase().match(allImgExt) == null) {
                 oUserHeadPhoto.src = "/images/headphoto/default_head_photo.png";
             } else {
                 oUserHeadPhoto.src = user.head_photo;
