@@ -70,7 +70,7 @@ $.ajax({
             oSelProvince.value = user.province;
             provinceChange();
             oSelCity.value = user.city;
-            var allImgExt = ".jpg|.jpeg|.gif|.bmp|.png";
+            var allImgExt = ".jpg|.jpeg|.bmp|.png";
             if (user.head_photo.toLowerCase().match(allImgExt) == null) {
                 oUserHeadPhoto.src = "/images/headphoto/default_head_photo.png";
             } else {

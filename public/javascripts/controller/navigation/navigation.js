@@ -64,7 +64,7 @@ window.onload = function () {
                     alert(result.message);
                 } else {
                     var user = result.result;
-                    var allImgExt = ".jpg|.jpeg|.gif|.bmp|.png";
+                    var allImgExt = ".jpg|.jpeg|.bmp|.png";
                     if (user.head_photo.toLowerCase().match(allImgExt) == null) {
                         // oUserHeadPhoto.src = "/images/headphoto/default_head_photo.png";
                         headPhoto.attr("src", "/images/headphoto/default_head_photo.png");
