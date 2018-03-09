@@ -53,6 +53,8 @@ $.ajax({
             var user = result.result;
             oNickname.value = user.nickname;
             oIntroduction.value = user.introduction;
+            var residueText = 150 - user.introduction.length;
+            oResidueText.innerHTML = "" + residueText;
             for (var i = 0; i < aSGLabel.length; i++) {
                 var oGender = aSGLabel[i].getElementsByClassName("gender")[0];
                 if ((i + 1) == user.sex) {
