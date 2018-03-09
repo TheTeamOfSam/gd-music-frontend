@@ -53,6 +53,7 @@ $.ajax({
                 oUserHeadPhoto.src = "/images/headphoto/default_head_photo.png";
             } else {
                 // oUserHeadPhoto.src = user.head_photo;
+
                 oUserHeadPhoto.src = user.head_photo;
             }
         }
