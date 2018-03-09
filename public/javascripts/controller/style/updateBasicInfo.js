@@ -17,6 +17,8 @@ var oSelCity = document.getElementById("selCity");
 
 var oUserHeadPhoto = document.getElementById("user_head_photo");
 
+var oSaveBtn = document.getElementById("save_btn");
+
 function timestampToTime(timestamp) {
     var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
     Y = date.getFullYear();
@@ -112,6 +114,60 @@ oIntroduction.onfocus = function () {
 oChangeHpBtn.onclick = oUpload.onclick = function () {
     window.location.href = "changeHeadPhoto.html";
 };
+
+oSaveBtn.onclick = function () {
+    var uGender = 0;
+    for (var i = 0; i < aSGLabel.length; i++) {
+        var oGender = aSGLabel[i].getElementsByClassName("gender")[0];
+        if (oGender.checked) {
+            uGender = oGender.value;
+        }
+    }
+    var uIntroduction = oIntroduction.value;
+    var selBOfDYear = oYear.value;
+    var selBOfDMonth = oMonth.value;
+    var selBOfDDay = oDay.value;
+    var uDOfB = selBOfDYear + "-" + selBOfDMonth + "-" + selBOfDDay;
+    var uProvince = oSelProvince.value;
+    var uCity = oSelCity.value;
+    // 判断出生年月日是否输入
+    if (selBOfDYear == "") {
+        alert("请选择出生年份");
+    }
+    if (selBOfDMonth == "") {
+        alert("请选择出生月份");
+    }
+    if (selBOfDDay == "") {
+        alert("请选择出生日子");
+    }
+
+    $.ajax({
+        url: 'http://localhost:7200/gdmusicserver/user/service/basic/info/@change',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            userId: $.cookie("uId"),
+            sex: uGender,
+            str_date_of_birth: uDOfB,
+            introduction: uIntroduction,
+            province: uProvince,
+            city: uCity
+        },
+        error: function () {
+            alert("网络异常，请求更新信息失败！");
+        },
+        success: function (result) {
+            if (result.is_success) {
+                window.location.href = "settings.html";
+            } else {
+                alert(result.message);
+            }
+        }
+    });
+
+};
+
+
 
 
 
