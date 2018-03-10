@@ -5,6 +5,8 @@ var oOldPasswordReminder = document.getElementById("old_password_reminder");
 var oNewPasswordReminder = document.getElementById("new_password_reminder");
 var oReNewPasswordReminder = document.getElementById("re_new_password_reminder");
 
+var oSavePwdBtn = document.getElementById("save_pwd_btn");
+
 oOldPassword.onblur = function () {
     var oldPasswordValue = oOldPassword.value;
     if (oldPasswordValue == "") {
@@ -41,7 +43,27 @@ oReNewPassword.onblur = function () {
     }
 };
 
-
-
+oSavePwdBtn.onclick = function () {
+    $.ajax({
+        url: 'http://localhost:7200/gdmusicserver/user/service/password/@reset',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            uId: $.cookie("uId"),
+            oldPassword: oOldPassword.value,
+            newPassword: oNewPassword.value
+        },
+        error: function () {
+            alert("网络请求错误，请稍后重试！");
+        },
+        success: function (data) {
+            if (!data.is_success) {
+                alert(data.message);
+            } else {
+                window.location.href = "settings.html";
+            }
+        }
+    });
+};
 
 
