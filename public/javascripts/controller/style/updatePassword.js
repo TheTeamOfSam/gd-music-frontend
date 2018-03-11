@@ -45,7 +45,7 @@ oReNewPassword.onblur = function () {
 
 oSavePwdBtn.onclick = function () {
     $.ajax({
-        url: 'http://localhost:7200/gdmusicserver/user/service/password/@reset',
+        url: ipAndHost + '/gdmusicserver/user/service/password/@reset',
         type: 'POST',
         dataType: 'json',
         data: {

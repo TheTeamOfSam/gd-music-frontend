@@ -36,7 +36,7 @@ oLafmLoginBtn.onclick = function () {
             } else {
                 oReminderInfo.innerHTML = null;
                 $.ajax({
-                    url: 'http://localhost:7200/gdmusicserver/user/service/@login',
+                    url: ipAndHost + '/gdmusicserver/user/service/@login',
                     type: 'POST',
                     dataType: 'json',
                     data: {

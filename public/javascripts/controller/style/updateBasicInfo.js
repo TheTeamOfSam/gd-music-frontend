@@ -22,7 +22,7 @@ var oSaveBtn = document.getElementById("save_btn");
 function timestampToTime(timestamp) {
     var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
     Y = date.getFullYear();
-    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    M = (date.getMonth() + 1 < 10 ? (date.getMonth() + 1) : date.getMonth() + 1);
     D = date.getDate();
     h = date.getHours();
     m = date.getMinutes();
@@ -39,7 +39,7 @@ function timestampToTime(timestamp) {
 }
 
 $.ajax({
-    url: 'http://localhost:7200/gdmusicserver/user/service/info/@get',
+    url: ipAndHost + '/gdmusicserver/user/service/info/@get',
     type: 'POST',
     dataType: 'json',
     data: {
@@ -84,7 +84,6 @@ $.ajax({
 
 oNickname.onblur = function () {
     var nicknameValue = oNickname.value;
-    console.log(nicknameValue);
     if (nicknameValue == "") {
         oNicknameReminder.style.display = "block";
         oNicknameReminder.innerText = "昵称不能为空，且长度控制在20个字符以内";
@@ -133,38 +132,39 @@ oSaveBtn.onclick = function () {
     // 判断出生年月日是否输入
     if (selBOfDYear == "") {
         alert("请选择出生年份");
-    }
-    if (selBOfDMonth == "") {
-        alert("请选择出生月份");
-    }
-    if (selBOfDDay == "") {
-        alert("请选择出生日子");
-    }
-
-    $.ajax({
-        url: 'http://localhost:7200/gdmusicserver/user/service/basic/info/@change',
-        type: 'POST',
-        dataType: 'json',
-        data: {
-            userId: $.cookie("uId"),
-            sex: uGender,
-            str_date_of_birth: uDOfB,
-            introduction: uIntroduction,
-            province: uProvince,
-            city: uCity
-        },
-        error: function () {
-            alert("网络异常，请求更新信息失败！");
-        },
-        success: function (result) {
-            if (result.is_success) {
-                window.location.href = "settings.html";
+    } else {
+        if (selBOfDMonth == "") {
+            alert("请选择出生月份");
+        } else {
+            if (selBOfDDay == "") {
+                alert("请选择出生日子");
             } else {
-                alert(result.message);
+                $.ajax({
+                    url: ipAndHost + '/gdmusicserver/user/service/basic/info/@change',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        userId: $.cookie("uId"),
+                        sex: uGender,
+                        str_date_of_birth: uDOfB,
+                        introduction: uIntroduction,
+                        province: uProvince,
+                        city: uCity
+                    },
+                    error: function () {
+                        alert("网络异常，请求更新信息失败！");
+                    },
+                    success: function (result) {
+                        if (result.is_success) {
+                            window.location.href = "settings.html";
+                        } else {
+                            alert(result.message);
+                        }
+                    }
+                });
             }
         }
-    });
-
+    }
 };
 
 

@@ -50,7 +50,7 @@ window.onload = function () {
         oHeadPhoto.style.display = "block";
 
         $.ajax({
-            url: 'http://localhost:7200/gdmusicserver/user/service/info/@get',
+            url: ipAndHost + '/gdmusicserver/user/service/info/@get',
             type: 'POST',
             dataType: 'json',
             data: {

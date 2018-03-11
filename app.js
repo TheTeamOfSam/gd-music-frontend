@@ -54,3 +54,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+// var proxyTarget = 'http://192.168.1.108:7200/';

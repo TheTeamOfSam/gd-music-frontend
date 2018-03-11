@@ -40,7 +40,7 @@ oSendEmailBtn.onclick = function () {
             if (oSendEmailBtn.value != "发送") {
             } else {
                 $.ajax({
-                    url: 'http://localhost:7200/gdmusicserver/email/@get',
+                    url: ipAndHost + '/gdmusicserver/email/@get',
                     type: 'POST',
                     data: {
                         email: oRegisterEmail.value
@@ -78,7 +78,7 @@ oFirstNextStepLink.onclick = function () {
     } else {
 
         $.ajax({
-            url: 'http://localhost:7200/gdmusicserver/email/@check',
+            url: ipAndHost + '/gdmusicserver/email/@check',
             type: 'POST',
             dataType: 'json',
             data: {
@@ -157,31 +157,43 @@ oFinishStepLink.onclick = function () {
     var rDOfB = oYear.value + "-" + oMonth.value + "-" + oDay.value;
     var rProvince = oSelProvince.value;
     var rCity = oSelCity.value;
-
-    $.ajax({
-        url: 'http://localhost:7200/gdmusicserver/user/service/@register',
-        type: 'POST',
-        dataType: 'json',
-        data: {
-            email: rEmail,
-            nickname: rNickname,
-            password: rPassword,
-            sex: rGender,
-            str_date_of_birth: rDOfB,
-            province: rProvince,
-            city: rCity
-        },
-        error: function () {
-            alert("网络异常，请求注册失败！");
-        },
-        success: function (result) {
-            if (result.is_success) {
-                window.location.href = "index.html";
+    // 判断出生年月日是否输入
+    if (oYear.value == "") {
+        alert("请选择出生年份");
+    } else {
+        if (oMonth.value == "") {
+            alert("请选择出生月份");
+        } else {
+            if (oDay.value == "") {
+                alert("请选择出生日子");
             } else {
-                alert(result.message);
+                $.ajax({
+                    url: ipAndHost + '/gdmusicserver/user/service/@register',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        email: rEmail,
+                        nickname: rNickname,
+                        password: rPassword,
+                        sex: rGender,
+                        str_date_of_birth: rDOfB,
+                        province: rProvince,
+                        city: rCity
+                    },
+                    error: function () {
+                        alert("网络异常，请求注册失败！");
+                    },
+                    success: function (result) {
+                        if (result.is_success) {
+                            window.location.href = "index.html";
+                        } else {
+                            alert(result.message);
+                        }
+                    }
+                });
             }
         }
-    });
+    }
 };
 
 

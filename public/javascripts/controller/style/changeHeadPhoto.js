@@ -33,7 +33,7 @@ function imgPreView(imgFile) {
 }
 
 $.ajax({
-    url: 'http://localhost:7200/gdmusicserver/user/service/info/@get',
+    url: ipAndHost + '/gdmusicserver/user/service/info/@get',
     type: 'POST',
     dataType: 'json',
     data: {
@@ -74,7 +74,7 @@ oSaveHeadPhotoBtn.onclick = function () {
         formData.append('head_photo', fileObj);
         formData.append('userId', $.cookie("uId"));
         $.ajax({
-            url: 'http://localhost:7200/gdmusicserver/user/service/head/photo/@change',
+            url: ipAndHost + '/gdmusicserver/user/service/head/photo/@change',
             type: 'POST',
             dataType: 'json',
             processData: false,
