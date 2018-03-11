@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/controller/iphost/iphost.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/register_form.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/register_form.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/updatePassword.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/updatePassword.js" />
-      <change beforePath="$PROJECT_DIR$/views/artist.html" afterPath="$PROJECT_DIR$/views/artist.html" />
-      <change beforePath="$PROJECT_DIR$/views/changeHeadPhoto.html" afterPath="$PROJECT_DIR$/views/changeHeadPhoto.html" />
-      <change beforePath="$PROJECT_DIR$/views/editMusicList.html" afterPath="$PROJECT_DIR$/views/editMusicList.html" />
-      <change beforePath="$PROJECT_DIR$/views/findMusic.html" afterPath="$PROJECT_DIR$/views/findMusic.html" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
-      <change beforePath="$PROJECT_DIR$/views/myCollection.html" afterPath="$PROJECT_DIR$/views/myCollection.html" />
-      <change beforePath="$PROJECT_DIR$/views/myMusic.html" afterPath="$PROJECT_DIR$/views/myMusic.html" />
-      <change beforePath="$PROJECT_DIR$/views/register.html" afterPath="$PROJECT_DIR$/views/register.html" />
-      <change beforePath="$PROJECT_DIR$/views/settings.html" afterPath="$PROJECT_DIR$/views/settings.html" />
-      <change beforePath="$PROJECT_DIR$/views/singleSong.html" afterPath="$PROJECT_DIR$/views/singleSong.html" />
-      <change beforePath="$PROJECT_DIR$/views/special.html" afterPath="$PROJECT_DIR$/views/special.html" />
-      <change beforePath="$PROJECT_DIR$/views/user.html" afterPath="$PROJECT_DIR$/views/user.html" />
-      <change beforePath="$PROJECT_DIR$/views/userMusicList.html" afterPath="$PROJECT_DIR$/views/userMusicList.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,28 +33,48 @@
       <file leaf-file-name="navigation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+            <state relative-caret-position="1590">
+              <caret line="106" column="11" lean-forward="true" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateBasicInfo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="updateBasicInfo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="69" column="39" lean-forward="true" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+            <state relative-caret-position="-164">
+              <caret line="119" column="64" lean-forward="false" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register_form.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register_form.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/register_form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="162" column="12" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="162" selection-end-column="12" />
+            <state relative-caret-position="310">
+              <caret line="35" column="127" lean-forward="true" selection-start-line="35" selection-start-column="127" selection-end-line="35" selection-end-column="127" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myMusic.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/myMusic.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/css/settings/settings.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -122,8 +121,8 @@
       <find>img</find>
       <find>$.cookie(&quot;uId&quot;),</find>
       <find>uId</find>
-      <find>url</find>
       <find>console.log</find>
+      <find>url</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,8 +180,8 @@
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/updatePassword.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controller/style/register_form.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/controller/style/register_form.js" />
       </list>
     </option>
   </component>
@@ -401,7 +400,7 @@
       <workItem from="1520685840654" duration="1473000" />
       <workItem from="1520688276610" duration="7000" />
       <workItem from="1520688303835" duration="21000" />
-      <workItem from="1520753288229" duration="4861000" />
+      <workItem from="1520753288229" duration="6695000" />
     </task>
     <task id="LOCAL-00001" summary="添加到歌单JS优化，可以共用一个函数！">
       <created>1520561027035</created>
@@ -487,11 +486,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520688092472</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="IP和地址优化&#10;&#10;注册和更改个人信息JS功能优化">
+      <created>1520770961411</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1520770961411</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288947000" />
+    <option name="totallyTimeSpent" value="290781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="22" width="1405" height="878" extended-state="6" />
@@ -501,7 +507,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24521072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24521072" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -571,18 +577,14 @@
     <MESSAGE value="更换头像功能完成" />
     <MESSAGE value="个人信息更新功能完成" />
     <MESSAGE value="个人密码更新功能完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="个人密码更新功能完成" />
+    <MESSAGE value="IP和地址优化&#10;&#10;注册和更改个人信息JS功能优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="IP和地址优化&#10;&#10;注册和更改个人信息JS功能优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/images/style/sprite.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/style/tab.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -838,14 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myMusic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="91" lean-forward="false" selection-start-line="10" selection-start-column="91" selection-end-line="10" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -926,26 +920,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js">
+    <entry file="file://$PROJECT_DIR$/views/myMusic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+        <state relative-caret-position="362">
+          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/register_form.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/css/settings/settings.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="162" column="12" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="162" selection-end-column="12" />
+        <state relative-caret-position="591">
+          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="106" column="11" lean-forward="true" selection-start-line="106" selection-start-column="11" selection-end-line="106" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="69" column="39" lean-forward="true" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+        <state relative-caret-position="-164">
+          <caret line="119" column="64" lean-forward="false" selection-start-line="119" selection-start-column="64" selection-end-line="119" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/register_form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="35" column="127" lean-forward="true" selection-start-line="35" selection-start-column="127" selection-end-line="35" selection-end-column="127" />
           <folding />
         </state>
       </provider>

@@ -32,7 +32,8 @@ oSendEmailBtn.onclick = function () {
     if (oRegisterEmail.value.length == 0) {
         oReminderRegisterEmail.innerHTML = "请输入邮箱号";
     } else {
-        var emailRegex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        // var emailRegex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        var emailRegex = /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/;
         if (!emailRegex.test(oRegisterEmail.value)) {
             oReminderRegisterEmail.innerHTML = "邮箱格式不正确";
         } else {
