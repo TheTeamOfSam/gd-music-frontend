@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body {
+    background-color: #F2F2F2;
+}
+
 .navigation {
     height: 70px;
     background-color: #242424;
