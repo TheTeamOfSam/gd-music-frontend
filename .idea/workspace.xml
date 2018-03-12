@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -82,8 +81,8 @@
           <file leaf-file-name="findMusic.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="137">
-                  <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+                <state relative-caret-position="197">
+                  <caret line="53" column="48" lean-forward="true" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -449,7 +448,7 @@
       <workItem from="1520688303835" duration="21000" />
       <workItem from="1520753288229" duration="7295000" />
       <workItem from="1520814641811" duration="195000" />
-      <workItem from="1520815256661" duration="8871000" />
+      <workItem from="1520815256661" duration="8953000" />
     </task>
     <task id="LOCAL-00001" summary="添加到歌单JS优化，可以共用一个函数！">
       <created>1520561027035</created>
@@ -549,11 +548,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520824742526</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="发现音乐单曲选项小优化">
+      <created>1520824937878</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1520824937878</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300447000" />
+    <option name="totallyTimeSpent" value="300529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="22" width="1405" height="878" extended-state="6" />
@@ -635,7 +641,8 @@
     <MESSAGE value="个人密码更新功能完成" />
     <MESSAGE value="IP和地址优化&#10;&#10;注册和更改个人信息JS功能优化" />
     <MESSAGE value="新增统一的自定义弹窗&#10;&#10;发现音乐页面按照歌曲名模糊搜索歌曲的功能与后台对接成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增统一的自定义弹窗&#10;&#10;发现音乐页面按照歌曲名模糊搜索歌曲的功能与后台对接成功" />
+    <MESSAGE value="发现音乐单曲选项小优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="发现音乐单曲选项小优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1039,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+        <state relative-caret-position="197">
+          <caret line="53" column="48" lean-forward="true" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
           <folding />
         </state>
       </provider>
