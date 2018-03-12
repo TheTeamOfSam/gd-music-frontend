@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a0d27d-2d25-4028-9fb0-31c714f5eefd" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/controller/customAlert/customAlert.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/navigation/navigation.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/changeHeadPhoto.js" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/login_form.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/register_form.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/register_form.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/updateBasicInfo.js" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/controller/style/updatePassword.js" afterPath="$PROJECT_DIR$/public/javascripts/controller/style/updatePassword.js" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/css/head/head.css" afterPath="$PROJECT_DIR$/public/stylesheets/css/head/head.css" />
-      <change beforePath="$PROJECT_DIR$/views/artist.html" afterPath="$PROJECT_DIR$/views/artist.html" />
-      <change beforePath="$PROJECT_DIR$/views/changeHeadPhoto.html" afterPath="$PROJECT_DIR$/views/changeHeadPhoto.html" />
-      <change beforePath="$PROJECT_DIR$/views/editMusicList.html" afterPath="$PROJECT_DIR$/views/editMusicList.html" />
-      <change beforePath="$PROJECT_DIR$/views/findMusic.html" afterPath="$PROJECT_DIR$/views/findMusic.html" />
-      <change beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change beforePath="$PROJECT_DIR$/views/login.html" afterPath="$PROJECT_DIR$/views/login.html" />
-      <change beforePath="$PROJECT_DIR$/views/myCollection.html" afterPath="$PROJECT_DIR$/views/myCollection.html" />
-      <change beforePath="$PROJECT_DIR$/views/myMusic.html" afterPath="$PROJECT_DIR$/views/myMusic.html" />
-      <change beforePath="$PROJECT_DIR$/views/register.html" afterPath="$PROJECT_DIR$/views/register.html" />
-      <change beforePath="$PROJECT_DIR$/views/settings.html" afterPath="$PROJECT_DIR$/views/settings.html" />
-      <change beforePath="$PROJECT_DIR$/views/singleSong.html" afterPath="$PROJECT_DIR$/views/singleSong.html" />
-      <change beforePath="$PROJECT_DIR$/views/special.html" afterPath="$PROJECT_DIR$/views/special.html" />
-      <change beforePath="$PROJECT_DIR$/views/user.html" afterPath="$PROJECT_DIR$/views/user.html" />
-      <change beforePath="$PROJECT_DIR$/views/userMusicList.html" afterPath="$PROJECT_DIR$/views/userMusicList.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -75,7 +53,7 @@
                 <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="0">
-                      <caret line="120" column="40" lean-forward="false" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
+                      <caret line="121" column="40" lean-forward="false" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
                       <folding />
                     </state>
                   </provider>
@@ -104,8 +82,8 @@
           <file leaf-file-name="findMusic.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
-                  <caret line="87" column="57" lean-forward="false" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+                <state relative-caret-position="137">
+                  <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
@@ -471,7 +449,7 @@
       <workItem from="1520688303835" duration="21000" />
       <workItem from="1520753288229" duration="7295000" />
       <workItem from="1520814641811" duration="195000" />
-      <workItem from="1520815256661" duration="8612000" />
+      <workItem from="1520815256661" duration="8871000" />
     </task>
     <task id="LOCAL-00001" summary="添加到歌单JS优化，可以共用一个函数！">
       <created>1520561027035</created>
@@ -564,11 +542,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520770961411</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="新增统一的自定义弹窗&#10;&#10;发现音乐页面按照歌曲名模糊搜索歌曲的功能与后台对接成功">
+      <created>1520824742526</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1520824742526</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300188000" />
+    <option name="totallyTimeSpent" value="300447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="22" width="1405" height="878" extended-state="6" />
@@ -649,7 +634,8 @@
     <MESSAGE value="个人信息更新功能完成" />
     <MESSAGE value="个人密码更新功能完成" />
     <MESSAGE value="IP和地址优化&#10;&#10;注册和更改个人信息JS功能优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="IP和地址优化&#10;&#10;注册和更改个人信息JS功能优化" />
+    <MESSAGE value="新增统一的自定义弹窗&#10;&#10;发现音乐页面按照歌曲名模糊搜索歌曲的功能与后台对接成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增统一的自定义弹窗&#10;&#10;发现音乐页面按照歌曲名模糊搜索歌曲的功能与后台对接成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1053,8 +1039,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controller/style/findMusic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="87" column="57" lean-forward="false" selection-start-line="87" selection-start-column="57" selection-end-line="87" selection-end-column="57" />
+        <state relative-caret-position="137">
+          <caret line="49" column="47" lean-forward="true" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
           <folding />
         </state>
       </provider>

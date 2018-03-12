@@ -48,6 +48,7 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
+            findLikeMusicName(oSearchContentInput.value);
         } else if (index == 1) {
             searchIndex = 1;
             oFdMusicList.style.display = "none";
