@@ -141,4 +141,23 @@
     color: #333333;
 }
 
+.reminder_search_content {
+    position: absolute;
+    width: 300px;
+    height: 23px;
+    border: 1px solid #666666;
+    border-radius: 3px;
+    display: none;
+    z-index: 99999;
+    padding: 10px 10px 8px 10px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    font-size: 14px;
+    color: red;
+}
 

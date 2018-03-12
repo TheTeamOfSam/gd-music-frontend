@@ -48,7 +48,8 @@ oSendEmailBtn.onclick = function () {
                     },
                     dataType: 'json',
                     error: function () {
-                        oReminderRegisterEmail.innerHTML = "网络错误，请求失败！";
+                        // oReminderRegisterEmail.innerHTML = "网络错误，请求失败！";
+                        customAlert("网络错误，请求失败！");
                     },
                     success: function (result) {
                         if (result.is_success == false) {
@@ -182,13 +183,13 @@ oFinishStepLink.onclick = function () {
                         city: rCity
                     },
                     error: function () {
-                        alert("网络异常，请求注册失败！");
+                       customAlert("网络异常，请求注册失败！");
                     },
                     success: function (result) {
                         if (result.is_success) {
                             window.location.href = "index.html";
                         } else {
-                            alert(result.message);
+                            customAlert(result.message);
                         }
                     }
                 });

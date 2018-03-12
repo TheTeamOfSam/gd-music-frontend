@@ -10,13 +10,9 @@ function getUrlParam(name) {
     }
 }
 
-console.log(getUrlParam("search_content"));
+var searchContent = getUrlParam("search_content");
 
-var addInfo;
-
-var oCreateMusicListFrameBg = document.getElementById("create_music_list_frame_bg");
-var oCloseAmlf = document.getElementById("close_amlf");
-var oAddMusicListFrame = document.getElementById("add_music_list_frame");
+var searchIndex = 0;
 
 var oTabBar = document.getElementById("tab_bar");
 var aTBLis = oTabBar.getElementsByTagName("li");
@@ -26,6 +22,8 @@ var oSearchContent = document.getElementById("search_content");
 
 oSearchContentInput.value = getUrlParam("search_content");
 oSearchContent.value = getUrlParam("search_content");
+
+var oSearchBtn = document.getElementById("search_btn");
 
 var oFdMusicList = document.getElementById("fd_music_list");
 var oFdArtistList = document.getElementById("fd_artist_list");
@@ -44,35 +42,35 @@ for (var i = 0; i < aTBLis.length; i++) {
         var oTBLiSltA = aTBLis[index].getElementsByTagName("a")[0];
         oTBLiSltA.className = "tb_slt";
         if (index == 0) {
-            console.log("单曲");
+            searchIndex = 0;
             oFdMusicList.style.display = "block";
             oFdArtistList.style.display = "none";
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
         } else if (index == 1) {
-            console.log("歌手");
+            searchIndex = 1;
             oFdMusicList.style.display = "none";
             oFdArtistList.style.display = "block";
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
         } else if (index == 2) {
-            console.log("专辑");
+            searchIndex = 2;
             oFdMusicList.style.display = "none";
             oFdArtistList.style.display = "none";
             oFdSpecialList.style.display = "block";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
         } else if (index == 3) {
-            console.log("歌单");
+            searchIndex = 3;
             oFdMusicList.style.display = "none";
             oFdArtistList.style.display = "none";
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "block";
             oFdUserList.style.display = "none";
         } else if (index == 4) {
-            console.log("用户");
+            searchIndex = 4;
             oFdMusicList.style.display = "none";
             oFdArtistList.style.display = "none";
             oFdSpecialList.style.display = "none";
@@ -81,3 +79,80 @@ for (var i = 0; i < aTBLis.length; i++) {
         }
     }
 }
+
+oSearchBtn.onclick = function () {
+    if (oSearchContentInput.value==null||oSearchContentInput.value==""||oSearchContentInput.value.length==0) {
+        customAlert("搜索内容不能为空！");
+    } else {
+        if (searchIndex == 0) {
+            findLikeMusicName(oSearchContentInput.value);
+        } else if (searchIndex == 1) {
+
+        } else if (searchIndex == 2) {
+
+        } else if (searchIndex == 3) {
+
+        } else if (searchIndex == 4) {
+
+        }
+    }
+};
+
+function findLikeMusicName(musicName) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/artist/special/music/find/like/music/name/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            music_name: musicName
+        },
+        error: function () {
+            customAlert("网络异常，请求更新信息失败！");
+        },
+        success: function (result) {
+            if (result.is_success) {
+                var result = result.result;
+                oFdMusicList.style.height = (result.length * 43) + 50 + "px";
+                $("div").remove("#fd_music_list .a_music");
+                $.each(result, function (n, result) {
+                    // console.log(result);
+                    var musicLink = $("<a>"+result.music_name+"</a>").attr("href","javascript:toSingleSong("+result.music_id+");");
+                    var musicDiv = $("<div class='am_w1'></div>");
+                    musicDiv.append(musicLink);
+
+                    var collectLink = $("<a class='collect_btn'></a>").attr("href", "javascript:addTheMusicToMusicList("+result.music_id+");");
+                    var operateBtns = $("<div class='operate_btn'></div>");
+                    operateBtns.append(collectLink);
+                    var amW2 = $("<div class='am_w2'></div>");
+                    amW2.append(operateBtns);
+
+                    var artistLink = $("<a>"+result.artist_name+"</a>").attr("href", "javascript:toArtist("+result.artist_id+");");
+                    var artistDiv = $("<div class='am_w3'></div>")
+                    artistDiv.append(artistLink);
+
+                    var specialLink = $("<a>"+result.special_name+"</a>").attr("href", "javascript:toSpecial("+result.special_id+");");
+                    var specialDiv = $("<div class='am_w4'></div>");
+                    specialDiv.append(specialLink);
+
+                    var durationInfo = getMusicDuration(result.music_duration);
+                    var musicDurationDiv = $("<div class='am_w5'>"+durationInfo+"</div>");
+
+                    var aMusicDiv = $("<div class='a_music'></div>");
+                    aMusicDiv.append(musicDiv);
+                    aMusicDiv.append(amW2);
+                    aMusicDiv.append(artistDiv);
+                    aMusicDiv.append(specialDiv);
+                    aMusicDiv.append(musicDurationDiv);
+
+                    $("#fd_music_list").append(aMusicDiv);
+                });
+            } else {
+                customAlert(result.message);
+            }
+        }
+    });
+}
+
+findLikeMusicName(searchContent);
+
+

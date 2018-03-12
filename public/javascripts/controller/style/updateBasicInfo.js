@@ -46,11 +46,11 @@ $.ajax({
         uID: $.cookie("uId")
     },
     error: function () {
-        alert("网络请求错误，请稍候重试！");
+        customAlert("网络请求错误，请稍候重试！");
     },
     success: function (result) {
         if (!result.is_success) {
-            alert(result.message);
+            customAlert(result.message);
         } else {
             var user = result.result;
             oNickname.value = user.nickname;
@@ -152,13 +152,13 @@ oSaveBtn.onclick = function () {
                         city: uCity
                     },
                     error: function () {
-                        alert("网络异常，请求更新信息失败！");
+                        customAlert("网络异常，请求更新信息失败！");
                     },
                     success: function (result) {
                         if (result.is_success) {
                             window.location.href = "settings.html";
                         } else {
-                            alert(result.message);
+                            customAlert(result.message);
                         }
                     }
                 });

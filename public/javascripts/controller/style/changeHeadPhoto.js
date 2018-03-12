@@ -40,11 +40,11 @@ $.ajax({
         uID: $.cookie("uId")
     },
     error: function () {
-        alert("网络请求错误，请稍候重试！");
+        customAlert("网络请求错误，请稍候重试！");
     },
     success: function (result) {
         if (!result.is_success) {
-            alert(result.message);
+            customAlert(result.message);
         } else {
             var user = result.result;
             var allImgExt = ".jpg|.jpeg|.bmp|.png";
@@ -67,7 +67,7 @@ oSaveHeadPhotoBtn.onclick = function () {
     //获取文件对象，files是文件选取控件的属性，存储的是文件选取控件选取的文件对象，类型是一个数组
     var fileObj = oUploadSelectBtn.files[0];
     if (typeof(fileObj) == "undefined"){
-        alert("请上传图片");
+        customAlert("请上传图片");
     } else {
         //创建formdata对象，formData用来存储表单的数据，表单数据时以键值对形式存储的。
         var formData = new FormData();
@@ -81,7 +81,7 @@ oSaveHeadPhotoBtn.onclick = function () {
             contentType: false,
             data: formData,
             error: function () {
-                alert("网络请求错误，请稍候重试！");
+               customAlert("网络请求错误，请稍候重试！");
             },
             success: function (data) {
                 if (!data.is_success) {

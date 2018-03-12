@@ -54,11 +54,11 @@ oSavePwdBtn.onclick = function () {
             newPassword: oNewPassword.value
         },
         error: function () {
-            alert("网络请求错误，请稍后重试！");
+            customAlert("网络请求错误，请稍后重试！");
         },
         success: function (data) {
             if (!data.is_success) {
-                alert(data.message);
+                customAlert(data.message);
             } else {
                 window.location.href = "settings.html";
             }

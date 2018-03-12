@@ -57,11 +57,11 @@ window.onload = function () {
                 uID: $.cookie("uId")
             },
             error: function () {
-                alert("网络请求错误，请稍候重试！");
+                customAlert("网络请求错误，请稍候重试！");
             },
             success: function (result) {
                 if (!result.is_success) {
-                    alert(result.message);
+                    customAlert(result.message);
                 } else {
                     var user = result.result;
                     var allImgExt = ".jpg|.jpeg|.bmp|.png";
@@ -110,13 +110,19 @@ window.onload = function () {
 
     var oSearchContent = document.getElementById("search_content");
 
+
     oSearchContent.onkeydown = function (ev) {
         var oEvent = ev || event;
         if (oEvent.keyCode == 13) {
-            var link = "findMusic.html?search_content=" + this.value;
-            window.location.href = link;
+            if (this.value == null || this.value == "" || this.value.length == 0) {
+                customAlert("搜索内容不能为空");
+            } else {
+                var link = "findMusic.html?search_content=" + this.value;
+                window.location.href = link;
+            }
         }
     };
 
 
 };
+

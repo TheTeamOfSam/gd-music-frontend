@@ -44,7 +44,7 @@ oLafmLoginBtn.onclick = function () {
                         password: oLoginPassword.value
                     },
                     error: function () {
-                        alert("网络请求错误，请稍候重试");
+                        customAlert("网络请求错误，请稍候重试");
                     },
                     success: function (result) {
                         if (!result.is_success) {
