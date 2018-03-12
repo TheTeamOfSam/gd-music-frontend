@@ -250,8 +250,6 @@ function findLikeSpecialName(specialName) {
                 $("li").remove("#fd_specials li");
                 $.each(result.result, function (n, result) {
 
-                    // console.log(result);
-
                     var facLinkImg = $("<img>").attr("src", result.special_photo);
                     var facLinkSpan = $("<span></span>");
                     var facLink = $("<a></a>").attr("href", "javascript:toSpecial(" + result.special_id + ");");
