@@ -535,13 +535,13 @@ body, * {
 
 .fd_user_list {
     width: 900px;
-    height: 1860px;
+    height: auto;
     display: none;
 }
 
 .fd_users {
     width: 900px;
-    height: 1860px;
+    height: auto;
     list-style: none;
 }
 

@@ -15,6 +15,8 @@ var searchContent = getUrlParam("search_content");
 var searchIndex = 0;
 var searchCtnt = searchContent;
 
+var allImgExt = ".jpg|.jpeg|.bmp|.png";
+
 var oTabBar = document.getElementById("tab_bar");
 var aTBLis = oTabBar.getElementsByTagName("li");
 
@@ -33,6 +35,7 @@ var oFdSpecialList = document.getElementById("fd_special_list");
 var oFdSpecials = document.getElementById("fd_specials");
 var oFdMusicListList = document.getElementById("fd_musicList_list");
 var oFdUserList = document.getElementById("fd_user_list");
+var oFdUsers = document.getElementById("fd_users");
 
 for (var i = 0; i < aTBLis.length; i++) {
     aTBLis[i].index = i;
@@ -88,7 +91,7 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "block";
             oSearchContentInput.value = searchCtnt;
-
+            findLikeNickName(oSearchContentInput.value);
         }
     }
 }
@@ -107,7 +110,7 @@ oSearchBtn.onclick = function () {
         } else if (searchIndex == 3) {
 
         } else if (searchIndex == 4) {
-
+            findLikeNickName(oSearchContentInput.value);
         }
     }
 };
@@ -274,6 +277,73 @@ function findLikeSpecialName(specialName) {
                     $("#fd_specials").append(fdli);
 
                 })
+            }
+        }
+    });
+}
+
+function findLikeNickName(nickName) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/user/service/find/like/nickname/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            nickname: nickName
+        },
+        error: function () {
+            customAlert("网络请求错误！");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var result = result.result;
+
+                var size = result.length;
+                oFdUserList.style.height = (size * 64 + 50) + "px";
+                oFdUsers.style.height = (size * 64 + 50) + "px";
+
+                $("li").remove("#fd_users li");
+                $.each(result, function (n, result) {
+
+                    var uhpLinkImg = $("<img>");
+                    if (result.head_photo.toLowerCase().match(allImgExt) == null) {
+                        uhpLinkImg.attr("src", "/images/headphoto/default_head_photo.png")
+                    } else {
+                        uhpLinkImg.attr("src", result.head_photo);
+                    }
+                    var uhpLinkSpan = $("<span></span>");
+                    var uhpLink = $("<a></a>").attr("href", "javascript:toUser(" + result.id + ");");
+                    uhpLink.append(uhpLinkImg);
+                    uhpLink.append(uhpLinkSpan);
+                    var uhpDiv = $("<div class='user_head_photo'></div>");
+                    uhpDiv.append(uhpLink);
+
+                    var userNickname = $("<div class='user_nickname'>" + result.nickname + "</div>");
+                    var userSex = $("<span class='sex'></span>");
+                    if (result.sex == 1) {
+                        userSex.css("background-position", "-70px -20px");
+                    } else if (result.sex == 2) {
+                        userSex.css("background-position", "-70px 0");
+                    } else {
+                        userSex.css("display", "none");
+                    }
+                    var unasLink = $("<a class='user_nickname_and_sex'></a>").attr("href", "javascript:toUser(" + result.id + ");");
+                    unasLink.append(userNickname);
+                    unasLink.append(userSex);
+                    var userIntro = $("<div class='user_intro'>"+result.introduction+"</div>");
+                    var userInfo = $("<div class='user_info'></div>");
+
+                    userInfo.append(unasLink);
+                    userInfo.append(userIntro);
+
+                    var userLi = $("<li></li>");
+                    userLi.append(uhpDiv);
+                    userLi.append(userInfo);
+
+                    $("#fd_users").append(userLi);
+
+                });
             }
         }
     });
