@@ -13,6 +13,7 @@ function getUrlParam(name) {
 var searchContent = getUrlParam("search_content");
 
 var searchIndex = 0;
+var searchCtnt = searchContent;
 
 var oTabBar = document.getElementById("tab_bar");
 var aTBLis = oTabBar.getElementsByTagName("li");
@@ -27,7 +28,9 @@ var oSearchBtn = document.getElementById("search_btn");
 
 var oFdMusicList = document.getElementById("fd_music_list");
 var oFdArtistList = document.getElementById("fd_artist_list");
+var oFdArtists = document.getElementById("fd_artists");
 var oFdSpecialList = document.getElementById("fd_special_list");
+var oFdSpecials = document.getElementById("fd_specials");
 var oFdMusicListList = document.getElementById("fd_musicList_list");
 var oFdUserList = document.getElementById("fd_user_list");
 
@@ -48,6 +51,7 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
+            oSearchContentInput.value = searchCtnt;
             findLikeMusicName(oSearchContentInput.value);
         } else if (index == 1) {
             searchIndex = 1;
@@ -56,6 +60,8 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
+            oSearchContentInput.value = searchCtnt;
+            findLikeArtistName(oSearchContentInput.value);
         } else if (index == 2) {
             searchIndex = 2;
             oFdMusicList.style.display = "none";
@@ -63,6 +69,8 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdSpecialList.style.display = "block";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "none";
+            oSearchContentInput.value = searchCtnt;
+            findLikeSpecialName(oSearchContentInput.value);
         } else if (index == 3) {
             searchIndex = 3;
             oFdMusicList.style.display = "none";
@@ -70,6 +78,8 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "block";
             oFdUserList.style.display = "none";
+            oSearchContentInput.value = searchCtnt;
+
         } else if (index == 4) {
             searchIndex = 4;
             oFdMusicList.style.display = "none";
@@ -77,20 +87,23 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdSpecialList.style.display = "none";
             oFdMusicListList.style.display = "none";
             oFdUserList.style.display = "block";
+            oSearchContentInput.value = searchCtnt;
+
         }
     }
 }
 
 oSearchBtn.onclick = function () {
-    if (oSearchContentInput.value==null||oSearchContentInput.value==""||oSearchContentInput.value.length==0) {
+    if (oSearchContentInput.value == null || oSearchContentInput.value == "" || oSearchContentInput.value.length == 0) {
         customAlert("搜索内容不能为空！");
     } else {
+        searchCtnt = oSearchContentInput.value;
         if (searchIndex == 0) {
             findLikeMusicName(oSearchContentInput.value);
         } else if (searchIndex == 1) {
-
+            findLikeArtistName(oSearchContentInput.value);
         } else if (searchIndex == 2) {
-
+            findLikeSpecialName(oSearchContentInput.value);
         } else if (searchIndex == 3) {
 
         } else if (searchIndex == 4) {
@@ -118,26 +131,26 @@ function findLikeMusicName(musicName) {
                 $.each(result, function (n, result) {
                     // console.log(result);
                     // 歌曲链接
-                    var musicLink = $("<a>"+result.music_name+"</a>").attr("href","javascript:toSingleSong("+result.music_id+");");
+                    var musicLink = $("<a>" + result.music_name + "</a>").attr("href", "javascript:toSingleSong(" + result.music_id + ");");
                     var musicDiv = $("<div class='am_w1'></div>");
                     musicDiv.append(musicLink);
                     // 歌曲操作
-                    var collectLink = $("<a class='collect_btn'></a>").attr("href", "javascript:addTheMusicToMusicList("+result.music_id+");");
+                    var collectLink = $("<a class='collect_btn'></a>").attr("href", "javascript:addTheMusicToMusicList(" + result.music_id + ");");
                     var operateBtns = $("<div class='operate_btn'></div>");
                     operateBtns.append(collectLink);
                     var amW2 = $("<div class='am_w2'></div>");
                     amW2.append(operateBtns);
                     // 歌曲艺人链接
-                    var artistLink = $("<a>"+result.artist_name+"</a>").attr("href", "javascript:toArtist("+result.artist_id+");");
+                    var artistLink = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.artist_id + ");");
                     var artistDiv = $("<div class='am_w3'></div>")
                     artistDiv.append(artistLink);
                     // 专辑链接
-                    var specialLink = $("<a>"+result.special_name+"</a>").attr("href", "javascript:toSpecial("+result.special_id+");");
+                    var specialLink = $("<a>" + result.special_name + "</a>").attr("href", "javascript:toSpecial(" + result.special_id + ");");
                     var specialDiv = $("<div class='am_w4'></div>");
                     specialDiv.append(specialLink);
                     // 歌曲时长信息
                     var durationInfo = getMusicDuration(result.music_duration);
-                    var musicDurationDiv = $("<div class='am_w5'>"+durationInfo+"</div>");
+                    var musicDurationDiv = $("<div class='am_w5'>" + durationInfo + "</div>");
                     // 一首歌的div
                     var aMusicDiv = $("<div class='a_music'></div>");
                     aMusicDiv.append(musicDiv);
@@ -150,6 +163,119 @@ function findLikeMusicName(musicName) {
                 });
             } else {
                 customAlert(result.message);
+            }
+        }
+    });
+}
+
+function findLikeArtistName(artistName) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/artist/special/music/find/like/artist/name/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            artist_name: artistName
+        },
+        error: function () {
+            customAlert("网络请求异常");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var resLength = result.result.length;
+                var shouldLength = 0;
+                if (resLength % 6 == 0) {
+                    shouldLength = Math.floor(resLength / 6);
+                } else {
+                    shouldLength = Math.floor(resLength / 6 + 1);
+                }
+
+                oFdArtistList.style.height = (shouldLength * 184 + 50) + "px";
+                oFdArtists.style.height = (shouldLength * 184 + 50) + "px";
+
+                $("li").remove("#fd_artists li");
+                $.each(result.result, function (n, result) {
+
+                    var facLinkImg = $("<img>").attr("src", result.artist_head_photo_small);
+                    var facLinkSpan = $("<span></span>");
+                    var facLink = $("<a></a>").attr("href", "javascript:toArtist(" + result.id + ");");
+                    facLink.append(facLinkImg);
+                    facLink.append(facLinkSpan);
+                    var fac = $("<div class='fd_artist_cover'></div>");
+                    fac.append(facLink);
+
+                    var pLink = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.id + ");");
+                    var p = $("<p></p>");
+                    p.append(pLink);
+
+                    var fdli = $("<li></li>");
+                    fdli.append(fac);
+                    fdli.append(p);
+
+                    $("#fd_artists").append(fdli);
+
+                })
+            }
+        }
+    });
+}
+
+function findLikeSpecialName(specialName) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/artist/special/music/find/like/special/name/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            special_name: specialName
+        },
+        error: function () {
+            customAlert("网络请求异常");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var resLength = result.result.length;
+                var shouldLength = 0;
+                if (resLength % 6 == 0) {
+                    shouldLength = Math.floor(resLength / 5);
+                } else {
+                    shouldLength = Math.floor(resLength / 5 + 1);
+                }
+
+                oFdSpecialList.style.height = (shouldLength * 208 + 50) + "px";
+                oFdSpecials.style.height = (shouldLength * 208 + 50) + "px";
+
+                $("li").remove("#fd_specials li");
+                $.each(result.result, function (n, result) {
+
+                    // console.log(result);
+
+                    var facLinkImg = $("<img>").attr("src", result.special_photo);
+                    var facLinkSpan = $("<span></span>");
+                    var facLink = $("<a></a>").attr("href", "javascript:toSpecial(" + result.special_id + ");");
+                    facLink.append(facLinkImg);
+                    facLink.append(facLinkSpan);
+                    var fac = $("<div></div>");
+                    fac.append(facLink);
+
+                    var pLink = $("<a>" + result.special_name + "</a>").attr("href", "javascript:toSpecial(" + result.special_id + ");");
+                    var p = $("<p></p>");
+                    p.append(pLink);
+
+                    var pLink2 = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.artist_id + ");");
+                    var p2 = $("<p></p>");
+                    p2.append(pLink2);
+
+                    var fdli = $("<li></li>");
+                    fdli.append(fac);
+                    fdli.append(p);
+                    fdli.append(p2);
+
+                    $("#fd_specials").append(fdli);
+
+                })
             }
         }
     });

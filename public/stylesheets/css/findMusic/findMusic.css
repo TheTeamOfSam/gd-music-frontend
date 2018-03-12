@@ -212,7 +212,7 @@ body, * {
 
 .fd_artist_list {
     width: 900px;
-    height: 2760px;
+    height: auto;
     display: none;
 }
 
@@ -282,13 +282,13 @@ body, * {
 
 .fd_special_list {
     width: 900px;
-    height: 3120px;
+    height: auto;
     display: none;
 }
 
 .fd_specials {
     width: 933px;
-    height: 3120px;
+    height: auto;
     margin-left: -33px;
     list-style: none;
 }
