@@ -117,34 +117,35 @@ function findLikeMusicName(musicName) {
                 $("div").remove("#fd_music_list .a_music");
                 $.each(result, function (n, result) {
                     // console.log(result);
+                    // 歌曲链接
                     var musicLink = $("<a>"+result.music_name+"</a>").attr("href","javascript:toSingleSong("+result.music_id+");");
                     var musicDiv = $("<div class='am_w1'></div>");
                     musicDiv.append(musicLink);
-
+                    // 歌曲操作
                     var collectLink = $("<a class='collect_btn'></a>").attr("href", "javascript:addTheMusicToMusicList("+result.music_id+");");
                     var operateBtns = $("<div class='operate_btn'></div>");
                     operateBtns.append(collectLink);
                     var amW2 = $("<div class='am_w2'></div>");
                     amW2.append(operateBtns);
-
+                    // 歌曲艺人链接
                     var artistLink = $("<a>"+result.artist_name+"</a>").attr("href", "javascript:toArtist("+result.artist_id+");");
                     var artistDiv = $("<div class='am_w3'></div>")
                     artistDiv.append(artistLink);
-
+                    // 专辑链接
                     var specialLink = $("<a>"+result.special_name+"</a>").attr("href", "javascript:toSpecial("+result.special_id+");");
                     var specialDiv = $("<div class='am_w4'></div>");
                     specialDiv.append(specialLink);
-
+                    // 歌曲时长信息
                     var durationInfo = getMusicDuration(result.music_duration);
                     var musicDurationDiv = $("<div class='am_w5'>"+durationInfo+"</div>");
-
+                    // 一首歌的div
                     var aMusicDiv = $("<div class='a_music'></div>");
                     aMusicDiv.append(musicDiv);
                     aMusicDiv.append(amW2);
                     aMusicDiv.append(artistDiv);
                     aMusicDiv.append(specialDiv);
                     aMusicDiv.append(musicDurationDiv);
-
+                    // 将歌曲加入列表中
                     $("#fd_music_list").append(aMusicDiv);
                 });
             } else {
