@@ -191,12 +191,13 @@ for (var j = 0; j < oMMLLis.length; j++) {
     };
 }
 
-
+// 创建歌单按钮点击时
 oCreateMusicListBtn.onclick = function () {
     oCreateMusicListFrameBg.style.display = "block";
     oCreateMusicListFrame.style.display = "block";
 };
 
+// 创建歌单弹窗取消按钮点击时
 oCancelBtn.onclick = function () {
     oCreateMusicListName.value = null;
     oReminderCmlfName.innerHTML = null;
@@ -204,11 +205,34 @@ oCancelBtn.onclick = function () {
     oCreateMusicListFrame.style.display = "none";
 };
 
+// 创建歌单弹窗创建按钮点击时
 oCreateBtn.onclick = function () {
     if (oCreateMusicListName.value == null || oCreateMusicListName.value == "" || oCreateMusicListName.value.length == 0) {
         oReminderCmlfName.innerHTML = "歌单名不能为空";
     } else {
         oReminderCmlfName.innerHTML = null;
+        $.ajax({
+            url: ipAndHost + '/gdmusicserver/user/music/list/@create',
+            type: 'POST',
+            dataType: 'json',
+            data:{
+                user_id:$.cookie("uId"),
+                music_list_name:oCreateMusicListName.value
+            },
+            error: function () {
+                customAlert("哦，网络开小差了！");
+            },
+            success:function (result) {
+                if (!result.is_success) {
+                    customAlert(result.message);
+                } else {
+                    oCreateMusicListName.value = null;
+                    oReminderCmlfName.innerHTML = null;
+                    oCreateMusicListFrameBg.style.display = "none";
+                    oCreateMusicListFrame.style.display = "none";
+                }
+            }
+        });
     }
 };
 

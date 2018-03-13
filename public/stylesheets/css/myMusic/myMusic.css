@@ -195,14 +195,17 @@ body, * {
     left: 232px;
     border-left: 1px solid #D3D3D3;
     float: left;
+    overflow: hidden;
 }
 
 .miml_top {
     width: 740px;
-    height: 315px;
+    /*height: 315px;*/
+    height: auto;
     margin: 0;
     padding: 0;
     border: 0;
+    /*overflow: hidden;*/
 }
 
 .miml_tt {
@@ -210,7 +213,9 @@ body, * {
     border: 0;
     padding: 40px;
     width: 660px;
-    height: 200px;
+    /*height: 200px;*/
+    height: auto;
+    overflow: hidden;
 }
 
 .music_list_cover {
@@ -227,8 +232,10 @@ body, * {
 .music_list_info {
     float: left;
     width: 430px;
-    height: 122px;
+    /*height: 122px;*/
+    height: auto;
     margin-left: 30px;
+    overflow: hidden;
 }
 
 .mli_top {
@@ -304,6 +311,10 @@ body, * {
     text-decoration: none;
 }
 
+.user_nickname:hover {
+    text-decoration: underline;
+}
+
 .user_created_time {
     margin-left: 15px;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
@@ -318,6 +329,19 @@ body, * {
     padding: 0;
     border: 0;
     margin: 0 -10px 25px 0;
+}
+
+.mli_intro {
+    width: 430px;
+    height: auto;
+    margin-top: 4px;
+    line-height: 18px;
+    color: #666666;
+    font-size: 12px;
+}
+
+.mli_intro b {
+    font-weight: normal;
 }
 
 .play_btn {
