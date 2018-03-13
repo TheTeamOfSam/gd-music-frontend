@@ -15,6 +15,7 @@ body, * {
 .middle_content {
     width: 100%;
     height: 100%;
+    background-color: #FFFFFF;
 }
 
 .middle_content_min {
