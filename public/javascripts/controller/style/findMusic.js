@@ -82,7 +82,7 @@ for (var i = 0; i < aTBLis.length; i++) {
             oFdMusicListList.style.display = "block";
             oFdUserList.style.display = "none";
             oSearchContentInput.value = searchCtnt;
-
+            findLikeUserMusicListName(oSearchContentInput.value);
         } else if (index == 4) {
             searchIndex = 4;
             oFdMusicList.style.display = "none";
@@ -108,7 +108,7 @@ oSearchBtn.onclick = function () {
         } else if (searchIndex == 2) {
             findLikeSpecialName(oSearchContentInput.value);
         } else if (searchIndex == 3) {
-
+            findLikeUserMusicListName(oSearchContentInput.value);
         } else if (searchIndex == 4) {
             findLikeNickName(oSearchContentInput.value);
         }
@@ -282,6 +282,30 @@ function findLikeSpecialName(specialName) {
     });
 }
 
+function findLikeUserMusicListName(userMusicListName) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/find/like/user/music/list/name/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            user_music_list_name: userMusicListName
+        },
+        error: function () {
+            customAlert("网络请求错误");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var result = result.result;
+                $.each(result, function (n, result) {
+                    console.log(result);
+                })
+            }
+        }
+    });
+}
+
 function findLikeNickName(nickName) {
     $.ajax({
         url: ipAndHost + '/gdmusicserver/user/service/find/like/nickname/@query',
@@ -331,7 +355,7 @@ function findLikeNickName(nickName) {
                     var unasLink = $("<a class='user_nickname_and_sex'></a>").attr("href", "javascript:toUser(" + result.id + ");");
                     unasLink.append(userNickname);
                     unasLink.append(userSex);
-                    var userIntro = $("<div class='user_intro'>"+result.introduction+"</div>");
+                    var userIntro = $("<div class='user_intro'>" + result.introduction + "</div>");
                     var userInfo = $("<div class='user_info'></div>");
 
                     userInfo.append(unasLink);
