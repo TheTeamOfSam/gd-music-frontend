@@ -34,6 +34,7 @@ var oFdArtists = document.getElementById("fd_artists");
 var oFdSpecialList = document.getElementById("fd_special_list");
 var oFdSpecials = document.getElementById("fd_specials");
 var oFdMusicListList = document.getElementById("fd_musicList_list");
+var oFdMusicLists = document.getElementById("fd_musicLists");
 var oFdUserList = document.getElementById("fd_user_list");
 var oFdUsers = document.getElementById("fd_users");
 
@@ -298,8 +299,50 @@ function findLikeUserMusicListName(userMusicListName) {
                 customAlert(result.message);
             } else {
                 var result = result.result;
+                oFdMusicListList.style.height = (result.length * 64 + 50) + "px";
+                oFdMusicLists.style.height = (result.length * 64 + 50) + "px";
+
+                $("li").remove("#fd_musicLists li");
                 $.each(result, function (n, result) {
-                    console.log(result);
+                    // console.log(result);
+
+                    var playBtnLink = $("<a></a>").attr("href", "javascript:playMusicList(" + result.user_music_list_id + ");");
+                    var playBtn = $("<div class='play_btn'></div>");
+                    playBtn.append(playBtnLink);
+
+                    var fcLinkImg = $("<img>").attr("src", result.user_music_list_photo);
+                    var fcLinkSpan = $("<span></span>");
+                    var fcLink = $("<a></a>").attr("href", "javascript:toUserMusicList(" + result.user_music_list_id + ");");
+                    fcLink.append(fcLinkImg);
+                    fcLink.append(fcLinkSpan);
+                    var fcDiv = $("<div class='fdml_cover'></div>");
+                    fcDiv.append(fcLink);
+
+                    var ftaoDiv1Link = $("<a>" + result.user_music_list_name + "</a>").attr("href", "javascript:toUserMusicList(" + result.user_music_list_id + ");");
+                    var ftaoDiv1 = $("<div class='fdml_title'></div>");
+                    ftaoDiv1.append(ftaoDiv1Link);
+                    var ftaoDiv2Link = $("<a></a>").attr("href", "javascript:collectUserMusicList(" + result.user_music_list_id + ");");
+                    var ftaoDiv2 = $("<div class='fdml_operate_btns'></div>");
+                    ftaoDiv2.append(ftaoDiv2Link);
+                    var ftaoDiv = $("<div class='fdml_tt_and_opt'></div>");
+                    ftaoDiv.append(ftaoDiv1);
+                    ftaoDiv.append(ftaoDiv2);
+
+                    var oFn = $("<div class='fdml_number'>" + result.num_of_music_in_user_music_list + "首</div>");
+
+                    var faLink = $("<a>" + result.user_nickname + "</a>").attr("href", "javascript:toUser(" + result.user_id + ");");
+                    var faDiv = $("<div class='fdml_author'>by&nbsp;&nbsp;</div>");
+                    faDiv.append(faLink);
+
+                    var fdMusicListsLi = $("<li></li>");
+                    fdMusicListsLi.append(playBtn);
+                    fdMusicListsLi.append(fcDiv);
+                    fdMusicListsLi.append(ftaoDiv);
+                    fdMusicListsLi.append(oFn);
+                    fdMusicListsLi.append(faDiv);
+
+                    $("#fd_musicLists").append(fdMusicListsLi);
+
                 })
             }
         }
