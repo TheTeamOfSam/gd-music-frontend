@@ -21,7 +21,7 @@ var oDeleteMusic = document.getElementById("delete_music");
 
 var oDMCancelBtn = document.getElementById("dm_cancel_btn");
 
-var musicIndex;
+var musicIndex = 0;
 
 // 删除歌曲的信息
 var deleteInfo;
@@ -109,11 +109,12 @@ function selectMyMusicList() {
         oMMLLis[j].onmouseover = function () {
             var index = this.index;
             oMMLLis[index].onmouseover = function () {
-                if (index == musicIndex) {
-                    oMMLLis[index].style.backgroundColor = "#E6E6E6";
-                } else {
-                    oMMLLis[index].style.backgroundColor = "#E6E6E6";
-                }
+                // if (index == musicIndex) {
+                //     oMMLLis[index].style.backgroundColor = "#E6E6E6";
+                // } else {
+                //     oMMLLis[index].style.backgroundColor = "#E6E6E6";
+                // }
+                oMMLLis[index].style.backgroundColor = "#E6E6E6";
             };
             oMMLLis[index].onmouseout = function () {
                 if (index == musicIndex) {

@@ -26,7 +26,30 @@ oEmlConfirmBtn.onclick = function () {
         } else {
             oReminderRmlIntro.innerHTML = null;
 
-
+            $.ajax({
+                url: ipAndHost + '/gdmusicserver/update/user/music/list/@update',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    user_music_list_id: musicListId,
+                    user_music_list_name: oReplaceMusicListName.value,
+                    user_music_list_intro: oMusicListIntro.value
+                },
+                error: function () {
+                    customAlert("网路请求错误");
+                },
+                success: function (result) {
+                    if (!result.is_success) {
+                        customAlert(result.message);
+                    } else {
+                        var result = result.result;
+                        customAlert(result.message);
+                        setTimeout(function () {
+                            window.location.href = "myMusic.html";
+                        }, 4000);
+                    }
+                }
+            });
 
         }
     }
@@ -53,16 +76,16 @@ $.ajax({
     data: {
         user_music_list_id: musicListId
     },
-    error:function () {
+    error: function () {
         customAlert("网络请求错误，请稍后重试！");
     },
-    success:function (result) {
+    success: function (result) {
         if (!result.is_success) {
             customAlert(result.message);
         } else {
             var result = result.result;
             oReplaceMusicListName.value = result.music_list_name;
-            oMusicListIntro.value= result.intro;
+            oMusicListIntro.value = result.intro;
             oUserMusicListPhoto.src = result.music_list_photo;
         }
     }
