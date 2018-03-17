@@ -32,7 +32,8 @@ body, * {
 .music_list {
     width: 232px;
     background-color: #F9F9F9;
-    padding: 40px 0 50px 0;
+    padding: 0 0 50px 0;
+    margin-top: -10px;
     position: fixed;
     float: left;
     display: block;
@@ -52,7 +53,7 @@ body, * {
 }
 
 .created_title {
-    margin: 0;
+    margin: 50px 0 0 0;
     border: 0;
     padding: 0 10px 12px 15px;
     width: 207px;

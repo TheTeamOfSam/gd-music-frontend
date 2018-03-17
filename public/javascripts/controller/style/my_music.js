@@ -8,6 +8,7 @@ var oCancelBtn = document.getElementById("cancel_btn");
 
 var oDeleteMusiListFrame = document.getElementById("delete_music_list_frame");
 var oDmConfirmBtn = document.getElementById("dm_confirm_btn");
+var oDmlfConfirmBtn = document.getElementById("dmlf_confirm_btn");
 var oDmlfCancelBtn = document.getElementById("dmlf_cancel_btn");
 
 var oDeleteMusic = document.getElementById("delete_music");
@@ -29,6 +30,9 @@ var musicIndex = 0;
 
 // 删除歌曲的信息
 var deleteInfo;
+
+// 删除歌单的信息
+var deleteMusicListId;
 
 // 歌单信息
 var myMusicList;
@@ -137,12 +141,16 @@ $.ajax({
 
             oPlayBtn.href = "javascript:playMusicList(" + aMusicList.user_music_list_id + ");";
 
-            var musicListIntro = aMusicList.user_music_list_intro.split("\n");
-            var mlIntro = "";
-            for (var i = 0; i < musicListIntro.length; i++) {
-                mlIntro+=(musicListIntro[i]+"<br>");
+            if (aMusicList.user_music_list_intro.length != 0) {
+                var musicListIntro = aMusicList.user_music_list_intro.split("\n");
+                var mlIntro = "<b>介绍：</b><br>";
+                for (var i = 0; i < musicListIntro.length; i++) {
+                    mlIntro += (musicListIntro[i] + "<br>");
+                }
+                oMliIntro.innerHTML = mlIntro;
+            } else {
+                oMliIntro.innerHTML = "";
             }
-            oMliIntro.innerHTML = mlIntro;
             oMimlTbMlNum.innerHTML = aMusicList.num_of_music_in_user_music_list;
 
         }
@@ -191,12 +199,16 @@ function selectMyMusicList() {
 
                 oPlayBtn.href = "javascript:playMusicList(" + aMusicList.user_music_list_id + ");";
 
-                var musicListIntro = aMusicList.user_music_list_intro.split("\n");
-                var mlIntro = "";
-                for (var i = 0; i < musicListIntro.length; i++) {
-                    mlIntro+=(musicListIntro[i]+"<br>");
+                if (aMusicList.user_music_list_intro.length != 0) {
+                    var musicListIntro = aMusicList.user_music_list_intro.split("\n");
+                    var mlIntro = "<b>介绍：</b><br>";
+                    for (var i = 0; i < musicListIntro.length; i++) {
+                        mlIntro += (musicListIntro[i] + "<br>");
+                    }
+                    oMliIntro.innerHTML = mlIntro;
+                } else {
+                    oMliIntro.innerHTML = "";
                 }
-                oMliIntro.innerHTML = mlIntro;
                 oMimlTbMlNum.innerHTML = aMusicList.num_of_music_in_user_music_list;
 
 
@@ -207,12 +219,12 @@ function selectMyMusicList() {
 }
 
 // 绑定事件
-$("#my_music_list").on('mouseover','li',function () {
+$("#my_music_list").on('mouseover', 'li', function () {
     this.style.backgroundColor = "#E6E6E6";
     selectMyMusicList();
 });
 
-$("#my_music_list").on('mouseout','li',function () {
+$("#my_music_list").on('mouseout', 'li', function () {
     if (this.index == musicIndex) {
         this.style.backgroundColor = "#E6E6E6";
     } else {
@@ -221,8 +233,8 @@ $("#my_music_list").on('mouseout','li',function () {
     selectMyMusicList();
 });
 
-$("#my_music_list").on('click','li',function () {
-   selectMyMusicList();
+$("#my_music_list").on('click', 'li', function () {
+    selectMyMusicList();
 });
 
 // 创建歌单按钮点击时
@@ -264,6 +276,7 @@ oCreateBtn.onclick = function () {
                     oReminderCmlfName.innerHTML = null;
                     oCreateMusicListFrameBg.style.display = "none";
                     oCreateMusicListFrame.style.display = "none";
+                    window.location.href = "myMusic.html";
                 }
             }
         });
@@ -285,6 +298,33 @@ function deleteMusicInMusicList(musicId, musicListId) {
     oDeleteMusic.style.display = "block";
     deleteInfo = {musicId: musicId, musicListId: musicListId};
 }
+
+function deleteMusicList(musicListId) {
+    oCreateMusicListFrameBg.style.display = "block";
+    oDeleteMusiListFrame.style.display = "block";
+    deleteMusicListId = musicListId;
+}
+
+oDmlfConfirmBtn.onclick = function () {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/user/music/list/@delete',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            user_music_list_id: deleteMusicListId
+        },
+        error: function () {
+            customAlert("网络请求错误");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                window.location.href = "myMusic.html";
+            }
+        }
+    });
+};
 
 oDmConfirmBtn.onclick = function () {
     console.log(deleteInfo.musicId + "\n" + deleteInfo.musicListId + "\n");
