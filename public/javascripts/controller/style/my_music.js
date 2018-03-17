@@ -467,7 +467,33 @@ oDmlfConfirmBtn.onclick = function () {
 };
 
 oDmConfirmBtn.onclick = function () {
-    console.log(deleteInfo.musicId + "\n" + deleteInfo.musicListId + "\n");
+    // console.log(deleteInfo.musicId + "\n" + deleteInfo.musicListId + "\n");
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/un/collect/music/into/user/music/list/@uncollect',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            user_music_list_id: deleteInfo.musicListId,
+            music_id:deleteInfo.musicId,
+            user_id:$.cookie("uId")
+        },
+        error: function () {
+            customAlert("网络开小差了");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                oCreateMusicListFrameBg.style.display = "none";
+                oDeleteMusic.style.display = "none";
+                var result = result.result;
+                customAlert(result.message);
+                setTimeout(function () {
+                    window.location.href = "myMusic.html";
+                },3000);
+            }
+        }
+    });
 };
 
 function editMusicList(musicListId) {
