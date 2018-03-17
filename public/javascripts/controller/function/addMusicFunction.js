@@ -31,6 +31,13 @@ function collectMusicIntoUserMusicList(userMusicListId) {
                 oCreateMusicListFrameBg.style.display = "none";
                 oAddMusicListFrame.style.display = "none";
                 addInfo = null;
+                var link = window.location.href;
+                var linkRegex = /myMusic\.html/;
+                if (linkRegex.test(link)) {
+                    setTimeout(function () {
+                        window.location.href = "myMusic.html";
+                    }, 3000);
+                }
             }
         }
     });
