@@ -1,21 +1,11 @@
 var oAtsAllSpecial = document.getElementById("ats_all_special");
-var aAASLis = oAtsAllSpecial.getElementsByTagName("li");
+
 var oAtsIntroduction = document.getElementById("ats_introduction");
 
 var oAtsTabBar = document.getElementById("ats_tab_bar");
 var oATBLis = oAtsTabBar.getElementsByTagName("li");
 
 var whichSelect = 0;
-
-var heightRemainder = aAASLis.length % 4;
-var heightLength;
-if (heightRemainder == 0) {
-    heightLength = aAASLis.length / 4 + 1;
-} else {
-    heightLength = aAASLis.length / 4;
-}
-
-oAtsAllSpecial.style.height = heightLength * (175 + 30) + 100 + "px";
 
 for (var i = 0; i < oATBLis.length; i++) {
     oATBLis[i].index = i;
@@ -59,6 +49,77 @@ for (var i = 0; i < oATBLis.length; i++) {
     };
 }
 
+var artistId = getUrlParam("artistId");
 
+$.ajax({
+    url: ipAndHost + '/gdmusicserver/find/artist/by/artist/id/@query',
+    type: 'GET',
+    dataType: 'json',
+    data: {
+        artist_id: artistId
+    },
+    error: function () {
+        customAlert("网络开小差了")
+    },
+    success: function (result) {
+        if (!result.is_success) {
+            customAlert(result.message);
+        } else {
+            var result = result.result;
+            $("#ats_name").text(result.artist_name);
+            $("#ats_other_name").text(result.artist_other_name);
+            $("#ats_head_photo_big").attr("src", result.artist_head_photo_big);
+            $("#ats_introduction h2").html("<i>&nbsp;</i>" + result.artist_name + "简介");
+            $("#ats_introduction p").text(result.artist_intro);
+        }
+    }
+});
+
+$.ajax({
+    url: ipAndHost + '/gdmusicserver/find/specials/by/artist/id/@query',
+    type: 'GET',
+    dataType: 'json',
+    data: {
+        artist_id: artistId
+    },
+    error: function () {
+        customAlert("网路开小差了");
+    },
+    success: function (result) {
+        if (!result.is_success) {
+            customAlert(result.message);
+        } else {
+            var result = result.result;
+
+            $("li").remove("#ats_all_special li");
+
+            $.each(result, function (n, result) {
+
+                var ascLinkImg = $("<img>").attr("src", result.special_photo);
+                var ascLinkSpan = $("<span class='ats_sc_msk'></span>");
+                var ascLinik = $("<a></a>").attr("href", "javascript:toSpecial(" + result.id + ");");
+                ascLinik.append(ascLinkImg).append(ascLinkSpan);
+                var ascDiv = $("<div class='ats_special_cover'></div>");
+                ascDiv.append(ascLinik);
+
+                var astLink = $("<a>" + result.special_name + "</a>").attr("href", "javascript:toSpecial(" + result.id + ");");
+                var astP = $("<p class='ats_special_title'></p>");
+                astP.append(astLink);
+
+                var spd = timestampToTime(result.publish_time / 1000);
+                var spdTitle = spd.year + "." + spd.month + "." + spd.day;
+                var aspdSpan = $("<span class='ats_spd'>"+spdTitle+"</span>");
+                var aspdP = $("<p class='ats_special_publish_date'></p>");
+                aspdP.append(aspdSpan);
+
+                var aasLi = $("<li></li>");
+                aasLi.append(ascDiv).append(astP).append(aspdP);
+
+                $("#ats_all_special").append(aasLi);
+            });
+
+        }
+    }
+});
 
 

@@ -151,6 +151,7 @@ body, * {
     margin: 20px 0 0 -18px;
     list-style: none;
     display: block;
+    overflow: hidden;
 }
 
 .ats_all_special li {

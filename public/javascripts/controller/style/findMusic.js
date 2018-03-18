@@ -1,15 +1,3 @@
-function getUrlParam(name) {
-    var paramArr = decodeURIComponent(window.location.href.split('?')[1]);
-    var subParamArr = paramArr.split('&');
-    for (var i = 0; i < subParamArr.length; i++) {
-        if (subParamArr[i].split('=')[0] == name) {
-            return subParamArr[i].split('=')[1];
-        } else {
-            return null;
-        }
-    }
-}
-
 var searchContent = getUrlParam("search_content");
 
 var searchIndex = 0;
