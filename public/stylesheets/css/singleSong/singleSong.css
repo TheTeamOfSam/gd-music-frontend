@@ -314,6 +314,12 @@ body, * {
     color: #999999;
 }
 
+.sep {
+    margin: 0 8px;
+    float: right;
+    color: #CCCCCC;
+}
+
 .cntwrap_bottom a {
     float: right;
     display: block;
@@ -336,7 +342,6 @@ body, * {
     background-image: url("../../../images/style/icon2.png");
     background-position: -150px 0;
 }
-
 
 .create_music_list_frame_bg {
     width: 100%;
