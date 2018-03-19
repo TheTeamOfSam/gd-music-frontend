@@ -109,3 +109,78 @@ if ($.cookie("uId") == null) {
         }
     });
 }
+
+
+$.ajax({
+    url: ipAndHost + '/gdmusicserver/get/music/comment/by/music/id/or/user/id/@query',
+    type: 'GET',
+    dataType: 'json',
+    data: {
+        user_id: $.cookie("uId"),
+        music_id: musicId
+    },
+    error: function () {
+        customAlert("网络开小差了");
+    },
+    success: function (result) {
+        if (!result.is_success) {
+            customAlert(result.message);
+        } else {
+            var result = result.result;
+
+            $("li").remove("#all_cmt li");
+
+            $.each(result, function (n, result) {
+                console.log(result);
+
+                var headLinkImg = $("<img>").attr("src", result.user_head_photo);
+                var headLink = $("<a></a>").attr("href", "javascript:toUser(" + result.user_id + ");").append(headLinkImg);
+                var headDiv = $("<div class='head'></div>").append(headLink);
+
+                var ctLink = $("<a>" + result.user_nickname + "</a>").attr("href", "javascript:toUser(" + result.user_id + ");");
+                var dtDiv = $("<div class='cntwrap_top'></div>").append(ctLink).append("：" + result.music_comment_content);
+
+                var cntTime = timestampToTime(result.music_comment_time / 1000);
+                var cntT = $("<div class='cnt_time'></div>").append(cntTime.year + "年" + cntTime.month + "月" + cntTime.day + "日");
+
+                var cbDiv = $("<div class='cntwrap_bottom'></div>").append(cntT);
+
+                if (!result.is_me_like_comment) {
+                    var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-150px 0");
+                    var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:likeComment("
+                        + result.music_comment_id + "," + $.cookie("uId") + ");").append(lcbI);
+                    if (result.num_of_like_comment_of_music > 0) {
+                        var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
+                        lcbLink.append(lcbSpan);
+                    }
+                    cbDiv.append(lcbLink);
+                } else {
+                    var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-170px 0");
+                    var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:unLikeComment("
+                        + result.music_comment_id + "," + $.cookie("uId") + ");").append(lcbI);
+                    if (result.num_of_like_comment_of_music > 0) {
+                        var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
+                        lcbLink.append(lcbSpan);
+                    }
+                    cbDiv.append(lcbLink);
+                }
+
+                if (result.is_my_comment) {
+                    var cbSpan = $("<span class='sep'>|</span>");
+                    var cbLink = $("<a class='delete_comment_btn'>删除</a>").attr("href",
+                        "javascript:deleteMusicComment(" + result.music_comment_id + ");");
+                    cbDiv.append(cbSpan).append(cbLink);
+                }
+
+                var cntWrapDiv = $("<div class='cntwrap'></div>").append(dtDiv).append(cbDiv);
+
+                var acmtLi = $("<li></li>").append(headDiv).append(cntWrapDiv);
+
+                $("#all_cmt").append(acmtLi);
+            });
+
+        }
+    }
+});
+
+
