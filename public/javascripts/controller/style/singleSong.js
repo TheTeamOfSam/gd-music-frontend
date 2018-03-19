@@ -2,6 +2,8 @@ var oComment = document.getElementById("comment");
 var oCmtBtn = document.getElementById("cmt_btn");
 var oResidueNum = document.getElementById("residue_num");
 
+var deleteMusicCommentId;
+
 oComment.onfocus = function () {
     oComment.onkeydown = function () {
         var cmtValue = oComment.value;
@@ -148,7 +150,7 @@ $.ajax({
                 if (!result.is_me_like_comment) {
                     var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-150px 0");
                     var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:likeComment("
-                        + result.music_comment_id + "," + $.cookie("uId") + ");").append(lcbI);
+                        + result.music_comment_id + ");").append(lcbI);
                     if (result.num_of_like_comment_of_music > 0) {
                         var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
                         lcbLink.append(lcbSpan);
@@ -157,7 +159,7 @@ $.ajax({
                 } else {
                     var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-170px 0");
                     var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:unLikeComment("
-                        + result.music_comment_id + "," + $.cookie("uId") + ");").append(lcbI);
+                        + result.music_comment_id + ");").append(lcbI);
                     if (result.num_of_like_comment_of_music > 0) {
                         var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
                         lcbLink.append(lcbSpan);
@@ -183,4 +185,105 @@ $.ajax({
     }
 });
 
+function likeComment(musicCommentId) {
+    if ($.cookie("uId") == null) {
+        customAlert("登录后才能给评论点赞哦");
+    } else {
+        $.ajax({
+            url: ipAndHost + '/gdmusicserver/like/music/comment/@like',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                music_comment_id: musicCommentId,
+                user_id: $.cookie("uId")
+            },
+            error: function () {
+                customAlert("网络开小差了");
+            },
+            success: function (result) {
+                if (!result.is_success) {
+                    customAlert(result.message);
+                } else {
+                    var result = result.result;
+                    customAlert(result.message);
+                    setTimeout(function () {
+                        var link = "singleSong.html?musicId=" + musicId;
+                        window.location.href = link;
+                    }, 3000);
+                }
+            }
+        });
+    }
+}
+
+function unLikeComment(musicCommentId) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/un/like/music/comment/@unlike',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            music_comment_id: musicCommentId,
+            user_id: $.cookie("uId")
+        },
+        error: function () {
+            customAlert("网络开小差了");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var result = result.result;
+                customAlert(result.message);
+                setTimeout(function () {
+                    var link = "singleSong.html?musicId=" + musicId;
+                    window.location.href = link;
+                }, 3000);
+            }
+        }
+    });
+}
+
+function deleteMusicComment(musicCommentId) {
+    $("#create_music_list_frame_bg").css("display","block");
+    $("#delete_music_list_frame").css("display","block");
+    deleteMusicCommentId = musicCommentId;
+}
+
+$("#dmlf_confirm_btn").click(function () {
+    deleteMC(deleteMusicCommentId);
+});
+
+$("#dmlf_cancel_btn").click(function () {
+    $("#create_music_list_frame_bg").css("display","none");
+    $("#delete_music_list_frame").css("display","none");
+    deleteMusicCommentId = null;
+});
+
+function deleteMC(musicCommentId) {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/delete/music/comment/@delete',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            music_comment_id: musicCommentId
+        },
+        error: function () {
+            customAlert("网络开小差了");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var result = result.result;
+                $("#create_music_list_frame_bg").css("display","none");
+                $("#delete_music_list_frame").css("display","none");
+                customAlert(result.message);
+                setTimeout(function () {
+                    var link = "singleSong.html?musicId=" + musicId;
+                    window.location.href = link;
+                }, 3000);
+            }
+        }
+    });
+}
 
