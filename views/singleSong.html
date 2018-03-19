@@ -48,7 +48,8 @@
             <div class="ss_info">
                 <div class="ss_left">
                     <div class="ss_cover">
-                        <img id="ss_cover" src="http://p1.music.126.net/yEGx5yAd9zaa3l03d30KNw==/18511377767183740.jpg?param=130y130">
+                        <img id="ss_cover"
+                             src="http://p1.music.126.net/yEGx5yAd9zaa3l03d30KNw==/18511377767183740.jpg?param=130y130">
                         <span class="msk"></span>
                     </div>
                 </div>
@@ -108,13 +109,13 @@
                                 <div class="cnt_time">
                                     2014年12月29日
                                 </div>
-                                <a href="javascript:;">
-                                   删除
-                                </a>
-                                <span class="sep">|</span>
-                                <a href="javascript:;">
+                                <a class="like_comment_btn" href="javascript:;">
                                     <i class="like_cmt"></i>
                                     <span>&nbsp;(1111)</span>
+                                </a>
+                                <span class="sep">|</span>
+                                <a class="delete_comment_btn" href="javascript:;">
+                                    删除
                                 </a>
                             </div>
                         </div>
@@ -139,6 +140,22 @@
     </div>
 </div>
 <div id="create_music_list_frame_bg" class="create_music_list_frame_bg"></div>
+<div class="delete_music_list_frame" id="delete_music_list_frame">
+    <div class="dmlf_top">
+        <div class="dmlf_title">
+            提示
+        </div>
+    </div>
+    <div class="dmlf_main">
+        <div class="dmlf_main_tip">
+            确认删除评论？
+        </div>
+        <div class="dmlf_btns">
+            <a class="dmlf_confirm_btn" id="dmlf_confirm_btn" href="javascript:;">确定</a>
+            <a class="dmlf_cancel_btn" id="dmlf_cancel_btn" href="javascript:;">取消</a>
+        </div>
+    </div>
+</div>
 <div class="add_music_list_frame" id="add_music_list_frame">
     <div class="amlf_top">
         <div class="amlf_top_tip">
