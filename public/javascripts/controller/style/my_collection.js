@@ -377,10 +377,11 @@ function deleteMusicList(musicListId) {
 // 删除歌单按钮的功能
 oDmlfConfirmBtn.onclick = function () {
     $.ajax({
-        url: ipAndHost + '/gdmusicserver/user/music/list/@delete',
+        url: ipAndHost + '/gdmusicserver/un/collect/other/user/music/list/@uncollect',
         type: 'GET',
         dataType: 'json',
         data: {
+            user_id: $.cookie("uId"),
             user_music_list_id: deleteMusicListId
         },
         error: function () {
