@@ -61,158 +61,162 @@ $(window).resize(function () {
     oMiddleContent.css("height", (documentHeight - 75) + "px");
 });
 
-$.ajax({
-    url: ipAndHost + '/gdmusicserver/find/user/music/list/by/user/id/@query',
-    type: 'GET',
-    dataType: 'json',
-    data: {
-        user_id: $.cookie("uId")
-    },
-    error: function () {
-        customAlert("网络请求错误，请稍候重试");
-    },
-    success: function (result) {
-        if (!result.is_success) {
-            customAlert(result.message);
-        } else {
-            var result = result.result;
-            if (result.length == 0) {
-                $("#music_in_music_list").css("display","none");
-                $("#my_music_list").css("display","none");
+function getMyMusicList() {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/find/user/music/list/by/user/id/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            user_id: $.cookie("uId")
+        },
+        error: function () {
+            customAlert("网络请求错误，请稍候重试");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
             } else {
-                $("#music_in_music_list").css("display","block");
-                $("#my_music_list").css("display","block");
-
-                myMusicList = result;
-
-                $("li").remove("#my_music_list li");
-
-                $.each(result, function (n, result) {
-
-                    var mliImg = $("<img>").attr("src", result.user_music_list_photo);
-                    var mliDiv = $("<div class='music_list_img'></div>");
-                    mliDiv.append(mliImg);
-
-                    var mlnDiv = $("<div class='music_list_name'>" + result.user_music_list_name + "</div>");
-                    var mnSpan = $("<span class='music_num'>" + result.num_of_music_in_user_music_list + "首</span>");
-                    var mlnuDiv = $("<div class='music_list_num'></div>");
-                    mlnuDiv.append(mnSpan);
-
-                    var mlnanDiv = $("<div class='music_list_name_and_num'></div>");
-                    mlnanDiv.append(mlnDiv);
-                    mlnanDiv.append(mlnuDiv);
-
-                    var mlbLink1 = $("<a class='edit_btn'></a>").attr("href", "javascript:editMusicList(" + result.user_music_list_id + ");");
-                    var mlbLink2 = $("<a class='delete_btn'></a>").attr("href", "javascript:deleteMusicList(" + result.user_music_list_id + ");");
-                    var mlbSpan = $("<span class='music_list_btns'></span>");
-                    mlbSpan.append(mlbLink1);
-                    mlbSpan.append(mlbLink2);
-
-                    var mmlLi = $("<li></li>");
-                    mmlLi.append(mliDiv);
-                    mmlLi.append(mlnanDiv);
-                    mmlLi.append(mlbSpan);
-
-                    $("#my_music_list").append(mmlLi);
-                });
-
-                var aMusicList = myMusicList[0];
-                oMusicListCover.src = aMusicList.user_music_list_photo;
-                oMusicListTitle.innerHTML = aMusicList.user_music_list_name;
-                oEditMusicListBtn.href = "javascript:editMusicList(" + aMusicList.user_music_list_id + ");";
-                oUserHeadPhotoLink.href = "javascript:toUser(" + aMusicList.user_id + ");";
-                oUserHeadPhoto.src = aMusicList.user_head_photo;
-                oUserNickname.innerHTML = aMusicList.user_nickname;
-                oUserNickname.href = "javascript:toUser(" + aMusicList.user_id + ");";
-
-                var createTime = timestampToTime(aMusicList.user_music_list_created_time / 1000);
-                var createT = createTime.year + "-" + createTime.month + "-" + createTime.day + "&nbsp;创建";
-                oUserCreatedTime.innerHTML = createT;
-
-                oPlayBtn.href = "javascript:playMusicList(" + aMusicList.user_music_list_id + ");";
-
-                if (aMusicList.user_music_list_intro.length != 0) {
-                    var musicListIntro = aMusicList.user_music_list_intro.split("\n");
-                    var mlIntro = "<b>介绍：</b><br>";
-                    for (var i = 0; i < musicListIntro.length; i++) {
-                        mlIntro += (musicListIntro[i] + "<br>");
-                    }
-                    oMliIntro.innerHTML = mlIntro;
+                var result = result.result;
+                if (result.length == 0) {
+                    $("#music_in_music_list").css("display","none");
+                    $("#my_music_list").css("display","none");
                 } else {
-                    oMliIntro.innerHTML = "";
-                }
-                oMimlTbMlNum.innerHTML = aMusicList.num_of_music_in_user_music_list;
+                    $("#music_in_music_list").css("display","block");
+                    $("#my_music_list").css("display","block");
 
-                $.ajax({
-                    url: ipAndHost + '/gdmusicserver/get/music/in/user/music/list/@query',
-                    type: 'GET',
-                    dataType: 'json',
-                    data: {
-                        user_id: $.cookie("uId"),
-                        user_music_list_id: aMusicList.user_music_list_id
-                    },
-                    error: function () {
-                        customAlert("网络开小差了！");
-                    },
-                    success: function (result) {
-                        if (!result.is_success) {
-                            customAlert(result.message);
-                        } else {
-                            var result = result.result;
+                    myMusicList = result;
 
-                            $("tr").remove("#music_table tr");
+                    $("li").remove("#my_music_list li");
 
-                            var mtc1 = $("<th class='first_mt_column'>&nbsp;</th>");
-                            var mtc2 = $("<th class='second_mt_column'>歌曲标题</th>");
-                            var mtc3 = $("<th class='third_mt_column'>时长</th>");
-                            var mtc4 = $("<th class='fourth_mt_column'>歌手</th>");
-                            var mtc5 = $("<th class='fifth_mt_column'>专辑</th>");
+                    $.each(result, function (n, result) {
 
-                            var mtTR = $("<tr></tr>");
-                            mtTR.append(mtc1).append(mtc2).append(mtc3).append(mtc4).append(mtc5);
+                        var mliImg = $("<img>").attr("src", result.user_music_list_photo);
+                        var mliDiv = $("<div class='music_list_img'></div>");
+                        mliDiv.append(mliImg);
 
-                            $("#music_table").append(mtTR);
+                        var mlnDiv = $("<div class='music_list_name'>" + result.user_music_list_name + "</div>");
+                        var mnSpan = $("<span class='music_num'>" + result.num_of_music_in_user_music_list + "首</span>");
+                        var mlnuDiv = $("<div class='music_list_num'></div>");
+                        mlnuDiv.append(mnSpan);
 
+                        var mlnanDiv = $("<div class='music_list_name_and_num'></div>");
+                        mlnanDiv.append(mlnDiv);
+                        mlnanDiv.append(mlnuDiv);
 
-                            $.each(result, function (n, result) {
-                                var num = n + 1;
-                                var td1 = $("<td>" + num + "</td>");
+                        var mlbLink1 = $("<a class='edit_btn'></a>").attr("href", "javascript:editMusicList(" + result.user_music_list_id + ");");
+                        var mlbLink2 = $("<a class='delete_btn'></a>").attr("href", "javascript:deleteMusicList(" + result.user_music_list_id + ");");
+                        var mlbSpan = $("<span class='music_list_btns'></span>");
+                        mlbSpan.append(mlbLink1);
+                        mlbSpan.append(mlbLink2);
 
-                                var td2Link = $("<a>" + result.music_name + "</a>").attr("href", "javascript:toSingleSong(" + result.music_id + ");");
-                                var td2 = $("<td></td>");
-                                td2.append(td2Link);
+                        var mmlLi = $("<li></li>");
+                        mmlLi.append(mliDiv);
+                        mmlLi.append(mlnanDiv);
+                        mmlLi.append(mlbSpan);
 
-                                var durationInfo = getMusicDuration(result.music_duration);
-                                var td3Span = $("<span class='music_duration'>" + durationInfo + "</span>");
-                                var td3DivLink1 = $("<a class='add_music'></a>").attr("href", "javascript:addTheMusicToMusicList(" + result.music_id + ");");
-                                var td3DivLink2 = $("<a class='delete_music'></a>").attr("href", "javascript:deleteMusicInMusicList(" + result.music_id + "," + aMusicList.user_music_list_id + ");");
-                                var td3Div = $("<div class='music_operation'></div>");
-                                td3Div.append(td3DivLink1).append(td3DivLink2);
-                                var td3 = $("<td></td>");
-                                td3.append(td3Span).append(td3Div);
+                        $("#my_music_list").append(mmlLi);
+                    });
 
-                                var td4Link = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.artist_id + ");");
-                                var td4 = $("<td></td>");
-                                td4.append(td4Link);
+                    var aMusicList = myMusicList[0];
+                    oMusicListCover.src = aMusicList.user_music_list_photo;
+                    oMusicListTitle.innerHTML = aMusicList.user_music_list_name;
+                    oEditMusicListBtn.href = "javascript:editMusicList(" + aMusicList.user_music_list_id + ");";
+                    oUserHeadPhotoLink.href = "javascript:toUser(" + aMusicList.user_id + ");";
+                    oUserHeadPhoto.src = aMusicList.user_head_photo;
+                    oUserNickname.innerHTML = aMusicList.user_nickname;
+                    oUserNickname.href = "javascript:toUser(" + aMusicList.user_id + ");";
 
-                                var td5Link = $("<a>" + result.special_name + "</a>").attr("href", "javascript:toSpecial(" + result.special_id + ");");
-                                var td5 = $("<td></td>");
-                                td5.append(td5Link);
+                    var createTime = timestampToTime(aMusicList.user_music_list_created_time / 1000);
+                    var createT = createTime.year + "-" + createTime.month + "-" + createTime.day + "&nbsp;创建";
+                    oUserCreatedTime.innerHTML = createT;
 
-                                var mTTR = $("<tr></tr>");
+                    oPlayBtn.href = "javascript:playMusicList(" + aMusicList.user_music_list_id + ");";
 
-                                mTTR.append(td1).append(td2).append(td3).append(td4).append(td5);
-
-                                $("#music_table").append(mTTR);
-                            });
+                    if (aMusicList.user_music_list_intro.length != 0) {
+                        var musicListIntro = aMusicList.user_music_list_intro.split("\n");
+                        var mlIntro = "<b>介绍：</b><br>";
+                        for (var i = 0; i < musicListIntro.length; i++) {
+                            mlIntro += (musicListIntro[i] + "<br>");
                         }
+                        oMliIntro.innerHTML = mlIntro;
+                    } else {
+                        oMliIntro.innerHTML = "";
                     }
-                });
+                    oMimlTbMlNum.innerHTML = aMusicList.num_of_music_in_user_music_list;
 
+                    $.ajax({
+                        url: ipAndHost + '/gdmusicserver/get/music/in/user/music/list/@query',
+                        type: 'GET',
+                        dataType: 'json',
+                        data: {
+                            user_id: $.cookie("uId"),
+                            user_music_list_id: aMusicList.user_music_list_id
+                        },
+                        error: function () {
+                            customAlert("网络开小差了！");
+                        },
+                        success: function (result) {
+                            if (!result.is_success) {
+                                customAlert(result.message);
+                            } else {
+                                var result = result.result;
+
+                                $("tr").remove("#music_table tr");
+
+                                var mtc1 = $("<th class='first_mt_column'>&nbsp;</th>");
+                                var mtc2 = $("<th class='second_mt_column'>歌曲标题</th>");
+                                var mtc3 = $("<th class='third_mt_column'>时长</th>");
+                                var mtc4 = $("<th class='fourth_mt_column'>歌手</th>");
+                                var mtc5 = $("<th class='fifth_mt_column'>专辑</th>");
+
+                                var mtTR = $("<tr></tr>");
+                                mtTR.append(mtc1).append(mtc2).append(mtc3).append(mtc4).append(mtc5);
+
+                                $("#music_table").append(mtTR);
+
+
+                                $.each(result, function (n, result) {
+                                    var num = n + 1;
+                                    var td1 = $("<td>" + num + "</td>");
+
+                                    var td2Link = $("<a>" + result.music_name + "</a>").attr("href", "javascript:toSingleSong(" + result.music_id + ");");
+                                    var td2 = $("<td></td>");
+                                    td2.append(td2Link);
+
+                                    var durationInfo = getMusicDuration(result.music_duration);
+                                    var td3Span = $("<span class='music_duration'>" + durationInfo + "</span>");
+                                    var td3DivLink1 = $("<a class='add_music'></a>").attr("href", "javascript:addTheMusicToMusicList(" + result.music_id + ");");
+                                    var td3DivLink2 = $("<a class='delete_music'></a>").attr("href", "javascript:deleteMusicInMusicList(" + result.music_id + "," + aMusicList.user_music_list_id + ");");
+                                    var td3Div = $("<div class='music_operation'></div>");
+                                    td3Div.append(td3DivLink1).append(td3DivLink2);
+                                    var td3 = $("<td></td>");
+                                    td3.append(td3Span).append(td3Div);
+
+                                    var td4Link = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.artist_id + ");");
+                                    var td4 = $("<td></td>");
+                                    td4.append(td4Link);
+
+                                    var td5Link = $("<a>" + result.special_name + "</a>").attr("href", "javascript:toSpecial(" + result.special_id + ");");
+                                    var td5 = $("<td></td>");
+                                    td5.append(td5Link);
+
+                                    var mTTR = $("<tr></tr>");
+
+                                    mTTR.append(td1).append(td2).append(td3).append(td4).append(td5);
+
+                                    $("#music_table").append(mTTR);
+                                });
+                            }
+                        }
+                    });
+
+                }
             }
         }
-    }
-});
+    });
+}
+
+getMyMusicList();
 
 function selectMyMusicList() {
     var oMyMusicList = document.getElementById("my_music_list");
@@ -398,7 +402,10 @@ oCreateBtn.onclick = function () {
                     oReminderCmlfName.innerHTML = null;
                     oCreateMusicListFrameBg.style.display = "none";
                     oCreateMusicListFrame.style.display = "none";
-                    window.location.href = "myMusic.html";
+                    // window.location.href = "myMusic.html";
+
+                    getMyMusicList();
+
                 }
             }
         });
@@ -427,6 +434,7 @@ function deleteMusicList(musicListId) {
     deleteMusicListId = musicListId;
 }
 
+// 删除歌单按钮的功能
 oDmlfConfirmBtn.onclick = function () {
     $.ajax({
         url: ipAndHost + '/gdmusicserver/user/music/list/@delete',
@@ -442,12 +450,21 @@ oDmlfConfirmBtn.onclick = function () {
             if (!result.is_success) {
                 customAlert(result.message);
             } else {
-                window.location.href = "myMusic.html";
+                // window.location.href = "myMusic.html";
+
+
+                oCreateMusicListFrameBg.style.display = "none";
+                oDeleteMusiListFrame.style.display = "none";
+                deleteMusicListId = null;
+
+                getMyMusicList();
+
             }
         }
     });
 };
 
+// 删除我的歌单中收藏的音乐
 oDmConfirmBtn.onclick = function () {
     // console.log(deleteInfo.musicId + "\n" + deleteInfo.musicListId + "\n");
     $.ajax({
@@ -470,14 +487,18 @@ oDmConfirmBtn.onclick = function () {
                 oDeleteMusic.style.display = "none";
                 var result = result.result;
                 customAlert(result.message);
-                setTimeout(function () {
-                    window.location.href = "myMusic.html";
-                },3000);
+                // setTimeout(function () {
+                //     window.location.href = "myMusic.html";
+                // },3000);
+
+                getMyMusicList();
+
             }
         }
     });
 };
 
+// 编辑歌单按钮的功能
 function editMusicList(musicListId) {
     var href = "editMusicList.html?musicListId=" + musicListId;
     window.location.href = href;

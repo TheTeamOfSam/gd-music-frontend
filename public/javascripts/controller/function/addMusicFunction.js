@@ -34,9 +34,12 @@ function collectMusicIntoUserMusicList(userMusicListId) {
                 var link = window.location.href;
                 var linkRegex = /myMusic\.html/;
                 if (linkRegex.test(link)) {
-                    setTimeout(function () {
-                        window.location.href = "myMusic.html";
-                    }, 3000);
+                    // setTimeout(function () {
+                    //     window.location.href = "myMusic.html";
+                    // }, 3000);
+
+                    getMyMusicList();
+
                 }
             }
         }

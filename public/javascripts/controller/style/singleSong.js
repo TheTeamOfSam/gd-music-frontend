@@ -44,10 +44,16 @@ oCmtBtn.onclick = function () {
                     } else {
                         var result = result.result;
                         customAlert(result.message);
-                        setTimeout(function () {
-                            var link = "singleSong.html?musicId=" + musicId;
-                            window.location.href = link;
-                        }, 3000);
+                        // setTimeout(function () {
+                        //     var link = "singleSong.html?musicId=" + musicId;
+                        //     window.location.href = link;
+                        // }, 3000);
+
+                        oComment.value = null;
+                        oResidueNum.value = 150;
+
+                        getMusicComment();
+
                     }
                 }
             });
@@ -57,133 +63,144 @@ oCmtBtn.onclick = function () {
 
 var musicId = getUrlParam("musicId");
 
-$.ajax({
-    url: ipAndHost + '/gdmusicserver/find/music/by/music/id/@query',
-    type: 'GET',
-    dataType: 'json',
-    data: {
-        music_id: musicId
-    },
-    error: function () {
-        customAlert("网络请求错误");
-    },
-    success: function (result) {
-        if (!result.is_success) {
-            customAlert(result.message);
-        } else {
-            var result = result.result;
-
-            $("#ss_cover").attr("src", result.special_photo);
-            $("#ss_name").text(result.music_name);
-            $("#ss_author").text(result.artist_name).attr("href", "javascript:toArtist(" + result.artist_id + ");");
-            $("#ss_special").text(result.special_name).attr("href", "javascript:toSpecial(" + result.special_id + ");");
-            $("#collect_btn").attr("href", "javascript:addTheMusicToMusicList(" + result.music_id + ");");
-
-        }
-    }
-});
-
-if ($.cookie("uId") == null) {
-    $("#my_head_photo").attr("src", "/images/headphoto/default_head_photo.png");
-} else {
+function getMusicInfo() {
     $.ajax({
-        url: ipAndHost + '/gdmusicserver/user/service/info/@get',
-        type: 'POST',
+        url: ipAndHost + '/gdmusicserver/find/music/by/music/id/@query',
+        type: 'GET',
         dataType: 'json',
         data: {
-            uID: $.cookie("uId")
+            music_id: musicId
         },
         error: function () {
-            customAlert("网络请求错误，请稍候重试！");
+            customAlert("网络请求错误");
         },
         success: function (result) {
             if (!result.is_success) {
                 customAlert(result.message);
             } else {
-                var user = result.result;
-                var allImgExt = ".jpg|.jpeg|.bmp|.png";
-                if (user.head_photo.toLowerCase().match(allImgExt) == null) {
-                    $("#my_head_photo").attr("src", "/images/headphoto/default_head_photo.png");
-                } else {
-                    $("#my_head_photo").attr("src", user.head_photo);
-                }
+                var result = result.result;
+
+                $("#ss_cover").attr("src", result.special_photo);
+                $("#ss_name").text(result.music_name);
+                $("#ss_author").text(result.artist_name).attr("href", "javascript:toArtist(" + result.artist_id + ");");
+                $("#ss_special").text(result.special_name).attr("href", "javascript:toSpecial(" + result.special_id + ");");
+                $("#collect_btn").attr("href", "javascript:addTheMusicToMusicList(" + result.music_id + ");");
+
             }
         }
     });
 }
 
+getMusicInfo();
 
-$.ajax({
-    url: ipAndHost + '/gdmusicserver/get/music/comment/by/music/id/or/user/id/@query',
-    type: 'GET',
-    dataType: 'json',
-    data: {
-        user_id: $.cookie("uId"),
-        music_id: musicId
-    },
-    error: function () {
-        customAlert("网络开小差了");
-    },
-    success: function (result) {
-        if (!result.is_success) {
-            customAlert(result.message);
-        } else {
-            var result = result.result;
-
-            $("li").remove("#all_cmt li");
-
-            $.each(result, function (n, result) {
-                console.log(result);
-
-                var headLinkImg = $("<img>").attr("src", result.user_head_photo);
-                var headLink = $("<a></a>").attr("href", "javascript:toUser(" + result.user_id + ");").append(headLinkImg);
-                var headDiv = $("<div class='head'></div>").append(headLink);
-
-                var ctLink = $("<a>" + result.user_nickname + "</a>").attr("href", "javascript:toUser(" + result.user_id + ");");
-                var dtDiv = $("<div class='cntwrap_top'></div>").append(ctLink).append("：" + result.music_comment_content);
-
-                var cntTime = timestampToTime(result.music_comment_time / 1000);
-                var cntT = $("<div class='cnt_time'></div>").append(cntTime.year + "年" + cntTime.month + "月" + cntTime.day + "日");
-
-                var cbDiv = $("<div class='cntwrap_bottom'></div>").append(cntT);
-
-                if (!result.is_me_like_comment) {
-                    var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-150px 0");
-                    var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:likeComment("
-                        + result.music_comment_id + ");").append(lcbI);
-                    if (result.num_of_like_comment_of_music > 0) {
-                        var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
-                        lcbLink.append(lcbSpan);
-                    }
-                    cbDiv.append(lcbLink);
+function getMyHeadPhoto() {
+    if ($.cookie("uId") == null) {
+        $("#my_head_photo").attr("src", "/images/headphoto/default_head_photo.png");
+    } else {
+        $.ajax({
+            url: ipAndHost + '/gdmusicserver/user/service/info/@get',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                uID: $.cookie("uId")
+            },
+            error: function () {
+                customAlert("网络请求错误，请稍候重试！");
+            },
+            success: function (result) {
+                if (!result.is_success) {
+                    customAlert(result.message);
                 } else {
-                    var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-170px 0");
-                    var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:unLikeComment("
-                        + result.music_comment_id + ");").append(lcbI);
-                    if (result.num_of_like_comment_of_music > 0) {
-                        var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
-                        lcbLink.append(lcbSpan);
+                    var user = result.result;
+                    var allImgExt = ".jpg|.jpeg|.bmp|.png";
+                    if (user.head_photo.toLowerCase().match(allImgExt) == null) {
+                        $("#my_head_photo").attr("src", "/images/headphoto/default_head_photo.png");
+                    } else {
+                        $("#my_head_photo").attr("src", user.head_photo);
                     }
-                    cbDiv.append(lcbLink);
                 }
-
-                if (result.is_my_comment) {
-                    var cbSpan = $("<span class='sep'>|</span>");
-                    var cbLink = $("<a class='delete_comment_btn'>删除</a>").attr("href",
-                        "javascript:deleteMusicComment(" + result.music_comment_id + ");");
-                    cbDiv.append(cbSpan).append(cbLink);
-                }
-
-                var cntWrapDiv = $("<div class='cntwrap'></div>").append(dtDiv).append(cbDiv);
-
-                var acmtLi = $("<li></li>").append(headDiv).append(cntWrapDiv);
-
-                $("#all_cmt").append(acmtLi);
-            });
-
-        }
+            }
+        });
     }
-});
+}
+
+getMyHeadPhoto();
+
+function getMusicComment() {
+    $.ajax({
+        url: ipAndHost + '/gdmusicserver/get/music/comment/by/music/id/or/user/id/@query',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            user_id: $.cookie("uId"),
+            music_id: musicId
+        },
+        error: function () {
+            customAlert("网络开小差了");
+        },
+        success: function (result) {
+            if (!result.is_success) {
+                customAlert(result.message);
+            } else {
+                var result = result.result;
+
+                $("li").remove("#all_cmt li");
+
+                $.each(result, function (n, result) {
+                    console.log(result);
+
+                    var headLinkImg = $("<img>").attr("src", result.user_head_photo);
+                    var headLink = $("<a></a>").attr("href", "javascript:toUser(" + result.user_id + ");").append(headLinkImg);
+                    var headDiv = $("<div class='head'></div>").append(headLink);
+
+                    var ctLink = $("<a>" + result.user_nickname + "</a>").attr("href", "javascript:toUser(" + result.user_id + ");");
+                    var dtDiv = $("<div class='cntwrap_top'></div>").append(ctLink).append("：" + result.music_comment_content);
+
+                    var cntTime = timestampToTime(result.music_comment_time / 1000);
+                    var cntT = $("<div class='cnt_time'></div>").append(cntTime.year + "年" + cntTime.month + "月" + cntTime.day + "日");
+
+                    var cbDiv = $("<div class='cntwrap_bottom'></div>").append(cntT);
+
+                    if (!result.is_me_like_comment) {
+                        var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-150px 0");
+                        var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:likeComment("
+                            + result.music_comment_id + ");").append(lcbI);
+                        if (result.num_of_like_comment_of_music > 0) {
+                            var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
+                            lcbLink.append(lcbSpan);
+                        }
+                        cbDiv.append(lcbLink);
+                    } else {
+                        var lcbI = $("<i class='like_cmt'></i>").css("backgroundPosition", "-170px 0");
+                        var lcbLink = $("<a class='like_comment_btn'></a>").attr("href", "javascript:unLikeComment("
+                            + result.music_comment_id + ");").append(lcbI);
+                        if (result.num_of_like_comment_of_music > 0) {
+                            var lcbSpan = $("<span>&nbsp;(" + result.num_of_like_comment_of_music + ")</span>");
+                            lcbLink.append(lcbSpan);
+                        }
+                        cbDiv.append(lcbLink);
+                    }
+
+                    if (result.is_my_comment) {
+                        var cbSpan = $("<span class='sep'>|</span>");
+                        var cbLink = $("<a class='delete_comment_btn'>删除</a>").attr("href",
+                            "javascript:deleteMusicComment(" + result.music_comment_id + ");");
+                        cbDiv.append(cbSpan).append(cbLink);
+                    }
+
+                    var cntWrapDiv = $("<div class='cntwrap'></div>").append(dtDiv).append(cbDiv);
+
+                    var acmtLi = $("<li></li>").append(headDiv).append(cntWrapDiv);
+
+                    $("#all_cmt").append(acmtLi);
+                });
+
+            }
+        }
+    });
+}
+
+getMusicComment();
 
 function likeComment(musicCommentId) {
     if ($.cookie("uId") == null) {
@@ -206,10 +223,13 @@ function likeComment(musicCommentId) {
                 } else {
                     var result = result.result;
                     customAlert(result.message);
-                    setTimeout(function () {
-                        var link = "singleSong.html?musicId=" + musicId;
-                        window.location.href = link;
-                    }, 3000);
+                    // setTimeout(function () {
+                    //     var link = "singleSong.html?musicId=" + musicId;
+                    //     window.location.href = link;
+                    // }, 3000);
+
+                    getMusicComment();
+
                 }
             }
         });
@@ -234,18 +254,21 @@ function unLikeComment(musicCommentId) {
             } else {
                 var result = result.result;
                 customAlert(result.message);
-                setTimeout(function () {
-                    var link = "singleSong.html?musicId=" + musicId;
-                    window.location.href = link;
-                }, 3000);
+                // setTimeout(function () {
+                //     var link = "singleSong.html?musicId=" + musicId;
+                //     window.location.href = link;
+                // }, 3000);
+
+                getMusicComment();
+
             }
         }
     });
 }
 
 function deleteMusicComment(musicCommentId) {
-    $("#create_music_list_frame_bg").css("display","block");
-    $("#delete_music_list_frame").css("display","block");
+    $("#create_music_list_frame_bg").css("display", "block");
+    $("#delete_music_list_frame").css("display", "block");
     deleteMusicCommentId = musicCommentId;
 }
 
@@ -254,8 +277,8 @@ $("#dmlf_confirm_btn").click(function () {
 });
 
 $("#dmlf_cancel_btn").click(function () {
-    $("#create_music_list_frame_bg").css("display","none");
-    $("#delete_music_list_frame").css("display","none");
+    $("#create_music_list_frame_bg").css("display", "none");
+    $("#delete_music_list_frame").css("display", "none");
     deleteMusicCommentId = null;
 });
 
@@ -275,13 +298,18 @@ function deleteMC(musicCommentId) {
                 customAlert(result.message);
             } else {
                 var result = result.result;
-                $("#create_music_list_frame_bg").css("display","none");
-                $("#delete_music_list_frame").css("display","none");
+                $("#create_music_list_frame_bg").css("display", "none");
+                $("#delete_music_list_frame").css("display", "none");
                 customAlert(result.message);
-                setTimeout(function () {
-                    var link = "singleSong.html?musicId=" + musicId;
-                    window.location.href = link;
-                }, 3000);
+
+
+                // setTimeout(function () {
+                //     var link = "singleSong.html?musicId=" + musicId;
+                //     window.location.href = link;
+                // }, 3000);
+
+                getMusicComment();
+
             }
         }
     });
