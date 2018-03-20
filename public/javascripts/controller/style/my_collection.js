@@ -85,7 +85,7 @@ function getMyMusicList() {
                         mliDiv.append(mliImg);
 
                         var mlnDiv = $("<div class='music_list_name'>" + result.user_music_list_name + "</div>");
-                        var mnSpan = $("<span class='music_num'>" + result.num_of_music_in_user_music_list + "首</span>");
+                        var mnSpan = $("<span class='music_num'>" + result.num_of_music_in_user_music_list + "首&nbsp;by&nbsp;"+result.user_nickname+"</span>");
                         var mlnuDiv = $("<div class='music_list_num'></div>");
                         mlnuDiv.append(mnSpan);
 
