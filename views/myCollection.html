@@ -64,7 +64,6 @@
                                 </div>
                             </div>
                             <span class="music_list_btns">
-                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(0);"></a>-->
                                 <a href="javascript:;" class="delete_btn"></a>
                             </span>
                         </li>
@@ -82,7 +81,6 @@
                                 </div>
                             </div>
                             <span class="music_list_btns">
-                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(1);"></a>-->
                                 <a href="javascript:;" class="delete_btn"></a>
                             </span>
                         </li>
@@ -100,7 +98,6 @@
                                 </div>
                             </div>
                             <span class="music_list_btns">
-                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(2);"></a>-->
                                 <a href="javascript:;" class="delete_btn"></a>
                             </span>
                         </li>
@@ -118,7 +115,6 @@
                                 </div>
                             </div>
                             <span class="music_list_btns">
-                                <!--<a href="javascript:;" class="edit_btn" onclick="editMusicList(3);"></a>-->
                                 <a href="javascript:;" class="delete_btn"></a>
                             </span>
                         </li>
@@ -130,33 +126,37 @@
             <div class="miml_top" id="miml_top">
                 <div class="miml_tt" id="miml_tt">
                     <div class="music_list_cover">
-                        <img src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
+                        <img id="music_list_cover"
+                             src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130"
                              alt="">
                     </div>
                     <div class="music_list_info">
                         <div class="mli_top">
                             <div class="music_list_icon"></div>
-                            <span class="music_list_title">The&nbsp;Playlist&nbsp;of&nbsp;Sam</span>
-                            <!--<a href="javascript:;" class="edit_music_list_btn" onclick="editMusicList(0);">编辑</a>-->
+                            <span class="music_list_title"
+                                  id="music_list_title">The&nbsp;Playlist&nbsp;of&nbsp;Sam</span>
                         </div>
                         <div class="mli_middle">
                             <div class="user_head_photo">
-                                <img src="/images/headphoto/IMG_0416.JPG" alt="">
+                                <a id="user_head_photo_link" href="javascript:;">
+                                    <img id="user_head_photo" src="/images/headphoto/IMG_0416.JPG"
+                                         alt="">
+                                </a>
                             </div>
-                            <a href="javascript:;" class="user_nickname">
+                            <a href="javascript:;" class="user_nickname" id="user_nickname">
                                 sam1995
                             </a>
-                            <span class="user_created_time">
+                            <span class="user_created_time" id="user_created_time">
                                 2014-11-01&nbsp;创建
                             </span>
                         </div>
                         <div class="mli_bottom">
-                            <a class="play_btn" href="javascript:;">
+                            <a class="play_btn" id="play_btn">
                                 <em class="play_start"></em>
                                 播放
                             </a>
                         </div>
-                        <div class="mli_intro">
+                        <div class="mli_intro" id="mli_intro">
                             <b>介绍：</b>
                             能遇见你，真好。<br>
                             <br>
@@ -219,7 +219,6 @@
                         </span>
                         <div class="music_operation">
                             <a href="javascript:;" class="add_music" onclick="addTheMusicToMusicList(1)"></a>
-                            <!--<a href="javascript:;" class="delete_music" onclick="deleteMusicInMusicList(1, 0);"></a>-->
                         </div>
                     </td>
                     <td>
@@ -246,7 +245,6 @@
                         </span>
                         <div class="music_operation">
                             <a href="javascript:;" class="add_music" onclick="addTheMusicToMusicList(2)"></a>
-                            <!--<a href="javascript:;" class="delete_music" onclick="deleteMusicInMusicList(2, 0);"></a>-->
                         </div>
                     </td>
                     <td>
@@ -265,37 +263,6 @@
     </div>
 </div>
 <div id="create_music_list_frame_bg" class="create_music_list_frame_bg"></div>
-<div class="create_music_list_frame" id="create_music_list_frame">
-    <div class="cmlf_top">
-        <div class="cmlf_title">新建歌单</div>
-    </div>
-    <div class="cmlf_middle">
-        <div class="inner_cmlf_middle">
-            <p>
-                歌单名：
-                <input type="text" name="create_music_list_name" id="create_music_list_name" class="create_music_list_name">
-            </p>
-            <div class="reminder_cmlf_name" id="reminder_cmlf_name">
-
-            </div>
-            <p>
-                可通过“收藏”将音乐添加到新歌单中
-            </p>
-            <div class="frame_btns">
-                <a class="create_btn" id="create_btn" href="javascript:;">
-                    <i>
-                        新建
-                    </i>
-                </a>
-                <a class="cancel_btn" id="cancel_btn" href="javascript:;">
-                    <i>
-                        取消
-                    </i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="delete_music_list_frame" id="delete_music_list_frame">
     <div class="dmlf_top">
         <div class="dmlf_title">
@@ -309,22 +276,6 @@
         <div class="dmlf_btns">
             <a class="dmlf_confirm_btn" id="dmlf_confirm_btn" href="javascript:;">确定</a>
             <a class="dmlf_cancel_btn" id="dmlf_cancel_btn" href="javascript:;">取消</a>
-        </div>
-    </div>
-</div>
-<div class="delete_music_list_frame" id="delete_music">
-    <div class="dmlf_top">
-        <div class="dmlf_title">
-            提示
-        </div>
-    </div>
-    <div class="dmlf_main">
-        <div class="dmlf_main_tip">
-            确认删除歌曲？
-        </div>
-        <div class="dmlf_btns">
-            <a class="dmlf_confirm_btn" id="dm_confirm_btn" href="javascript:;">确定</a>
-            <a class="dmlf_cancel_btn" id="dm_cancel_btn" href="javascript:;">取消</a>
         </div>
     </div>
 </div>
