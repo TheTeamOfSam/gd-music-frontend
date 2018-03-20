@@ -136,6 +136,11 @@ body, * {
     margin: 2px 0 8px 0;
     width: 150px;
     height: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    display: block;
     font-size: 12px;
     color: #333333;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
@@ -256,6 +261,11 @@ body, * {
 
 .music_list_title {
     width: 328px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    display: block;
     height: 24px;
     line-height: 24px;
     font-size: 20px;

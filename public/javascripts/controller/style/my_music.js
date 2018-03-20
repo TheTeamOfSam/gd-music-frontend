@@ -78,11 +78,11 @@ function getMyMusicList() {
             } else {
                 var result = result.result;
                 if (result.length == 0) {
-                    $("#music_in_music_list").css("display","none");
-                    $("#my_music_list").css("display","none");
+                    $("#music_in_music_list").css("display", "none");
+                    $("#my_music_list").css("display", "none");
                 } else {
-                    $("#music_in_music_list").css("display","block");
-                    $("#my_music_list").css("display","block");
+                    $("#music_in_music_list").css("display", "block");
+                    $("#my_music_list").css("display", "block");
 
                     myMusicList = result;
 
@@ -381,6 +381,8 @@ oCancelBtn.onclick = function () {
 oCreateBtn.onclick = function () {
     if (oCreateMusicListName.value == null || oCreateMusicListName.value == "" || oCreateMusicListName.value.length == 0) {
         oReminderCmlfName.innerHTML = "歌单名不能为空";
+    } else if (oCreateMusicListName.value.length > 30) {
+        oReminderCmlfName.innerHTML = "歌单名不能大于30个字符";
     } else {
         oReminderCmlfName.innerHTML = null;
         $.ajax({
@@ -473,8 +475,8 @@ oDmConfirmBtn.onclick = function () {
         dataType: 'json',
         data: {
             user_music_list_id: deleteInfo.musicListId,
-            music_id:deleteInfo.musicId,
-            user_id:$.cookie("uId")
+            music_id: deleteInfo.musicId,
+            user_id: $.cookie("uId")
         },
         error: function () {
             customAlert("网络开小差了");
