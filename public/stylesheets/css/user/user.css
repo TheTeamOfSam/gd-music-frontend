@@ -24,7 +24,8 @@ body, * {
 
 .user_info {
     width: 900px;
-    height: 188px;
+    height: auto;
+    overflow: hidden;
     margin: 0 0 43px 0;
 }
 
@@ -45,7 +46,7 @@ body, * {
 
 .ui_other_info {
     width: 670px;
-    height: 169px;
+    height: auto;
     float: left;
 }
 
@@ -116,7 +117,8 @@ body, * {
 
 .user_crt_pl {
     width: 950px;
-    height: 780px;
+    height: auto;
+    overflow: hidden;
     margin: 20px 0 0 -50px;
     list-style: none;
 }
