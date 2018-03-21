@@ -38,6 +38,8 @@ body, * {
 .uml_info {
     width: 640px;
     height: auto;
+    overflow: hidden;
+    padding: 7px;
 }
 
 .uml_photo {
