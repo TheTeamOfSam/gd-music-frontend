@@ -50,7 +50,7 @@ oCmtBtn.onclick = function () {
                         // }, 3000);
 
                         oComment.value = null;
-                        oResidueNum.value = 150;
+                        oResidueNum.innerHTML = "150";
 
                         getMusicComment();
 

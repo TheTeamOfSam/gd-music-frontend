@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.play_bar {
+    width: 100%;
+    height: 53px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333333;
+}
+
+
+
