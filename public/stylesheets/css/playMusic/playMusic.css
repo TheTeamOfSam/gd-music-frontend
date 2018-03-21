@@ -14,5 +14,143 @@ body {
     background-color: #333333;
 }
 
+.play_bar_min {
+    width: 980px;
+    height: 53px;
+    margin: 0 auto;
+    padding: 0;
+}
 
+.btns {
+    width: 137px;
+    padding: 6px 0 0 0;
+    float: left;
+}
+
+.btns a {
+    display: block;
+    float: left;
+    background-image: url("../../../images/play/playbar.png");
+}
+
+.prv {
+    margin: 5px 8px 0 0;
+    width: 28px;
+    height: 28px;
+    background-position: 0 -130px;
+}
+
+.prv:hover {
+    background-position: -30px -130px;
+}
+
+.ply {
+    width: 36px;
+    height: 36px;
+    margin: 0 8px 0 0;
+    background-position: 0 -204px;
+}
+
+.ply:hover {
+    background-position: -40px -204px;
+}
+
+.nxt {
+    margin: 5px 8px 0 0;
+    width: 28px;
+    height: 28px;
+    background-position: -80px -130px;
+}
+
+.nxt:hover {
+    background-position: -110px -130px;
+}
+
+.play {
+    position: relative;
+    float: left;
+    width: 608px;
+}
+
+.words {
+    height: 28px;
+    color: #E8E8E8;
+    text-shadow: 0 1px 0 #171717;
+    line-height: 28px;
+}
+
+.words span {
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.music_name {
+    max-width: 300px;
+    color: #E8E8E8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    float: left;
+}
+
+.music_author {
+    margin-left: 15px;
+    color: #9b9b9b;
+    float: left;
+}
+
+.m_pbar {
+    width: 493px;
+    position: relative;
+    display: block;
+}
+
+.barbg {
+    height: 9px;
+    width: 493px;
+    background-image: url("../../../images/play/statbar.png");
+    background-position: right 0;
+}
+
+.cur {
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../../../images/play/statbar.png");
+    background-position: left -66px;
+    height: 9px;
+}
+
+.cur_btn {
+    position: absolute;
+    top: -7px;
+    width: 22px;
+    height: 24px;
+    display: block;
+    margin-left: -11px;
+    background-image: url("../../../images/play/iconall.png");
+    background-position: 0 -250px;
+}
+
+.cur_btn:hover {
+    cursor: pointer;
+}
+
+.time {
+    position: absolute;
+    top: -3px;
+    right: -84px;
+    color: #797979;
+    text-shadow: 0 1px 0 #121212;
+    float: left;
+    height: 14px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.time em {
+    font-style: normal;
+}
 
