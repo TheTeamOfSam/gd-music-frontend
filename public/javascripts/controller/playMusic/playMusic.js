@@ -213,6 +213,23 @@ $("#ply").click(function () {
     }
 });
 
+var timer;
+timer = setInterval(function () {
+    var currentT = oAudio.currentTime;
+    var durationT = oAudio.duration;
+    var scale = currentT / durationT;
+    var disLeft = (oProgress.offsetWidth - oProgressBtn.offsetWidth / 2 + 5) * scale;
+
+    oProgressBtn.style.left = disLeft + 'px';
+    oCurPgs.style.width = (scale * 100) + "%";
+
+    $("#currect_time_text").html(getMusicDuration(oAudio.currentTime));
+
+    if (oAudio.ended) {
+        next_music();
+    }
+
+}, 500);
 
 // 进度条和进度条按钮以及进度初始化距离
 var oProgress = document.getElementById("progress");
@@ -225,6 +242,8 @@ oProgressBtn.onmousedown = function (ev) {
     disProgress = oEvent.clientX - oProgressBtn.offsetLeft;
 
     oAudio.pause();
+
+    clearInterval(timer);
 
     document.onmousemove = function (ev) {
         var oEvent = ev || event;
@@ -247,6 +266,24 @@ oProgressBtn.onmousedown = function (ev) {
     document.onmouseup = function () {
         oProgress.onmousedown = null;
         document.onmousemove = null;
+
+        timer = setInterval(function () {
+            var currentT = oAudio.currentTime;
+            var durationT = oAudio.duration;
+            var scale = currentT / durationT;
+            var disLeft = (oProgress.offsetWidth - oProgressBtn.offsetWidth / 2 + 5) * scale;
+
+            oProgressBtn.style.left = disLeft + 'px';
+            oCurPgs.style.width = (scale * 100) + "%";
+
+            $("#currect_time_text").html(getMusicDuration(oAudio.currentTime));
+
+            if (oAudio.ended) {
+                next_music();
+            }
+
+        }, 500);
+
         oAudio.play();
     };
 };
@@ -391,25 +428,6 @@ function playModeTip(tipText) {
         $("#tip").css("display", "none");
     }, 3000);
 }
-
-console.log(mscplist);
-
-var timer = setInterval(function () {
-    var currentT = oAudio.currentTime;
-    var durationT = oAudio.duration;
-    var scale = currentT / durationT;
-    var disLeft = (oProgress.offsetWidth - oProgressBtn.offsetWidth / 2 + 5) * scale;
-
-    oProgressBtn.style.left = disLeft + 'px';
-    oCurPgs.style.width = (scale * 100) + "%";
-
-    $("#currect_time_text").html(getMusicDuration(oAudio.currentTime));
-
-    if (oAudio.ended) {
-        next_music();
-    }
-
-}, 500);
 
 $("#prv").click(function () {
     prev_music();
