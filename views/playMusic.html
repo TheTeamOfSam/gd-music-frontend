@@ -4,45 +4,279 @@
     <meta charset="UTF-8">
     <title>音乐播放</title>
     <link type="text/css" rel="stylesheet" href="/stylesheets/css/playMusic/playMusic.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/css/head/head.css">
     <script type="text/javascript" src="/javascripts/jquery/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="/javascripts/jquery/jquery.cookie.js"></script>
     <script type="text/javascript" src="/javascripts/controller/iphost/iphost.js"></script>
+    <script type="text/javascript" src="/javascripts/controller/navigation/navigation.js"></script>
 </head>
 <body>
-<div>
+<div class="navigation">
+    <div class="navigation_min">
+        <div class="logo">
+            <div class="logo_min">
+                <a href="javascript:;">
+                    <img src="/images/logo/logo.png">
+                </a>
+            </div>
+        </div>
+        <ul id="navigation_ul" style="display: none;">
+            <li>发现音乐</li>
+            <li>我的音乐</li>
+            <li>我的收藏</li>
+            <li>个人设置</li>
+        </ul>
+        <div class="search" style="display: none;">
+            <input type="text" class="search_content" id="search_content" placeholder="搜索音乐/专辑/艺人/歌单">
+        </div>
+        <div id="head_photo" class="head_photo_right">
+            <img src="">
+        </div>
+        <div id="login_btn" class="login_btn">
+            <a href="javascript:;">登录</a>
+        </div>
+        <div id="logout_btn" class="logout_btn">
+            <a href="javascript:;">退出登录</a>
+        </div>
+    </div>
+</div>
+<div class="red_bar"></div>
+<div class="middle_content">
+    <div class="middle_content_min">
+        <div class="play_list">
+            <div class="plist_title">
+                歌单
+            </div>
+            <div class="plist_table">
 
+
+                <table class="m_table" id="m_table">
+                    <tr>
+                        <th class="th_w1">
+                            <div class="wp" style="background: none;"></div>
+                        </th>
+                        <th class="th_w2">
+                            <div class="wp">
+                                歌曲标题
+                            </div>
+                        </th>
+                        <th class="th_w3">
+                            <div class="wp">
+                                时长
+                            </div>
+                        </th>
+                        <th class="th_w4">
+                            <div class="wp">
+                                歌手
+                            </div>
+                        </th>
+                        <th class="th_w5">
+                            <div class="wp">
+                                专辑
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="num">1</span>
+                            <a class="play_music" href="javascript:;"></a>
+                        </td>
+                        <td>
+                            <div class="music_title">
+                                <a href="javascript:;">夜曲</a>
+                            </div>
+                        </td>
+                        <td class="s-fc3">
+                            <span>03:46</span>
+                            <div class="opt_btn">
+                                <a class="add_music" href="javascript:addTheMusicToMusicList(0);"></a>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="author">
+                                <a href="javascript:;">周杰伦</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="special">
+                                <a href="javascript:;">十一月的萧邦</a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="num">2</span>
+                            <a class="play_music" href="javascript:;"></a>
+                        </td>
+                        <td>
+                            <div class="music_title">
+                                <a href="javascript:;">一路向北</a>
+                            </div>
+                        </td>
+                        <td class="s-fc3">
+                            <span>04:55</span>
+                            <div class="opt_btn">
+                                <a class="add_music" href="javascript:addTheMusicToMusicList(1);"></a>
+                            </div>
+                        </td>
+                        <td>
+                             <span class="author">
+                                <a href="javascript:;">周杰伦</a>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="special">
+                                <a href="javascript:;">十一月的萧邦</a>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+        <div class="music_info">
+            <div class="m_info_cover">
+                <img id="special_cover" src="http://p1.music.126.net/yjVbsgfNeF2h7fIvnxuZDQ==/18894007811887644.jpg?param=130y130">
+                <span></span>
+            </div>
+            <p>
+                <span>歌曲名：</span>
+                <a id="music_title" href="javascript:;">她的睫毛</a>
+            </p>
+            <p>
+                <span>歌手：</span>
+                <a id="artist_title" href="javascript:;">周杰伦</a>
+            </p>
+            <p>
+                <span>专辑：</span>
+                <a id="special_title" href="javascript:;">叶惠美</a>
+            </p>
+        </div>
+    </div>
 </div>
 <div class="play_bar">
     <div class="play_bar_min">
         <div class="btns">
-            <a class="prv" href="javascript:;"></a>
-            <a class="ply" href="javascript:;"></a>
-            <a class="nxt" href="javascript:;"></a>
+            <a class="prv" id="prv" href="javascript:;"></a>
+            <a class="pause" id="ply" href="javascript:;"></a>
+            <a class="nxt" id="nxt" href="javascript:;"></a>
         </div>
         <div class="play">
             <div class="words">
-                <span class="music_name">
-                    独家记忆
+                <span id="music_name" class="music_name">
+                    她的睫毛
                 </span>
-                <span class="music_author">
-                    陈小春
+                <span id="music_author" class="music_author">
+                    周杰伦
                 </span>
             </div>
             <div class="m_pbar">
-                <div class="barbg">
-                    <div class="cur">
-                        <span class="cur_btn">
+                <div class="barbg" id="progress">
+                    <div class="cur" id="cur_pgs">
+                        <span class="cur_btn" id="progress_btn">
                             <i></i>
                         </span>
                     </div>
                 </div>
                 <div class="time">
-                    <em>00:00</em>
-                    / 05:07
+                    <em id="currect_time_text">00:00</em>
+                    /
+                    <div id="music_duration" style="float: right;">
+                        05:07
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="ctrl">
+            <div class="m_vol" id="m_vol">
+                <div class="m_vol_barbg"></div>
+                <div class="vbg" id="volume_bar">
+                    <div class="curr" id="curr_volume"></div>
+                    <span class="vol_btn" id="volume_btn"></span>
+                </div>
+            </div>
+            <a href="javascript:;" class="volume" id="volume"></a>
+            <a href="javascript:;" class="mode_random" id="play_mode"></a>
+            <div class="tip" id="tip">
+
             </div>
         </div>
     </div>
 </div>
+<div id="create_music_list_frame_bg" class="create_music_list_frame_bg"></div>
+<div class="add_music_list_frame" id="add_music_list_frame">
+    <div class="amlf_top">
+        <div class="amlf_top_tip">
+            添加到歌单
+        </div>
+    </div>
+    <div class="amlf_middle">
+        <ul id="amlf_middle">
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="amlfm_item">
+                    <div class="amlfm_item_left">
+                        <img src="http://p1.music.126.net/RBNa1MGuuwhLWWC8J_Pyhg==/3242459793609734.jpg?param=40y40">
+                    </div>
+                    <p class="amlfm_item_title">
+                        The&nbsp;Playlist&nbsp;of&nbsp;Sam
+                    </p>
+                    <p class="amlfm_item_num">
+                        100首
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <span class="close_amlf" id="close_amlf"></span>
+</div>
+<div id="reminder_search_content" class="reminder_search_content">
+    歌曲名不能为空！
+</div>
+<!--<audio id="m_audio" src="" controls="controls" class="m_audio"></audio>-->
+<script type="text/javascript" src="/javascripts/controller/utils/processMusicDuration.js"></script>
+<script type="text/javascript" src="/javascripts/controller/utils/processUrlUtil.js"></script>
+<script type="text/javascript" src="/javascripts/controller/function/addMusicFunction.js"></script>
+<script type="text/javascript" src="/javascripts/controller/customAlert/customAlert.js"></script>
+<script type="text/javascript" src="/javascripts/controller/playMusic/playMusic.js"></script>
 </body>
 </html>

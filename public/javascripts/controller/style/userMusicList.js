@@ -90,8 +90,6 @@ $.ajax({
                         $("#m_table").append(mTTr);
 
                         $.each(result, function (n, result) {
-                            console.log(result);
-
                             var td1Span = $("<span class='num'>" + (n + 1) + "</span>");
                             var td1 = $("<td></td>");
                             td1.append(td1Span);

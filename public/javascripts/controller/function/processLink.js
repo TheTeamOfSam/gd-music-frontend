@@ -23,4 +23,7 @@ function toUserMusicList(userMusicListId) {
     window.location.href = link;
 }
 
-
+function playMusicList(userMusicListId) {
+    var link = "playMusic.html?userMusicListId=" + userMusicListId;
+    window.open(link);
+}

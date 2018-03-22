@@ -10,13 +10,13 @@ function getMusicDuration(musicDuration) {
     if (minute < 10) {
         rM = "0" + Math.floor(minute);
     } else {
-        rM = minute;
+        rM = Math.floor(minute);
     }
     var rS = "";
     if (second < 10) {
         rS = "0" + Math.floor(second);
     } else {
-        rS = second;
+        rS = Math.floor(second);
     }
     return rM + ":" + rS;
 }

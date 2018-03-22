@@ -1,7 +1,12 @@
 window.onload = function () {
 
     $(".logo").click(function () {
-        window.location.href = "index.html";
+        if (!/playMusic\.html/.test(window.location.href)) {
+            window.location.href = "index.html";
+
+        } else {
+            window.open("index.html");
+        }
     });
 
     var oNavigationUl = document.getElementById("navigation_ul");
@@ -38,7 +43,7 @@ window.onload = function () {
     var isLogoutBtn = false;
 
     var oHeadPhoto = document.getElementById("head_photo");
-    var headPhoto = $(".head_photo img");
+    var headPhoto = $("#head_photo img");
     var oLoginBtn = document.getElementById("login_btn");
     var oLogoutBtn = document.getElementById("logout_btn");
 
