@@ -16,6 +16,9 @@ $.ajax({
         } else {
             var result = result.result;
 
+
+
+
             $("#ui_head_photo").attr("src", result.user_head_photo);
             $("#ui_name").text(result.user_nickname);
             if (result.user_sex == 1) {
