@@ -48,7 +48,7 @@ body, * {
     margin-top: 40px;
     padding-left: 30px;
     /*background-color: #E33232;*/
-    height: 550px;
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -74,7 +74,7 @@ body, * {
     border-collapse: collapse;
     border-spacing: 0;
     table-layout: fixed;
-    margin: 0 5px;
+    /*margin: 0 15px;*/
 }
 
 .m_table tr {
