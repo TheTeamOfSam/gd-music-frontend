@@ -191,13 +191,13 @@ function findLikeArtistName(artistName) {
 
                     var facLinkImg = $("<img>").attr("src", result.artist_head_photo_small);
                     var facLinkSpan = $("<span></span>");
-                    var facLink = $("<a></a>").attr("href", "javascript:toArtist(" + result.id + ");");
+                    var facLink = $("<a></a>").attr("href", "javascript:toArtist(" + result.artist_id + ");");
                     facLink.append(facLinkImg);
                     facLink.append(facLinkSpan);
                     var fac = $("<div class='fd_artist_cover'></div>");
                     fac.append(facLink);
 
-                    var pLink = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.id + ");");
+                    var pLink = $("<a>" + result.artist_name + "</a>").attr("href", "javascript:toArtist(" + result.artist_id + ");");
                     var p = $("<p></p>");
                     p.append(pLink);
 
