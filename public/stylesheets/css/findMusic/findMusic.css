@@ -121,7 +121,8 @@ body, * {
 
 .fd_music_list {
     width: 900px;
-    height: 1290px;
+    height: auto;
+    overflow: hidden;
     display: block;
 }
 
@@ -219,6 +220,7 @@ body, * {
 .fd_artist_list {
     width: 900px;
     height: auto;
+    overflow: hidden;
     display: none;
 }
 
@@ -226,6 +228,8 @@ body, * {
     margin: 0 0 0 -24px;
     width: 924px;
     list-style: none;
+    overflow: hidden;
+    height: auto;
 }
 
 .fd_artists li {
@@ -290,12 +294,14 @@ body, * {
     width: 900px;
     height: auto;
     display: none;
+    overflow: hidden;
 }
 
 .fd_specials {
     width: 933px;
     height: auto;
     margin-left: -33px;
+    overflow: hidden;
     list-style: none;
 }
 
@@ -377,13 +383,15 @@ body, * {
 
 .fd_musicList_list {
     width: 900px;
-    height: 1860px;
+    height:auto;
+    overflow: hidden;
     display: none;
 }
 
 .fd_musicLists {
     width: 900px;
-    height: 1860px;
+    height: auto;
+    overflow: hidden;
     list-style: none;
 }
 
@@ -543,11 +551,13 @@ body, * {
     width: 900px;
     height: auto;
     display: none;
+    overflow: hidden;
 }
 
 .fd_users {
     width: 900px;
     height: auto;
+    overflow: hidden;
     list-style: none;
 }
 
