@@ -15,6 +15,7 @@ body, * {
 
 .middle_content {
     width: 100%;
+    overflow: hidden;
     height: auto;
     background-color: #F5F5F5;
 }
@@ -22,6 +23,7 @@ body, * {
 .middle_content_min {
     width: 900px;
     height: auto;
+    overflow: hidden;
     padding: 0;
     margin: 0 auto;
     background-color: #FFFFFF;
@@ -33,6 +35,7 @@ body, * {
     width: 640px;
     padding: 47px 30px 40px 39px;
     height: auto;
+    overflow: hidden;
 }
 
 .uml_info {
@@ -236,7 +239,8 @@ body, * {
 .n-songtb {
     margin-top: 27px;
     width: 640px;
-    height: 435px;
+    height: auto;
+    overflow: hidden;
 }
 
 .sontb_title {
