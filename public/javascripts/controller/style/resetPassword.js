@@ -10,21 +10,12 @@ var oSendEmailBtn = document.getElementById("send_email_btn");
 var oReminderEmailCode = document.getElementById("reminder_email_code");
 var oFirstNextStepLink = document.getElementById("first_next_step_link");
 var oSecondStepForm = document.getElementById("second_step_form");
-var oNickname = document.getElementById("nickname");
-var oReminderNickname = document.getElementById("reminder_nickname");
 var oPassword = document.getElementById("password");
 var oReminderPassword = document.getElementById("reminder_password");
 var oRePassword = document.getElementById("re_password");
 var oReminderRePassword = document.getElementById("reminder_re_password");
 var oSecondNextStepLink = document.getElementById("second_next_step_link");
 var oFinishStepForm = document.getElementById("finish_step_form");
-var oGender = document.getElementsByName("gender");
-var oYear = document.getElementById("year");
-var oMonth = document.getElementById("month");
-var oDay = document.getElementById("day");
-var oSelProvince = document.getElementById("selProvince");
-var oSelCity = document.getElementById("selCity");
-var oFinishStepLink = document.getElementById("finish_step_link");
 
 var timer = null;
 
@@ -41,7 +32,7 @@ oSendEmailBtn.onclick = function () {
             if (oSendEmailBtn.value != "发送") {
             } else {
                 $.ajax({
-                    url: ipAndHost + '/gdmusicserver/email/@get',
+                    url: ipAndHost + '/gdmusicserver/reset/password/email/@get',
                     type: 'POST',
                     data: {
                         email: oRegisterEmail.value
@@ -111,91 +102,46 @@ oFirstNextStepLink.onclick = function () {
 };
 
 oSecondNextStepLink.onclick = function () {
-    if (oNickname.value.length == 0) {
-        oReminderNickname.innerHTML = "请输入昵称";
-    } else if (oNickname.value.length > 20) {
-        oReminderNickname.innerHTML = "请控制昵称长度在20个字符以内";
-    } else {
-        oReminderNickname.innerHTML = "";
-        if (oPassword.value.length == 0) {
-            oReminderPassword.innerHTML = "请输入密码";
-        } else if (oPassword.value.length > 50) {
-            oReminderPassword.innerHTML = "密码过长，请控制在50个字符以内";
-        } else {
-            oReminderPassword.innerHTML = "";
-            if (oRePassword.value.length == 0) {
-                oReminderRePassword.innerHTML = "请输入确认密码";
-            } else {
-                if (oRePassword.value != oPassword.value) {
-                    oReminderRePassword.innerHTML = "密码与确认密码不同";
-                } else {
-                    oReminderRePassword.innerHTML = "";
-                    oRULis[1].style.border = "1px solid #C6C6C6";
-                    oRULis[1].style.backgroundColor = "#F7F7F7";
-                    oRULis[1].getElementsByTagName("div")[0].className = "step_number";
-                    oRULis[1].getElementsByTagName("span")[0].className = "step_text";
-                    oRULis[2].style.borderTop = "1px solid #C20C0C";
-                    oRULis[2].style.backgroundColor = "#FFFFFF";
-                    oRULis[2].getElementsByTagName("div")[0].className = "step_number step_outline";
-                    oRULis[2].getElementsByTagName("span")[0].className = "step_text step_text_outline";
-                    oSecondStepForm.style.display = "none";
-                    oFinishStepForm.style.display = "block";
-                }
-            }
-        }
-    }
-};
 
-oFinishStepLink.onclick = function () {
-    var rEmail = oRegisterEmail.value;
-    var rNickname = oNickname.value;
-    var rPassword = oPassword.value;
-    var rGender = 0;
-    for (var i = 0; i < oGender.length; i++) {
-        if (oGender[i].checked) {
-            rGender = oGender[i].value;
-        }
-    }
-    var rDOfB = oYear.value + "-" + oMonth.value + "-" + oDay.value;
-    var rProvince = oSelProvince.value;
-    var rCity = oSelCity.value;
-    // 判断出生年月日是否输入
-    if (oYear.value == "") {
-        alert("请选择出生年份");
+    if (oPassword.value.length == 0) {
+        oReminderPassword.innerHTML = "请输入密码";
+    } else if (oPassword.value.length > 50) {
+        oReminderPassword.innerHTML = "密码过长，请控制在50个字符以内";
     } else {
-        if (oMonth.value == "") {
-            alert("请选择出生月份");
+        oReminderPassword.innerHTML = "";
+        if (oRePassword.value.length == 0) {
+            oReminderRePassword.innerHTML = "请输入确认密码";
         } else {
-            if (oDay.value == "") {
-                alert("请选择出生日子");
+            if (oRePassword.value != oPassword.value) {
+                oReminderRePassword.innerHTML = "密码与确认密码不同";
             } else {
+                oReminderRePassword.innerHTML = "";
+
                 $.ajax({
-                    url: ipAndHost + '/gdmusicserver/user/service/@register',
+                    url: ipAndHost + '/gdmusicserver/user/service/password/@forget',
                     type: 'POST',
                     dataType: 'json',
                     data: {
-                        email: rEmail,
-                        nickname: rNickname,
-                        password: rPassword,
-                        sex: rGender,
-                        str_date_of_birth: rDOfB,
-                        province: rProvince,
-                        city: rCity
+                        email: oRegisterEmail.value,
+                        password: oPassword.value
                     },
                     error: function () {
-                       customAlert("网络异常，请求注册失败！");
+                        customAlert("网络开小差了");
                     },
                     success: function (result) {
-                        if (result.is_success) {
-                            window.location.href = "index.html";
-                        } else {
+                        if (result.is_success == false) {
                             customAlert(result.message);
+                        } else {
+                            customAlert("重置成功");
+                            setTimeout(function () {
+                                window.location.href = "login.html";
+                            }, 3000);
                         }
                     }
                 });
+
+
             }
         }
     }
 };
-
-

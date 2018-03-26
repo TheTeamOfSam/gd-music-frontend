@@ -258,6 +258,21 @@ body, * {
     text-decoration: underline;
 }
 
+
+.reset_pwd_link {
+    height: 48px;
+    float: left;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+    color: #999999;
+    text-decoration: none;
+    line-height: 48px;
+}
+
+.reset_pwd_link:hover {
+    text-decoration: underline;
+}
+
 .login_email {
     width: 206px;
     height: 19px;

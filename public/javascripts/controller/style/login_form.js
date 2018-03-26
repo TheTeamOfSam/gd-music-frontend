@@ -73,4 +73,7 @@ oRegistLink.click(function () {
     window.location.href = "register.html";
 });
 
+$(".reset_pwd_link").click(function () {
+    window.location.href = "resetPassword.html";
+});
 
