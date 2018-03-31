@@ -6,7 +6,7 @@ $(function () {
     var oMiddleContent = $(".middle_content_min");
 
     // oMusicList.css("height", (windowHeight - 75) + "px");
-    oMiddleContent.css("height", (windowHeight - 108) + "px");
+    oMiddleContent.css("height", (windowHeight - 128) + "px");
 });
 
 //当浏览器大小变化时
