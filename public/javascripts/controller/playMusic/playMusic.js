@@ -430,9 +430,6 @@ $("#play_mode").click(function () {
         $("#play_mode").addClass("mode_one");
         playModeTip("单曲循环");
     }
-
-    console.log(playMode);
-
 });
 
 function playModeTip(tipText) {
