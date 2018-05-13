@@ -29,6 +29,17 @@ var mscplist;
 
 var musicIndex = 0;
 
+
+/**
+ * 播放模式：
+ * 余数为0的是随机
+ * 余数为1的是循环
+ * 余数为2的是单曲循环
+ * @type {number}
+ */
+var playMode = 0;
+
+
 $.ajax({
     url: ipAndHost + '/gdmusicserver/get/music/play/list/@query',
     type: 'GET',
@@ -172,6 +183,9 @@ function toSingleSong(musicId) {
 }
 
 function setProperty(mscIndex) {
+
+    musicIndex = mscIndex;
+
     var sMusic = mscplist[mscIndex];
     if (sMusic == null) {
         $("#special_cover").attr("src", "http://p1.music.126.net/tGHU62DTszbFQ37W9qPHcg==/2002210674180197.jpg?param=200y200");
@@ -182,6 +196,12 @@ function setProperty(mscIndex) {
         $("#music_author").text("");
         $("#music_duration").text("00:00");
     } else {
+
+        $("#ply").removeClass("ply");
+        $("#ply").addClass("pause");
+        oAudio.play();
+        isMusicPlay = false;
+
         $("#special_cover").attr("src", sMusic.special_photo).attr("href", "javascript:toSpecial(" + sMusic.special_id + ");");
         $("#special_title").text(sMusic.special_name).attr("href", "javascript:toSpecial(" + sMusic.special_id + ");");
         $("#music_name").text(sMusic.music_name).attr("href", "javascript:toSingleSong(" + sMusic.music_id + ");");
@@ -229,7 +249,7 @@ timer = setInterval(function () {
         next_music();
     }
 
-}, 500);
+}, 50);
 
 // 进度条和进度条按钮以及进度初始化距离
 var oProgress = document.getElementById("progress");
@@ -282,7 +302,7 @@ oProgressBtn.onmousedown = function (ev) {
                 next_music();
             }
 
-        }, 500);
+        }, 50);
 
         oAudio.play();
     };
@@ -390,15 +410,6 @@ $("#volume").click(function () {
     }
 });
 
-/**
- * 播放模式：
- * 余数为0的是随机
- * 余数为1的是循环
- * 余数为2的是单曲循环
- * @type {number}
- */
-var playMode = 0;
-
 $("#play_mode").click(function () {
     playMode++;
     if (playMode % 3 == 0) {
@@ -418,8 +429,10 @@ $("#play_mode").click(function () {
         $("#play_mode").removeClass("mode_loop");
         $("#play_mode").addClass("mode_one");
         playModeTip("单曲循环");
-
     }
+
+    console.log(playMode);
+
 });
 
 function playModeTip(tipText) {

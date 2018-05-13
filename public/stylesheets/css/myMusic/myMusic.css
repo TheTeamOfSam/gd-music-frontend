@@ -22,6 +22,7 @@ body, * {
 .middle_content_min {
     width: 980px;
     height: 1000px;
+    overflow: hidden;
     border-left: 1px solid #D3D3D3;
     border-right: 1px solid #D3D3D3;
     background-color: #FFFFFF;

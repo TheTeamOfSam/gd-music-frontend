@@ -228,17 +228,6 @@ function findLikeSpecialName(specialName) {
             if (!result.is_success) {
                 customAlert(result.message);
             } else {
-                var resLength = result.result.length;
-                var shouldLength = 0;
-                if (resLength % 6 == 0) {
-                    shouldLength = Math.floor(resLength / 5);
-                } else {
-                    shouldLength = Math.floor(resLength / 5 + 1);
-                }
-
-                oFdSpecialList.style.height = (shouldLength * 208 + 50) + "px";
-                oFdSpecials.style.height = (shouldLength * 208 + 50) + "px";
-
                 $("li").remove("#fd_specials li");
                 $.each(result.result, function (n, result) {
 
