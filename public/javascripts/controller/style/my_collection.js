@@ -149,6 +149,9 @@ function getMyMusicList() {
                             if (!result.is_success) {
                                 customAlert(result.message);
                             } else {
+
+                                $("body,html").animate({scrollTop: 0}, 500);
+
                                 var result = result.result;
 
                                 if (result.length < 10) {
@@ -286,6 +289,9 @@ function selectMyMusicList() {
                         if (!result.is_success) {
                             customAlert(result.message);
                         } else {
+                            
+                            $("body,html").animate({scrollTop: 0}, 500);
+
                             var result = result.result;
 
                             if (result.length < 10) {

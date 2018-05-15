@@ -16,13 +16,14 @@ body, * {
     margin-top: 75px;
     width: 100%;
     background-color: #F5F5F5;
+    height: auto;
     z-index: 999;
 }
 
 .middle_content_min {
     width: 980px;
-    /*height: 1000px;*/
-    height: auto;
+    height: 1000px;
+    /*height: auto;*/
     overflow: hidden;
     border-left: 1px solid #D3D3D3;
     border-right: 1px solid #D3D3D3;
