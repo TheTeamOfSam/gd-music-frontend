@@ -47,6 +47,7 @@ $(function () {
 
     oMusicList.css("height", (windowHeight - 75) + "px");
     oMiddleContent.css("height", (documentHeight - 75) + "px");
+    $(".middle_content_min").css("height", (documentHeight - 75) + "px");
 });
 
 //当浏览器大小变化时
@@ -59,6 +60,7 @@ $(window).resize(function () {
 
     oMusicList.css("height", (windowHeight - 75) + "px");
     oMiddleContent.css("height", (documentHeight - 75) + "px");
+    $(".middle_content_min").css("height", (documentHeight - 75) + "px");
 });
 
 function getMyMusicList() {
@@ -160,6 +162,13 @@ function getMyMusicList() {
                                 customAlert(result.message);
                             } else {
                                 var result = result.result;
+
+                                if (result.length < 10) {
+                                    var documentHeight = $(document).height();
+                                    $(".middle_content_min").css("height", (documentHeight - 75) + "px");
+                                } else {
+                                    $(".middle_content_min").css("height", "auto");
+                                }
 
                                 $("tr").remove("#music_table tr");
 
@@ -288,6 +297,13 @@ function selectMyMusicList() {
                             customAlert(result.message);
                         } else {
                             var result = result.result;
+
+                            if (result.length < 10) {
+                                var documentHeight = $(document).height();
+                                $(".middle_content_min").css("height", (documentHeight - 75) + "px");
+                            } else {
+                                $(".middle_content_min").css("height", "auto");
+                            }
 
                             $("tr").remove("#music_table tr");
 

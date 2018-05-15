@@ -151,6 +151,13 @@ function getMyMusicList() {
                             } else {
                                 var result = result.result;
 
+                                if (result.length < 10) {
+                                    var documentHeight = $(document).height();
+                                    $(".middle_content_min").css("height", (documentHeight - 75) + "px");
+                                } else {
+                                    $(".middle_content_min").css("height", "auto");
+                                }
+
                                 $("tr").remove("#music_table tr");
 
                                 var mtc1 = $("<th class='first_mt_column'>&nbsp;</th>");
@@ -280,6 +287,13 @@ function selectMyMusicList() {
                             customAlert(result.message);
                         } else {
                             var result = result.result;
+
+                            if (result.length < 10) {
+                                var documentHeight = $(document).height();
+                                $(".middle_content_min").css("height", (documentHeight - 75) + "px");
+                            } else {
+                                $(".middle_content_min").css("height", "auto");
+                            }
 
                             $("tr").remove("#music_table tr");
 
