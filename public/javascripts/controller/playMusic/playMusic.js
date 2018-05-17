@@ -232,8 +232,7 @@ function setProperty(mscIndex) {
 // 暂停播放状态
 var isMusicPlay = false;
 
-// 播放暂定按钮点击时
-$("#ply").click(function () {
+function playOrPause() {
     if (isMusicPlay) {
         $("#ply").removeClass("ply");
         $("#ply").addClass("pause");
@@ -244,6 +243,20 @@ $("#ply").click(function () {
         $("#ply").addClass("ply");
         oAudio.pause();
         isMusicPlay = true;
+    }
+}
+
+// 播放暂定按钮点击时
+$("#ply").click(function () {
+    playOrPause();
+});
+
+// 键盘按下
+$(window).keydown(function (ev) {
+    var oEvent = ev || event;
+    if (oEvent.keyCode == 32) { // 空格按下，暂停/播放
+        playOrPause();
+        oEvent.preventDefault();
     }
 });
 
