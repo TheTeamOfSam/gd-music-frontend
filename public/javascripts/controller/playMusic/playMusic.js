@@ -10,7 +10,7 @@ $(function () {
 
     var windowWidth = $(window).width();
     if (((windowWidth - (oMiddleContent.width() + 2)) / 2) < 0) {
-        $(".music_info").css("left",689 + "px");
+        $(".music_info").css("left", 689 + "px");
     } else {
         $(".music_info").css("left", ((windowWidth - (oMiddleContent.width() + 2)) / 2 + 689) + "px");
     }
@@ -29,7 +29,7 @@ $(window).resize(function () {
 
     var windowWidth = $(window).width();
     if (((windowWidth - (oMiddleContent.width() + 2)) / 2) < 0) {
-        $(".music_info").css("left",689 + "px");
+        $(".music_info").css("left", 689 + "px");
     } else {
         $(".music_info").css("left", ((windowWidth - (oMiddleContent.width() + 2)) / 2 + 689) + "px");
     }
