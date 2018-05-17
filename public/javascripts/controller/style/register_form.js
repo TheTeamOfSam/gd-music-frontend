@@ -187,7 +187,7 @@ oFinishStepLink.onclick = function () {
                     },
                     success: function (result) {
                         if (result.is_success) {
-                            window.location.href = "index.html";
+                            window.location.href = "login.html";
                         } else {
                             customAlert(result.message);
                         }
