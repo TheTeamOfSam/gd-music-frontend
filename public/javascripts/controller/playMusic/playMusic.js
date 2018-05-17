@@ -7,6 +7,13 @@ $(function () {
 
     // oMusicList.css("height", (windowHeight - 75) + "px");
     oMiddleContent.css("height", (windowHeight - 128) + "px");
+
+    var windowWidth = $(window).width();
+    if (((windowWidth - (oMiddleContent.width() + 2)) / 2) < 0) {
+        $(".music_info").css("left",689 + "px");
+    } else {
+        $(".music_info").css("left", ((windowWidth - (oMiddleContent.width() + 2)) / 2 + 689) + "px");
+    }
 });
 
 //当浏览器大小变化时
@@ -19,6 +26,13 @@ $(window).resize(function () {
 
     // oMusicList.css("height", (windowHeight - 75) + "px");
     oMiddleContent.css("height", (windowHeight - 128) + "px");
+
+    var windowWidth = $(window).width();
+    if (((windowWidth - (oMiddleContent.width() + 2)) / 2) < 0) {
+        $(".music_info").css("left",689 + "px");
+    } else {
+        $(".music_info").css("left", ((windowWidth - (oMiddleContent.width() + 2)) / 2 + 689) + "px");
+    }
 });
 
 var oAudio = new Audio();

@@ -289,6 +289,7 @@ body, * {
     width: 270px;
     height: 550px;
     border-left: 1px dotted #666666;
+    position: fixed;
 }
 
 .m_info_cover {
